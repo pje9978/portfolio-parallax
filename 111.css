@@ -1,0 +1,61 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+/* @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities'; */
+
+
+/* 
+@layer components {
+  .btn {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+  }
+  .aaa{
+    @apply p-96;
+  }
+  .loading:after{
+    @apply content-[''] fixed z-50 top-1/2 left-1/2 w-16 h-16 -mt-8 mr-0 mb-0 -m-8 rounded-full opacity-40 bg-white animate-loaderAnim;
+  }
+  .loading:before{
+    @apply content-[''] fixed z-50 top-0 left-0 w-full h-full bg-[#0e0e0e];
+  }
+  .text-color {
+  }
+  .nav-after {
+    @apply after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[3px] after:bg-[#eee] after:ease-in after:duration-300;
+  }
+  .tab-content{
+    @apply hidden;
+  }
+  .tab-menu.active{
+    @apply border-b-2 border-white text-white;
+  }
+  .active {
+    @apply block;
+  }
+}
+
+ */
+
+
+.splitting .char {
+    animation: slide-in 1s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(60ms * var(--char-index));
+    -webkit-animation: slide-in 1s cubic-bezier(.5, 0, .5, 1) both;
+}
+  
+:root {
+  --my-bg : #0e0e0e;
+  --my-txt : #ddc4a4;
+}
+@keyframes slide-in {
+from {
+    transform: translateY(-1em) rotate(-.5turn) scale(0.5);
+    opacity: 0;
+    -webkit-transform: translateY(-1em) rotate(-.5turn) scale(0.5);
+    -moz-transform: translateY(-1em) rotate(-.5turn) scale(0.5);
+    -ms-transform: translateY(-1em) rotate(-.5turn) scale(0.5);
+    -o-transform: translateY(-1em) rotate(-.5turn) scale(0.5);
+}
+}

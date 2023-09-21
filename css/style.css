@@ -1,0 +1,21 @@
+:root {
+  --my-bg: #0e0e0e;
+  --my-txt: #ddc4a4;
+}
+
+@layer utilities {
+  .nav-after {
+    @apply after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[3px] after:bg-[#eee] after:ease-in after:duration-300;
+  }
+}
+.splitting .char {
+  animation: slide-in 1s cubic-bezier(0.5, 0, 0.5, 1) both;
+  animation-delay: calc(60ms * var(--char-index));
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-1em) rotate(-0.5turn) scale(0.5);
+    opacity: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
