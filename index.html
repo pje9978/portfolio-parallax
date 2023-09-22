@@ -3,181 +3,405 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 	<title>Document</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/dist/output.css">
 	<link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/mouse-effect.css">
+    <link rel="stylesheet" href="/css/universe-bg.css">
 	<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
 	<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
 	<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-	<script src="https://cdn.tailwindcss.com"></script>
 	<script>
 		tailwind.config = {
-		  theme: {
-			extend: {
-			  colors: {
-				clifford: '#da373d',
-			  }
-			}
-		  }
+            // important:true,
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
 		}
 	</script>
 	<style type="text/tailwindcss">
 		@layer utilities {
+            .link {@apply underline opacity-40 text-xs;}
+            .content {@apply flex  relative p-[--page-padding];}
+            .char-lg { @apply text-lg;}
 			.nav-after {
-				@apply after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[3px] after:bg-[--my-txt] after:ease-in after:duration-300;
+				@apply after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[--my-txt] after:ease-in after:duration-300;
 			}
+            .info_after{
+                @apply after:content-[''] after:absolute after:left-1/2 after:w-[1px] after:h-[2rem] after:bg-white after:top-full after:mt-4;
+            }
+            .hiddenItem {@apply hidden;}
+            p,span{@apply selection:bg-yellow-300 selection:text-yellow-900;}
+            
 		}
-	</style>
+        
+    </style>
 </head>
-<body class="bg-[--my-bg] text-[--my-txt]">
-	<nav class="w-screen border-b-white bg-black z-50 aaa">
-		<div class="container mx-auto">
-			<div class="flex flex-wrap items-center">
+<body  class="bg-[--my-bg] text-[--my-txt] box-border">
+    <div id="stars" class="opacity-40"></div>
+
+	<nav class="w-screen  bg-black z-50 border-b  border-[--my-txt]">
+		<div class="container mx-auto ">
+			<div class="flex flex-wrap items-center ">
 				<h1 class="md:w-auto text-xl font-bold flex w-full justify-center items-center py-4 text-[--my-text]"><a href="#">PORTFOLIO.</a></h1>
-				<ul class="md:w-auto flex flex-wrap w-full justify-center ml-auto items-center text-base  h-[60px]">
-					<li class="relative h-[60px]"><a href="#intro" class="block p-5 opacity-50 text-center text-[--my-text] text-xs nav-after hover:opacity-100 hover:after:w-full">INTRO</a></li>
-					<li class="relative h-[60px]"><a href="#work" class="block p-5 opacity-50 text-center text-[--my-text] text-xs nav-after hover:opacity-100 hover:after:w-full">WORK</a></li>
-					<li class="relative h-[60px]"><a href="#gallery" class="block p-5 opacity-50 text-center text-[--my-text] text-xs nav-after hover:opacity-100 hover:after:w-full">GALLERY</a></li>
-					<li class="relative h-[60px]"><a href="#contact" class="block p-5 opacity-50 text-center text-[--my-text] text-xs nav-after hover:opacity-100 hover:after:w-full">CONTACT</a></li>
+				<ul class="md:w-auto md:flex-row flex h-full flex-wrap w-full justify-center ml-auto items-center text-base  h-[60px]">
+					<li class="relative h-[60px]"><a href="#intro" class="block p-5 opacity-50 text-center text-[--my-text] text-xs nav-after hover:opacity-100 hover:after:w-full">{ Portfolio }</a></li>
+					<li class="relative h-[60px]"><a href="#work" class="block p-5 opacity-50 text-center text-[--my-text] text-xs nav-after hover:opacity-100 hover:after:w-full">{ Work }</a></li>
+					<li class="relative h-[60px]"><a href="#work" class="block p-5 opacity-50 text-center text-[--my-text] text-xs nav-after hover:opacity-100 hover:after:w-full">{ Gallery }</a></li>
+					<li class="relative h-[60px]"><a href="#contact" class="block p-5 opacity-50 text-center text-[--my-text] text-xs nav-after hover:opacity-100 hover:after:w-full">{ Contact }</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<main class="btn">
-		<main>
-            <div class="frame">
-                <div class="frame__title">
-                    <a aria-label="Back to the article" class="frame__title-back" href="https://tympanus.net/codrops/?p=69734">
-                        <span>Back to the article</span>
-                        <svg width="18px" height="18px" viewBox="0 0 24 24">
-                            <path vector-effect="non-scaling-stroke" d="M18.25 15.5a.75.75 0 00.75-.75v-9a.75.75 0 00-.75-.75h-9a.75.75 0 000 1.5h7.19L6.22 16.72a.75.75 0 101.06 1.06L17.5 7.56v7.19c0 .414.336.75.75.75z"></path>
-                        </svg>
-                    </a>
+
+    <main class="btn flex flex-col justify-center items-center">
+        <section class="intro sm:h-[70vh] h-[50vh] mt-32 grid place-items-center text-center">
+            <div>
+                <span class="block text-xs tracking-widest">Web Publisher</span>
+                <span class="intro__info text-xs tracking-widest relative opacity-60 mt-auto leading-normal info_after">나를 표현하는 동사<br></span>
+                <h2 class="sm:text-7xl content__title relative text flex items-center text-5xl text-center py-32 pt-0 after:content-['}'] after:opacity-50 after:m-6 after:text-9xl before:content-['{'] before:text-9xl before:m-6 before:opacity-50 mb-auto"  data-splitting data-effect28>Develop</h2>
+            </div>
+            <div class="grid place-items-center text-center">
+                <div class="cover w-screen mb-20 flex mt-[1vh] transform -rotate-2 bg-[--my-txt] text-[--my-bg] opacity-100">
+                    <p class="first-parallel tracking-widest font-light p-2 flex selection:bg-[--my-txt] opacity-70 hover:opacity-100"></p>
                 </div>
-                <a class="frame__prev" href="https://tympanus.net/Tutorials/LoopScrolling/">Previous demo</a>
-                <nav class="frame__demos">
-                    <a href="index.html">Set 1</a>
-                    <span>Set 2</span>
-                </nav>
+                <div class="cover w-screen mb-20 flex transform rotate-2 bg-[--my-txt] text-[--my-bg] justify-end opacity-30">
+                    <p class="second-parallel tracking-widest font-light p-2 flex selection:bg-[--my-txt] opacity-70 hover:opacity-100"></p>
+                </div>
             </div>
-            <div class="intro">
-                <h1 class="intro__title">
-                    <span class="intro__title-pre">On-Scroll</span>
-                    <span class="intro__title-sub">Typography Animations<sup><small>2</small></sup></span>
-                </h1>
-                <span class="intro__info">Please scroll moderately to fully experience the animations</span>
-            </div>
-            <div class="content">
-                <h2 class="content__title content__title--left" data-splitting data-effect16>
-                    <p class="font-small">As human beings, we often find ourselves feeling out of place in the world around us. We sense that something is not quite right, that the reality we experience is not necessarily the truth. And yet, we are bound by the beliefs and illusions that have been ingrained in us since childhood.
-                        It can be a difficult and confusing journey to try and unravel these beliefs, to see beyond the layers of deception that cloud our vision. We may feel as though we need to make an effort, to strive for enlightenment, to grasp at something just beyond our reach.
-                        But what if the answer is not found in effort, but in surrender? What if we simply allow ourselves to be carried by the flow of existence, to trust in the natural rhythm of life itself?
-                    </p>
+        </section>
+
+        <!-- about -->
+        <section id="about">
+            <div class="container mx-auto flex flex-col justify-center ">
+                <div class="content w-full md:flex-row md:w-3/4 md:mx-auto flex flex-col  flex-wrap relative p-[--page-padding] gap-8 items-start justify-items-start">
+                    <div class="flex flex-col shrink-0 h-full w-1/3">
+                        <span class="text-xs tracking-widest selection:bg-yellow-300 selection:text-yellow-900">{ About }</span>
+                        <h1 class="w-1/2 text-3xl font-medium selection:bg-yellow-300 selection:text-yellow-900 mt-2">A brief introduction</h1>
+                        <div class="sm:flex hidden mt-8"><button class="inline-flex  border px-2 py-1">Contact Me</button></div>
+            
+                    </div>
+                    <h2 class="content__title content__title--left grow w-full flex-1" data-splitting data-effect16>
+                        <p class="leading-relaxed font-small text-lg font-normal selection:bg-yellow-300 selection:text-yellow-900 mt-4">저는 다양한 경험 속에서 많은 문제들을 마주했습니다. 남들보다 문제를 많이 생각하고 발견하며, 그 문제를 반드시 해결해야 했습니다. 그 과정은 저를 성장시키고 발전시킵니다. 그리고 사람을 기본적으로 애정하는 마음이 있어, 사람들의 긍정적인 면을 많이 발견합니다. 협업에 있어 긍정적인 커뮤니케이션을 할 수 있습니다.
+                            저는 다양한 경험 속에서 많은 문제들을 마주했습니다. 남들보다 문제를 많이 생각하고 발견하며, 그 문제를 반드시 해결해야 했습니다. 그 과정은 저를 성장시키고 발전시킵니다. 그리고 사람을 기본적으로 애정하는 마음이 있어, 사람들의 긍정적인 면을 많이 발견합니다. 협업에 있어 긍정적인 커뮤니케이션을 할 수 있습니다.
+                        </p>
+                    </h2>
+            
+                    <div class="sm:invisible shrink-0 w-full text-center"><button class="hover:bg-[--my-txt] hover:text-[--my-bg] border ml-auto px-2 py-1 rounded-full w-32 h-32">Contact Me</button></div>
+                </div>
+                <h2 class="content__title grid text-center" data-splitting data-effect10>
+                    <span class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Strength.</span>
+                    <span><a class="underline text-xs opacity-40" href="https://store.gallup.com/c/en-sg/1/cliftonstrengths">갤럽 GALLUP 에서 조사한 강점 리포트</a></span>
                 </h2>
+                <div class="flex flex-wrap items-center md:px-52 px-4 mt-4">
+                    <div class="w-32 flex flex-col flex-1 justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                        <span class="text-xs font-thin tracking-widest">공감능력</span>
+                        <span class="font-medium">Empathy</span>
+                    </div>
+                    <div class="w-32 flex flex-col flex-1 justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                        <span class="text-xs font-thin tracking-widest">미래지향적</span>
+                        <span class="font-medium">Futuristic</span>
+                    </div>
+                    <div class="w-32 flex flex-col flex-1 justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                        <span class="text-xs font-thin tracking-widest">문제해결</span>
+                        <span class="font-medium">Restorative</span>
+                    </div>
+                    <div class="w-32 flex flex-col flex-1 justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                        <span class="text-xs font-thin tracking-widest">적응력</span>
+                        <span class="font-medium">Adaptability</span>
+                    </div>
+                    <div class="w-32 flex flex-col flex-1 justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                        <span class="text-xs font-thin tracking-widest">긍정적</span>
+                        <span class="font-medium">Positivity</span>
+                    </div>
+                </div>
+                <a class="text-center p-12 link" href="https://www.notion.so/GALLUP-5-b1c9b3e695064cf1a51e8175a170877e?pvs=4">자세히 보기</a>
+                
             </div>
-            <div class="content">
-                <h2 class="content__title" data-splitting data-effect17><span>Stubborn</span><span>Naivety</span></h2>
+        </section>
+
+        <!-- skill -->
+        <section id="skill" class=" flex-col before:content-[''] before:absolute before:left-1/2 before:translate-x-1/2 before:w-[1px] before:h-[2rem] before:bg-white before:mt-8 py-12 "  >
+            <div class="container mx-auto flex flex-col justify-center mt-20" data-splitting data-effect14>
+               
+                <h2 class="content__title grid text-center" data-splitting data-effect10><span class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Skill.</span></h2>
+
+                <div class="md:flex-row md:w-3/4 md:mx-auto flex flex-col  flex-wrap relative gap-8 items-start justify-items-start">
+                    <div class="w-full flex flex-col shrink-0 h-full justify-center items-center">
+                        <span class="text-xs tracking-widest selection:bg-yellow-300 selection:text-yellow-900">{ Skill }</span>
+                        <h1 class="text-center text-3xl text-[--my-txt] font-semibold selection:bg-yellow-300 selection:text-yellow-900 mt-2 ">My focused technologies:<br> <span class="text-[--my-txt] opacity-50">current areas of proficiency</span></h1>
+
+                    </div>
+                    <h2 class="content__title content__title--left grow w-full flex-1" >
+                        <!-- language -->
+                        <div class="before:content-['[Language]'] before:block before:tracking-widest before:text-xs before:opacity-50 before:my-3">
+                            <div class="skillbar relative block w-full mb-[30px] before:bg-[--my-bg] before:content-[''] before:h-[3px] before:absolute before:w-full before:-z-1" data-percent="80%">
+                                <div class="skillbar-title text-[--my-txt]] inline-block mb-1">HTML</div>
+                                <div class="skill-bar-percent float-right inline-block uppercase">80%</div>
+                                <div class="skillbar-bar h-[3px] w-0 bg-[--my-txt]" style="width: 80%"></div>
+                            </div>
+
+                            <div class="skillbar relative block w-full mb-[30px] before:bg-[--my-bg] before:content-[''] before:h-[3px] before:absolute before:w-full before:-z-1" data-percent="80%">
+                                <div class="skillbar-title text-[--my-txt]uppercase inline-block mb-1">CSS</div>
+                                <div class="skill-bar-percent float-right inline-block uppercase">80%</div>
+                                <div class="skillbar-bar h-[3px] w-0 bg-[--my-txt]" style="width: 80%"></div>
+                            </div>
+                            
+                            <div class="skillbar relative block w-full mb-[30px] before:bg-[--my-bg] before:content-[''] before:h-[3px] before:absolute before:w-full before:-z-1" data-percent="40%">
+                                <div class="skillbar-title text-[--my-txt]uppercase inline-block mb-1">JavaScript</div>
+                                <div class="skill-bar-percent float-right inline-block uppercase">50%</div>
+                                <div class="skillbar-bar h-[3px] w-0 bg-[--my-txt]" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <!-- framework -->
+                        <div class="before:content-['[Framework]'] before:block before:tracking-widest before:text-xs before:opacity-50 before:my-3">
+                            <div class="skillbar relative block w-full mb-[30px] before:bg-[--my-bg] before:content-[''] before:h-[3px] before:absolute before:w-full before:-z-1" data-percent="70%">
+                                <div class="skillbar-title text-[--my-txt]] inline-block mb-1">SCSS</div>
+                                <div class="skill-bar-percent float-right inline-block uppercase">70%</div>
+                                <div class="skillbar-bar h-[3px] w-0 bg-[--my-txt]" style="width: 70%"></div>
+                            </div>
+
+                            <div class="skillbar relative block w-full mb-[30px] before:bg-[--my-bg] before:content-[''] before:h-[3px] before:absolute before:w-full before:-z-1" data-percent="70%">
+                                <div class="skillbar-title text-[--my-txt]uppercase inline-block mb-1">TailwindCSS</div>
+                                <div class="skill-bar-percent float-right inline-block uppercase">70%</div>
+                                <div class="skillbar-bar h-[3px] w-0 bg-[--my-txt]" style="width: 70%"></div>
+                            </div>
+                            
+                            <div class="skillbar relative block w-full mb-[30px] before:bg-[--my-bg] before:content-[''] before:h-[3px] before:absolute before:w-full before:-z-1" data-percent="50%">
+                                <div class="skillbar-title text-[--my-txt]uppercase inline-block mb-1">Next.js</div>
+                                <div class="skill-bar-percent float-right inline-block uppercase">50%</div>
+                                <div class="skillbar-bar h-[3px] w-0 bg-[--my-txt]" style="width: 50%"></div>
+                            </div>
+                            <div class="skillbar relative block w-full mb-[30px] before:bg-[--my-bg] before:content-[''] before:h-[3px] before:absolute before:w-full before:-z-1" data-percent="40%">
+                                <div class="skillbar-title text-[--my-txt]uppercase inline-block mb-1">React</div>
+                                <div class="skill-bar-percent float-right inline-block uppercase">40%</div>
+                                <div class="skillbar-bar h-[3px] w-0 bg-[--my-txt]" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <!-- tool -->
+                        <div class="before:content-['[Tool]'] before:block before:tracking-widest before:text-xs before:opacity-50 before:my-3">
+                            <div class="skillbar relative block w-full mb-[30px] before:bg-[--my-bg] before:content-[''] before:h-[3px] before:absolute before:w-full before:-z-1" data-percent="80%">
+                                <div class="skillbar-title text-[--my-txt]] inline-block mb-1">Figma</div>
+                                <div class="skill-bar-percent float-right inline-block uppercase">80%</div>
+                                <div class="skillbar-bar h-[3px] w-0 bg-[--my-txt] opacity-80" style="width: 80%"></div>
+                            </div>
+                            <div class="skillbar relative block w-full mb-[30px] before:bg-[--my-bg] before:content-[''] before:h-[3px] before:absolute before:w-full before:-z-1" data-percent="80%">
+                                <div class="skillbar-title text-[--my-txt]uppercase inline-block mb-1">Notion</div>
+                                <div class="skill-bar-percent float-right inline-block uppercase">80%</div>
+                                <div class="skillbar-bar h-[3px] w-0 bg-[--my-txt] opacity-80" style="width: 80%"></div>
+                            </div>
+                            <div class="skillbar relative block w-full mb-[30px] before:bg-[--my-bg] before:content-[''] before:h-[3px] before:absolute before:w-full before:-z-1" data-percent="80%">
+                                <div class="skillbar-title text-[--my-txt]uppercase inline-block mb-1">PhotoShop</div>
+                                <div class="skill-bar-percent float-right inline-block uppercase">80%</div>
+                                <div class="skillbar-bar h-[3px] w-0 bg-[--my-txt] opacity-80" style="width: 80%"></div>
+                            </div>
+                            
+                            <div class="skillbar relative block w-full mb-[30px] before:bg-[--my-bg] before:content-[''] before:h-[3px] before:absolute before:w-full before:-z-1" data-percent="50%">
+                                <div class="skillbar-title text-[--my-txt]uppercase inline-block mb-1">Illustrator</div>
+                                <div class="skill-bar-percent float-right inline-block uppercase">50%</div>
+                                <div class="skillbar-bar h-[3px] w-0 bg-[--my-txt] opacity-50" style="width: 50%"></div>
+                            </div>
+
+                            <div class="skillbar relative block w-full mb-[30px] before:bg-[--my-bg] before:content-[''] before:h-[3px] before:absolute before:w-full before:-z-1 " data-percent="40%">
+                                <div class="skillbar-title text-[--my-txt]uppercase inline-block mb-1">Slack</div>
+                                <div class="skill-bar-percent float-right inline-block uppercase ">40%</div>
+                                <div class="skillbar-bar h-[3px] w-0 bg-[--my-txt] opacity-40" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </h2>
+            
+
+            
+                </div>
             </div>
-            <div class="content">
-                <p>It is in this surrender that we may find the truth of who we are, the essence of our being that lies just beyond the veil of illusion. We let go of our striving, our constant seeking, and instead allow ourselves to be swept up in the infinite mystery of existence.</p>
-            </div>
-            <div class="content">
-                <h2 class="content__title" data-splitting data-effect18><span class="font-16 font-upper">Surrender to reality</span><span class="font-16 font-upper">Step into the light</span></h2>
-            </div>
-            <div class="content">
-                <p>This surrender does not mean giving up, nor does it mean accepting the status quo. It is, in fact, quite the opposite. It is a willingness to let go of the illusions that have been holding us back, to see beyond the limitations of our own beliefs, and to embrace the fullness of life itself.</p>
-            </div>
-            <div class="content">
-                <h2 class="content__title" data-splitting data-effect19><span class="font-21 font-upper">Intense</span><span class="font-21 font-upper">Nature</span></h2>
-            </div>
-            <div class="content">
-                <p>It is a journey of discovery, of exploration, of coming to know ourselves in a deeper and more profound way. And in that journey, we may find the truth that has been eluding us, and the freedom that comes with it.</p>
-            </div>
-            <div class="content">
-                <h2 class="content__title" data-splitting data-effect20><span class="font-22 font-upper">Waking</span><span class="font-12 font-upper">Life</span></h2>
-            </div>
-            <div class="content">
-                <p>So let us surrender ourselves to the flow of existence, and trust in the journey that lies before us. For in that surrender, we may find the truth, and the beauty that comes with it.</p>
-            </div>
-            <div class="content content--full">
-                <h2 class="content__title" data-splitting data-effect21><span class="font-20">Beauty</span><span class="font-18">remains</span></h2>
-            </div>
-            <div class="content">
-                <p>The truth is that we are all simply waves in the ocean of existence, arising and falling back into the depths from which we came. And yet, we spend so much of our lives struggling against the natural ebb and flow of the universe, trying to hold on to what is fleeting and resist what is inevitable. </p>
-            </div>
-            <div class="content content--full">
-                <h2 class="content__title" data-splitting data-effect22><span class="font-23 font-upper">Dance</span><span class="font-upper font-16">into</span><span class="font-upper font-23">Existence</span></h2>
-            </div>
-            <div class="content">
-                <p> But the more we cling to the illusion of control, the more we suffer. The art of letting go is not a skill to be learned, but a state of being to be realized. It is the recognition that we are not separate from the world around us, but a part of it, and that our true power lies not in trying to dominate it, but in surrendering to it.</p>
-            </div>
-            <div class="content content--full">
-                <h2 class="content__title" data-splitting data-effect23><span class="font-upper font-22">Deeper</span><span class=" font-upper font-20">Love</span><span class=" font-upper font-18">Light</span></h2>
-            </div>
-            <div class="content">
-                <p>When we let go of our attachment to outcomes, our fear of the unknown, and our need for certainty, we open ourselves up to the infinite possibilities and potentialities of life.</p>
-            </div>
-            <div class="content content--full">
-                <h2 class="content__title" data-splitting data-effect24><span class="font-15 font-upper">Embrace</span></h2>
-            </div>
-            <div class="content">
-                <p>Letting go is not giving up, but rather a courageous act of trust in the universe and in ourselves. So let us embrace the art of letting go, and discover the freedom and joy that lie beyond our limited notions of control.</p>
-            </div>
-            <div class="content">
-                <h2 class="content__title content__title--left" data-splitting data-effect25>
-                   <span class="font-13 font-medium font-height-medium">
-                        Feel because you have a heart<br>
-                        And let it guide you through the dark.<br>
-                        For it's the well of emotions deep,<br>
-                        That helps you laugh, love, and sleep.<br>
-                    </span>
+        </section>
+
+
+        <!-- edu -->
+        <section id="edu">
+            <div class="container w-screen mx-auto flex flex-col justify-start">
+                <h2 class="content content--full flex flex-col w-screen relative p-0">
+                    <h2 class="content__title grid text-center" data-splitting data-effect10><span class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Education.</span></h2>
                 </h2>
+                <div class="content md:flex-row md:mx-auto md:items-start items-center flex flex-col relative p-[--page-padding] gap-8  justify-items-start">
+                    <div class="md:mr-12 md:w-1/4 flex flex-col h-full justify-center items-center">
+                        <span class="text-xs tracking-widest selection:bg-yellow-300 selection:text-yellow-900 text-center">{ eductaion }</span>
+                        <h1 class="w-1/2 text-3xl font-medium selection:bg-yellow-300 selection:text-yellow-900 mt-2 text-center">A brief introduction</h1>
+                    </div>
+                    
+                    <ul class="content__title content__title--left md:w-3/4 w-full flex flex-col flex-wrap" data-splitting data-effect16>
+                        <li class="relative text-2xl flex-1 px-4 py-4 flex flex-col items-start border border-white/10 hover:border hover:px-6 hover:border-[--my-txt] hover:opacity-100">
+                            <span class="text-xs tracking-widest opacity-50 mb-2">2023.03 - 2023. 08</span>
+                            <h2 class="text-lg font-medium leading-relaxed ">이젠 아카데미 웹 퍼블리셔 과정 수료</h2>
+                        </li>
+                        <li class="relative text-2xl flex-1 px-4 py-4 flex flex-col items-start border border-white/10 hover:border hover:px-6 hover:border-[--my-txt] hover:opacity-100">
+                            <span class="text-xs tracking-widest opacity-50 mb-2">2022. 09 - 2022. 10</span>
+                            <h2 class="text-lg font-medium leading-relaxed">패스트캠퍼스 UIUX 사이드 프로젝트 수료</h2>
+                        </li>
+                        <li class="relative text-2xl flex-1 px-4 py-4 flex flex-col items-start border border-white/10 hover:border hover:px-6 hover:border-[--my-txt] hover:opacity-100">
+                            <span class="text-xs tracking-widest opacity-50 mb-2"> 2022.12</span>
+                            <h2 class="text-lg font-medium leading-relaxed">Udemy - User Experience Design Fundamenshrinktals</h2>
+
+                        </li>
+                        <li class="relative text-2xl flex-1 px-4 py-4 flex flex-col items-start border border-white/10 hover:border hover:px-6 hover:border-[--my-txt] hover:opacity-100">
+                            <span class="text-xs tracking-widest opacity-50 mb-2">2022.12</span>
+                            <h2 class="text-lg font-medium leading-relaxed ">Udemy - Information Architecture</h2>
+
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="content content--full">
-                <h2 class="content__title" data-splitting data-effect26><span class="font-upper font-19">Cosmic</span><span class="font-upper font-23">Symphony</span></h2>
-            </div>
-            <div class="content">
-                <p>Think because you have a mind,
-                    that makes you unique and one of a kind.
-                    With it you can learn and grow,
-                    and see the world from its highest glow.
-                </p>
-            </div>
-            <div class="content">
-                <h2 class="content__title" data-splitting data-effect27>
-                <span class="font-upper font-19 font-medium">
-                Act because you have hands,
-                that bring to life your every command.
-                With them you can create and build,
-                and bring to life what once was stilled.</span>
+        </section>
+
+        <!-- like -->
+        
+
+        <!-- 더보기 기능 -->
+        <!-- <div>
+            <div class="items">1</div>
+            <div class="items">2</div>
+            <div class="items">3</div>
+            <div class="items">4</div>
+            <div class="items hiddenItem">4</div>
+            <div class="items hiddenItem">4</div>
+            <div class="items hiddenItem">4</div>
+            <div class="items hiddenItem">4</div>
+            <div class="items hiddenItem">4</div>
+            <a href="#" id="load">더 보기</a>
+        </div> -->
+        <!-- Json data -->
+        <section id="work">
+            <div class="container mx-auto">
+                <h2 class="content content--full flex flex-col w-screen relative p-0">
+                    <h2 class="content__title grid text-center" data-splitting data-effect10><span class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Work.</span></h2>
                 </h2>
+                <section id="work-wrapper" class="bg-[--my-txt] text-[--my-bg]">
+                    <div id="work1">
+                    </div>
+                    <div id="work2">
+                    </div>
+                    <div id="work3">
+                    </div>
+                </section>
             </div>
-            <div class="content content--full">
-                <h2 class="content__title" data-splitting data-effect28><span class="font-12 font-medium">Liberation</span></h2>
-            </div>
-            <div class="content">
-                <p>And when death comes, like the falling night,
-                    remember the purpose that gave you flight.
-                    For you were made to make a mark,
-                    and leave behind a legacy bright and stark.
-                </p>
-            </div>
-            <div class="content">
-                <h2 class="content__title" data-splitting data-effect29><span class="font-upper">Discipline</span><span class="font-upper">above</span><span class="font-upper">Motivation</span><span class="font-upper">Always</span></h2>
-            </div>
-            <div class="content">
-                <p>So feel with your heart, think with your mind,
-                    and act with your hands, one of a kind.
-                    For you are a gift, full of potential and might,
-                    a spark of the divine, shining bright.
-                </p>
-            </div>
-            <div class="intro"><p><a class="line" href="index.html">View the first set</a></p></div>
-        </main>
-	</main>
-	
-	<p data-splitting>dklfjlwekjflkwjekljwelkfj</p>
-	<!-- <script> Splitting(); </script> -->
+        </section>
+        <section id="gallery">
+            
+        </section>
+        <div class="content flex flex-col w-screen relative p-[--page-padding]">
+            <h2 class="content__title" data-splitting data-effect17><span>Stubborn</span><span>Naivety</span></h2>
+        </div>
+        <div class="content flex flex-col w-screen relative p-[--page-padding]">
+            <p>It is in this surrender that we may find the truth of who we are, the essence of our being that lies just beyond the veil of illusion. We let go of our striving, our constant seeking, and instead allow ourselves to be swept up in the infinite mystery of existence.</p>
+        </div>
+        <div class="content flex flex-col w-screen relative p-[--page-padding]">
+            <h2 class="content__title" data-splitting data-effect11><span class="font-16 font-upper">Surrender to reality</span><span class="font-16 font-upper">Step into the light</span></h2>
+        </div>
+        <div class="content flex flex-col w-screen relative p-[--page-padding]">
+            <p>This surrender does not mean giving up, nor does it mean accepting the status quo. It is, in fact, quite the opposite. It is a willingness to let go of the illusions that have been holding us back, to see beyond the limitations of our own beliefs, and to embrace the fullness of life itself.</p>
+        </div>
+        <div class="content flex flex-col w-screen relative p-[--page-padding]">
+            <h2 class="content__title" data-splitting data-effect19><span class="font-21 font-upper">Intense</span><span class="font-21 font-upper">Nature</span></h2>
+        </div>
+        <div class="content flex flex-col w-screen relative p-[--page-padding]">
+            <p>It is a journey of discovery, of exploration, of coming to know ourselves in a deeper and more profound way. And in that journey, we may find the truth that has been eluding us, and the freedom that comes with it.</p>
+        </div>
+        <div class="content">
+            <h2 class="content__title" data-splitting data-effect20><span class="font-22 font-upper">Waking</span><span class="font-12 font-upper">Life</span></h2>
+        </div>
+        <div class="content">
+            <p>So let us surrender ourselves to the flow of existence, and trust in the journey that lies before us. For in that surrender, we may find the truth, and the beauty that comes with it.</p>
+        </div>
+        <div class="content content--full">
+            <h2 class="content__title" data-splitting data-effect21><span class="font-20">Beauty</span><span class="font-18">remains</span></h2>
+        </div>
+        <div class="content">
+            <p>The truth is that we are all simply waves in the ocean of existence, arising and falling back into the depths from which we came. And yet, we spend so much of our lives struggling against the natural ebb and flow of the universe, trying to hold on to what is fleeting and resist what is inevitable. </p>
+        </div>
+        <div class="content content--full">
+            <h2 class="content__title" data-splitting data-effect22><span class="font-23 font-upper">Dance</span><span class="font-upper font-16">into</span><span class="font-upper font-23">Existence</span></h2>
+        </div>
+        <div class="content">
+            <p> But the more we cling to the illusion of control, the more we suffer. The art of letting go is not a skill to be learned, but a state of being to be realized. It is the recognition that we are not separate from the world around us, but a part of it, and that our true power lies not in trying to dominate it, but in surrendering to it.</p>
+        </div>
+        <div class="content content--full">
+            <h2 class="content__title" data-splitting data-effect23><span class="font-upper font-22">Deeper</span><span class=" font-upper font-20">Love</span><span class=" font-upper font-18">Light</span></h2>
+        </div>
+        <div class="content">
+            <p>When we let go of our attachment to outcomes, our fear of the unknown, and our need for certainty, we open ourselves up to the infinite possibilities and potentialities of life.</p>
+        </div>
+        <div class="content content--full">
+            <h2 class="content__title" data-splitting data-effect24><span class="font-15 font-upper">Embrace</span></h2>
+        </div>
+        <div class="content">
+            <p>Letting go is not giving up, but rather a courageous act of trust in the universe and in ourselves. So let us embrace the art of letting go, and discover the freedom and joy that lie beyond our limited notions of control.</p>
+        </div>
+        <div class="content">
+            <h2 class="content__title content__title--left" data-splitting data-effect25>
+               <span class="font-13 font-medium font-height-medium">
+                    Feel because you have a heart<br>
+                    And let it guide you through the dark.<br>
+                    For it's the well of emotions deep,<br>
+                    That helps you laugh, love, and sleep.<br>
+                </span>
+            </h2>
+        </div>
+        <div class="content content--full">
+            <h2 class="content__title" data-splitting data-effect26><span class="font-upper font-19">Cosmic</span><span class="font-upper font-23">Symphony</span></h2>
+        </div>
+        <div class="content">
+            <p>Think because you have a mind,
+                that makes you unique and one of a kind.
+                With it you can learn and grow,
+                and see the world from its highest glow.
+            </p>
+        </div>
+        <div class="content">
+            <h2 class="content__title" data-splitting data-effect27>
+            <span class="font-upper font-19 font-medium">
+            Act because you have hands,
+            that bring to life your every command.
+            With them you can create and build,
+            and bring to life what once was stilled.</span>
+            </h2>
+        </div>
+        <div class="content content--full">
+            <h2 class="content__title" data-splitting data-effect28><span class="font-12 font-medium">Liberation</span></h2>
+        </div>
+        <div class="content">
+            <p>And when death comes, like the falling night,
+                remember the purpose that gave you flight.
+                For you were made to make a mark,
+                and leave behind a legacy bright and stark.
+            </p>
+        </div>
+        <div class="content">
+            <h2 class="content__title" data-splitting data-effect29><span class="font-upper">Discipline</span><span class="font-upper">above</span><span class="font-upper">Motivation</span><span class="font-upper">Always</span></h2>
+        </div>
+        <div class="content">
+            <p>So feel with your heart, think with your mind,
+                and act with your hands, one of a kind.
+                For you are a gift, full of potential and might,
+                a spark of the divine, shining bright.
+            </p>
+        </div>
+        <div class="intro"><p><a class="line" href="index.html">View the first set</a></p></div>
+    </main>
+
+    <script src="js/res2.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/mouse-effect.js"></script>
+    <script src="js/marquee-effect.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script> 
+    <script src="js/textscramble.js"></script>
 	<script src="js/splitting.js"></script>
 </body>
 </html>

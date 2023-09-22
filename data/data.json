@@ -1,0 +1,53 @@
+{
+  "work1": [
+    { 
+    "categroy":"팀 프로젝트",
+    "title": "인공지능 음성 서비스 'Hi Avatar'",
+    "device":["데스크탑","태블릿","모바일"],
+    "part":["기획","디자인","퍼블리싱"],
+    "count":"Design : 2명 / Frontend : 4명 , Backend : 3명",
+    "date": "2304-2306(60일)",
+    "design":"90%",
+    "publishing":"90%",
+    "tool":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
+    "blockquote":"abc",
+    "pdf":"work/202304_plant_website/portfolio.pdf",
+    "url":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/202304_plant_website/",
+    "detail":"Data/data-plant-website.html"
+    }
+  ],
+  "work2": [
+    { 
+    "categroy":"개인 프로젝트",
+    "title": "인공지능 음성 서비스 'Hi Avatar'",
+    "device":["데스크탑","태블릿","모바일"],
+    "part":["기획","디자인","퍼블리싱"],
+    "count":"Design : 2명 / Frontend : 4명 , Backend : 3명",
+    "date": "2304-2306(60일)",
+    "design":"90%",
+    "publishing":"90%",
+    "tool":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
+    "blockquote":"abc",
+    "pdf":"work/202304_plant_website/portfolio.pdf",
+    "url":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/202304_plant_website/",
+    "detail":"Data/data-plant-website.html"
+    }
+  ],
+  "work3": [
+    { 
+    "categroy":"개인 프로젝트",
+    "title": "인공지능 음성 서비스 'Hi Avatar'",
+    "device":["데스크탑","태블릿","모바일"],
+    "part":["기획","디자인","퍼블리싱"],
+    "count":"Design : 2명 / Frontend : 4명 , Backend : 3명",
+    "date": "2304-2306(60일)",
+    "design":"90%",
+    "publishing":"90%",
+    "tool":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
+    "blockquote":"abc",
+    "pdf":"work/202304_plant_website/portfolio.pdf",
+    "url":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/202304_plant_website/",
+    "detail":"Data/data-plant-website.html"
+    }
+  ]
+}

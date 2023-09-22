@@ -1,7 +1,10 @@
 
 :root {
     --my-bg : #0e0e0e;
-    --my-txt : #ddc4a4;
+    --my-txt : #e8e5de;
+    --link: #fff;
+    --link-hover:#fff;
+    --page-padding: 1.5rem 2rem;
 }
 
 @layer utilities {
@@ -9,16 +12,24 @@
       @apply after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[3px] after:bg-[#eee] after:ease-in after:duration-300;
     }
 }
-  
 
-.splitting .char {
-    animation: slide-in 1s cubic-bezier(.5, 0, .5, 1) both;
-    animation-delay: calc(60ms * var(--char-index));
-  }
+.bg-pin .char {display: inline !important; }
+// .splitting .char {
+//     animation: slide-in 1s cubic-bezier(.5, 0, .5, 1) both;
+//     animation-delay: calc(60ms * var(--char-index));
+//     -webkit-animation: slide-in 1s cubic-bezier(.5, 0, .5, 1) both;
+   
+// }
   
-  @keyframes slide-in {
-    from {
-      transform: translateY(-1em) rotate(-.5turn) scale(0.5);
-      opacity: 0;
-    }
-}
+// @keyframes slide-in {
+//   from {
+//       transform: translateY(-1em) rotate(-.5turn) scale(0.5);
+//       opacity: 0;
+//       -webkit-transform: translateY(-1em) rotate(-.5turn) scale(0.5);
+//       -moz-transform: translateY(-1em) rotate(-.5turn) scale(0.5);
+//       -ms-transform: translateY(-1em) rotate(-.5turn) scale(0.5);
+//       -o-transform: translateY(-1em) rotate(-.5turn) scale(0.5);
+//   }
+// }
+
+// mouse effect 
