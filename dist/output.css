@@ -3829,6 +3829,18 @@ video {
     flex-wrap: nowrap;
   }
 
+  .sm\:items-start {
+    align-items: flex-start;
+  }
+
+  .sm\:items-center {
+    align-items: center;
+  }
+
+  .sm\:justify-start {
+    justify-content: flex-start;
+  }
+
   .sm\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
@@ -3913,9 +3925,17 @@ video {
     align-items: flex-start;
   }
 
+  .md\:justify-start {
+    justify-content: flex-start;
+  }
+
   .md\:px-52 {
     padding-left: 13rem;
     padding-right: 13rem;
+  }
+
+  .md\:text-left {
+    text-align: left;
   }
 
   .md\:text-\[20vw\] {
