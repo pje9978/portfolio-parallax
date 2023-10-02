@@ -80,16 +80,16 @@ body {
   transform: rotate(45deg);
 }
 
-section#work-gallery .content {
+section#work-gallery #desc {
   position: fixed;
   top: 10rem;
   left: 0;
-  width: 100%;
-  height: calc(100% - 10rem);
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
   z-index: 100;
 }
-section#work-gallery .content .content__item {
+section#work-gallery #desc .content__item {
   position: absolute;
   top: 0;
   right: 0;
@@ -98,27 +98,27 @@ section#work-gallery .content .content__item {
   padding: 10vh 5vw;
   overflow: auto;
 }
-section#work-gallery .content .content__item .content__number {
+section#work-gallery #desc .content__item .content__number {
   font-weight: bold;
 }
-section#work-gallery .content .content__item .content__number::before {
+section#work-gallery #desc .content__item .content__number::before {
   content: "—";
   display: inline-block;
   margin: 0 1rem 0 0;
 }
-section#work-gallery .content .content__item .content__title {
+section#work-gallery #desc .content__item .content__title {
   margin: 0.5rem 0;
   font-size: 2rem;
 }
-section#work-gallery .content .content__item .content__subtitle {
+section#work-gallery #desc .content__item .content__subtitle {
   margin: 0 0 0.5rem;
   font-size: 1rem;
   font-weight: normal;
 }
-section#work-gallery .content .content__item .content__text {
+section#work-gallery #desc .content__item .content__text {
   font-size: 0.85rem;
 }
-section#work-gallery .content button.content__close {
+section#work-gallery #desc button.content__close {
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -128,10 +128,10 @@ section#work-gallery .content button.content__close {
   margin: 0;
   padding: 0;
 }
-section#work-gallery .content button.content__close:focus {
+section#work-gallery #desc button.content__close:focus {
   outline: none;
 }
-section#work-gallery .content button.content__close .icon--longarrow {
+section#work-gallery #desc button.content__close .icon--longarrow {
   width: 2rem;
 }
 section#work-gallery .frame {
@@ -184,7 +184,7 @@ section#work-gallery .slideshow {
   overflow: hidden;
   margin: 0;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   height: calc(100vh - 10rem);
   display: grid;
   grid-template-columns: 33% 33% 33%;
@@ -329,10 +329,10 @@ section#work-gallery .slideshow--previewopen .nav--prev {
   opacity: 1;
   pointer-events: auto;
 }
-.js section#work-gallery .content__title,
-.js section#work-gallery .content__subtitle,
-.js section#work-gallery .content__number,
-.js section#work-gallery .content__text,
-.js section#work-gallery .content__close {
+.js #desc .content__title,
+.js #desc .content__subtitle,
+.js #desc .content__number,
+.js #desc .content__text,
+.js #desc .content__close {
   opacity: 0;
 }/*# sourceMappingURL=style.css.map */

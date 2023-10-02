@@ -84,12 +84,13 @@ body {
 
 
 section#work-gallery {
-  .content {
+  #desc {
     position: fixed;
     top: 10rem;
     left: 0;
-    width: 100%;
-    height: calc(100% - 10rem);
+    width: 100vw;
+    height: 100vh;
+    // height: calc(100% - 10rem);
     pointer-events: none;
     z-index: 100;
   
@@ -198,7 +199,7 @@ section#work-gallery {
     overflow: hidden;
     margin: 0;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     height: calc(100vh - 10rem);
     display: grid;
     grid-template-columns: 33% 33% 33%;
@@ -376,7 +377,7 @@ section#work-gallery {
       pointer-events: auto;
     }
   }
-  section#work-gallery{
+  #desc {
     .content__title,
     .content__subtitle,
     .content__number,
