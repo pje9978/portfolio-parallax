@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --my-bg: #0e0e0e;
   --my-txt: #e8e5de;
@@ -6,11 +7,332 @@
   --page-padding: 1.5rem 2rem;
 }
 
+body {
+  --color-text: #f1f1f1;
+  --color-bg: #0c0c0c;
+  --color-link: #1ab3de;
+  --color-link-hover: #f1f1f1;
+  --color-deco: #141414;
+  --color-side: #353535;
+  font-family: Futura, "futura-pt", sans-serif;
+  min-height: 100vh;
+  color: #57585c;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page Loader */
+.js .loading::before {
+  content: "";
+  position: fixed;
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg);
+}
+
+.js .loading::after {
+  content: "";
+  position: fixed;
+  z-index: 100000;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin: -30px 0 0 -30px;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0.4;
+  background: var(--color-link);
+  animation: loaderAnim 0.7s linear infinite alternate forwards;
+  -webkit-animation: loaderAnim 0.7s linear infinite alternate forwards;
+}
+
 @layer utilities {
   .nav-after {
     @apply after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[3px] after:bg-[#eee] after:ease-in after:duration-300;
   }
 }
+@keyframes loaderAnim {
+  to {
+    opacity: 1;
+    transform: scale3d(0.5, 0.5, 1);
+  }
+}
 .bg-pin .char {
   display: inline !important;
+}
+
+/* Icons */
+.icon {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0 auto;
+  fill: currentColor;
+}
+
+.icon--navarrow-next {
+  transform: rotate(45deg);
+}
+
+section#work-gallery .content {
+  position: fixed;
+  top: 10rem;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 10rem);
+  pointer-events: none;
+  z-index: 100;
+}
+section#work-gallery .content .content__item {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10vh 5vw;
+  overflow: auto;
+}
+section#work-gallery .content .content__item .content__number {
+  font-weight: bold;
+}
+section#work-gallery .content .content__item .content__number::before {
+  content: "—";
+  display: inline-block;
+  margin: 0 1rem 0 0;
+}
+section#work-gallery .content .content__item .content__title {
+  margin: 0.5rem 0;
+  font-size: 2rem;
+}
+section#work-gallery .content .content__item .content__subtitle {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+}
+section#work-gallery .content .content__item .content__text {
+  font-size: 0.85rem;
+}
+section#work-gallery .content button.content__close {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: none;
+  color: currentColor;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+section#work-gallery .content button.content__close:focus {
+  outline: none;
+}
+section#work-gallery .content button.content__close .icon--longarrow {
+  width: 2rem;
+}
+section#work-gallery .frame {
+  position: fixed;
+  z-index: 10000;
+  top: 5rem;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  height: 100vh;
+  padding: 1rem;
+  pointer-events: none;
+}
+section#work-gallery .frame a {
+  pointer-events: auto;
+}
+section#work-gallery .frame .codrops-header {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section#work-gallery .frame .codrops-header .codrops-header__title {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+}
+section#work-gallery .frame .codrops-header .codrops-links {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  white-space: nowrap;
+}
+section#work-gallery .frame .codrops-header .codrops-links .github {
+  display: block;
+  padding: 0.25em;
+  margin: 0 0.25rem;
+}
+section#work-gallery .frame .codrops-header .codrops-links .codrops-icon {
+  display: inline-block;
+  padding: 0.25em;
+  margin: 0.25em 0 0 0;
+}
+section#work-gallery .slideshow {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  height: calc(100vh - 10rem);
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-column-gap: 0.5%;
+  grid-template-rows: 100%;
+  grid-template-areas: "... slide ...";
+}
+section#work-gallery .slideshow .slideshow__deco {
+  grid-area: slide;
+  background: var(--color-deco);
+  width: 100%;
+  height: 80%;
+  align-self: center;
+  position: relative;
+  margin: -40px 0 0 0;
+  right: -20px;
+}
+section#work-gallery .slideshow .slide {
+  width: 100%;
+  display: flex;
+  pointer-events: none;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  grid-area: slide;
+}
+section#work-gallery .slideshow .slide .slide__img-wrap {
+  width: 100%;
+  overflow: hidden;
+  z-index: 100;
+  height: 80%;
+  top: 10%;
+  position: absolute;
+}
+section#work-gallery .slideshow .slide .slide__img-wrap .slide__img {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  position: absolute;
+  pointer-events: none;
+  transform: scale3d(1.01, 1.01, 1);
+  -webkit-transform: scale3d(1.01, 1.01, 1);
+  -moz-transform: scale3d(1.01, 1.01, 1);
+  -ms-transform: scale3d(1.01, 1.01, 1);
+  -o-transform: scale3d(1.01, 1.01, 1);
+}
+section#work-gallery .slideshow .slide .slide__side {
+  display: none;
+}
+section#work-gallery .slideshow .slide .slide__title-wrap {
+  justify-self: flex-end;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+}
+section#work-gallery .slideshow .slide .slide__title-wrap .slide__title,
+section#work-gallery .slideshow .slide .slide__title-wrap .slide__subtitle {
+  display: none;
+}
+section#work-gallery .slideshow .slide .slide__title-wrap .slide__number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+}
+section#work-gallery .slideshow .slide .slide__title-wrap .slide__number::before {
+  content: "—";
+  display: inline-block;
+  margin: 0 1rem 0 0;
+}
+section#work-gallery .slideshow .nav {
+  position: absolute;
+  background: none;
+  width: 3rem;
+  height: 3rem;
+  z-index: 1000;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  transition: transform 0.8s, opacity 0.8s;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+section#work-gallery .slideshow .nav--next {
+  bottom: 1rem;
+  right: 1rem;
+}
+section#work-gallery .slideshow .nav--next svg {
+  transform: rotate(45deg);
+}
+section#work-gallery .slideshow .nav--prev {
+  top: 1rem;
+  left: 1rem;
+}
+section#work-gallery .slideshow .nav--prev .icon--navarrow-prev {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+}
+section#work-gallery .slideshow .nav--prev svg {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+}
+section#work-gallery .slideshow .slide--visible .slide__img-wrap {
+  pointer-events: auto;
+}
+section#work-gallery .slideshow .slideshow--previewopen .slide {
+  cursor: default;
+}
+section#work-gallery .slideshow .slide--current {
+  pointer-events: auto;
+}
+section#work-gallery .content__item--current,
+section#work-gallery .content__item--current ~ .content__close {
+  pointer-events: auto;
+}
+section#work-gallery .slideshow--previewopen .nav {
+  opacity: 0;
+  transition-duration: 0.4s;
+}
+section#work-gallery .slideshow--previewopen .nav--next {
+  transform: translate3d(100%, 100%, 0);
+}
+section#work-gallery .slideshow--previewopen .nav--prev {
+  transform: translate3d(-100%, -100%, 0);
+}
+
+.js .slide__img-wrap,
+.js .slide__title-wrap,
+.js .slide__side {
+  opacity: 0;
+  pointer-events: none;
+}
+.js .slide--current .slide__img-wrap {
+  opacity: 1;
+  pointer-events: auto;
+}
+.js section#work-gallery .content__title,
+.js section#work-gallery .content__subtitle,
+.js section#work-gallery .content__number,
+.js section#work-gallery .content__text,
+.js section#work-gallery .content__close {
+  opacity: 0;
 }/*# sourceMappingURL=style.css.map */
