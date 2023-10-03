@@ -275,9 +275,9 @@
             return this.isLeft;
         }
         // Check if the slide is the current one.
-        isPositionedCenter() {
-            return this.isCurrent;
-        }
+        // isPositionedCenter() {
+        //     return this.isCurrent;
+        // }
         // Reset classes and state.
         reset() {
             this.isRight = this.isLeft = this.isCurrent = false;
@@ -380,7 +380,8 @@
                 opacity: 0.8,
                 startAt: {y: 40},
                 backdropFilter: "blur(30px)",
-                y: 0
+                y: 0,
+                zIndex : 100
             }, 0.05);
             TweenMax.staggerTo([this.DOM.backCtrl,this.DOM.number,this.DOM.title,this.DOM.subtitle,this.DOM.text], 0.8, {
                 ease: Power4.easeOut,
@@ -482,7 +483,8 @@
                 scaleX: winsize.width/this.DOM.deco.offsetWidth,
                 scaleY: winsize.height/this.DOM.deco.offsetHeight,
                 x: -20,
-                y: 20
+                y: 20,
+               
             });
             // Move away right/left slides.
             this.prevSlide.moveToPosition({position: -2});

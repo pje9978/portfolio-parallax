@@ -1000,8 +1000,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // nav 숨기기
-    const showNav = gsap.from("#parallax__nav", { 
-        yPercent: -200,
+    const showNav = gsap.from(".lnb", { 
+        yPercent: 200,
         paused: true,
         duration: 0.2
     }).progress(1);

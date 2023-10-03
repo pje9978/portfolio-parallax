@@ -99,19 +99,16 @@ section#work-gallery {
 }
 section#work-gallery #desc {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   height: 50%;
-  -webkit-backdrop-filter: 10px;
-          backdrop-filter: 10px;
   background-color: var(--my-bg);
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -25%) !important;
+  -webkit-transform: translate(-50%, -25%) !important;
+  -moz-transform: translate(-50%, -25%) !important;
+  -ms-transform: translate(-50%, -25%) !important;
+  -o-transform: translate(-50%, -25%) !important;
   pointer-events: none;
-  z-index: 100;
   overflow: hidden;
 }
 section#work-gallery #desc .content__item {

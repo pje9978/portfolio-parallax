@@ -74,4 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var loadButton = document.getElementById("load");
     loadButton.addEventListener("click", showMoreDivs);
+
+
+
+
+
 });
