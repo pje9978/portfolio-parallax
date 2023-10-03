@@ -283,9 +283,9 @@
             this.isRight = this.isLeft = this.isCurrent = false;
             this.DOM.el.classList = 'slide';
         }
-        hide() {
-            TweenMax.set(this.DOM.imgWrap, {x:0, y:0, rotationX:0, rotationY:0, rotationZ:0, opacity:0});
-        }
+        // hide() {
+        //     TweenMax.set(this.DOM.imgWrap, {x:0, y:0, rotationX:0, rotationY:0, rotationZ:0, opacity:0});
+        // }
         // Moves a slide to a specific position defined in settings.position.
         // Also, moves it from position settings.from and if we need to reset the image scale when moving the slide then settings.resetImageScale should be true.
         moveToPosition(settings) {
@@ -355,21 +355,33 @@
             }
         }
     }
+    
 
     // The Content class. Represents one content item per slide.
     class Content {
         constructor(el) {
             this.DOM = {el: el};
+            console.log(el)
+            this.DOM.desc = this.DOM.el.parentNode;
             this.DOM.number = this.DOM.el.querySelector('.content__number');
             this.DOM.title = this.DOM.el.querySelector('.content__title');
             this.DOM.subtitle = this.DOM.el.querySelector('.content__subtitle');
             this.DOM.text = this.DOM.el.querySelector('.content__text');
             this.DOM.backCtrl = this.DOM.el.parentNode.querySelector('.content__close');
             this.DOM.backCtrl.addEventListener('click', () => slideshow.hideContent());
+            this.DOM.desc.style.opacity = '0';
         }
         show() {
+            this.DOM.desc.style.backdropFilter = '30px';
             this.DOM.el.classList.add('content__item--current');
-
+            TweenMax.staggerTo([this.DOM.desc], 0.8, {
+                ease: Power4.easeOut,
+                delay: 0.4,
+                opacity: 0.8,
+                startAt: {y: 40},
+                backdropFilter: "blur(30px)",
+                y: 0
+            }, 0.05);
             TweenMax.staggerTo([this.DOM.backCtrl,this.DOM.number,this.DOM.title,this.DOM.subtitle,this.DOM.text], 0.8, {
                 ease: Power4.easeOut,
                 delay: 0.4,
@@ -379,9 +391,9 @@
             }, 0.05);
         }
         hide() {
+            this.DOM.el.parentNode.style.opacity = '0';
             this.DOM.el.classList.remove('content__item--current');
-
-            TweenMax.staggerTo([this.DOM.backCtrl,this.DOM.number,this.DOM.title,this.DOM.subtitle,this.DOM.text].reverse(), 0.3, {
+            TweenMax.staggerTo([this.DOM.desc,this.DOM.backCtrl,this.DOM.number,this.DOM.title,this.DOM.subtitle,this.DOM.text].reverse(), 0.3, {
                 ease: Power3.easeIn,
                 opacity: 0,
                 y: 10
@@ -459,9 +471,11 @@
             window.addEventListener('resize', this.resizeFn);
         }
         showContent() {
+            this.DOM.el.parentNode.style.opacity = '1';
             if ( this.isContentOpen || this.isAnimating ) return;
             allowTilt = false;
             this.isContentOpen = true;
+            
             this.DOM.el.classList.add('slideshow--previewopen');
             TweenMax.to(this.DOM.deco, .8, {
                 ease: Power4.easeInOut,
@@ -544,7 +558,7 @@
             // Move slides (the previous, current, next and upcoming slide).
             this.prevSlide.moveToPosition({position: direction === 'next' ? -2 : 0, delay: direction === 'next' ? 0 : 0.14}).then(() => {
                 if ( direction === 'next' ) {
-                    this.prevSlide.hide();
+                    // this.prevSlide.hide();
                 }
             });
             
@@ -555,7 +569,7 @@
             
             this.nextSlide.moveToPosition({position: direction === 'next' ? 0 : 2, delay: direction === 'next' ? 0.14 : 0 }).then(() => {
                 if ( direction === 'prev' ) {
-                    this.nextSlide.hide();
+                    // this.nextSlide.hide();
                 }
             });
 

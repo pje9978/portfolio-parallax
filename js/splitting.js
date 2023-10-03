@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScrolling();
 
 
+// Apply 'overflow: hidden' to the document.documentElement and document.body
 
 
     // GSAP Scroll Triggers

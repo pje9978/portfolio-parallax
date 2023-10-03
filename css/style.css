@@ -7,6 +7,11 @@
   --page-padding: 1.5rem 2rem;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   --color-text: #f1f1f1;
   --color-bg: #0c0c0c;
@@ -21,6 +26,14 @@ body {
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+body.s_no-scroll {
+  overflow-y: hidden;
+}
+
+.modal-open {
+  overflow: hidden;
 }
 
 /* Page Loader */
@@ -80,14 +93,26 @@ body {
   transform: rotate(45deg);
 }
 
+section#work-gallery {
+  position: relative;
+  width: 100%;
+}
 section#work-gallery #desc {
-  position: fixed;
-  top: 10rem;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  height: 50%;
+  -webkit-backdrop-filter: 10px;
+          backdrop-filter: 10px;
+  background-color: var(--my-bg);
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 100;
+  overflow: hidden;
 }
 section#work-gallery #desc .content__item {
   position: absolute;
@@ -95,8 +120,13 @@ section#work-gallery #desc .content__item {
   right: 0;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   padding: 10vh 5vw;
-  overflow: auto;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+  align-items: start;
+  justify-content: center;
 }
 section#work-gallery #desc .content__item .content__number {
   font-weight: bold;
@@ -108,31 +138,23 @@ section#work-gallery #desc .content__item .content__number::before {
 }
 section#work-gallery #desc .content__item .content__title {
   margin: 0.5rem 0;
-  font-size: 2rem;
 }
 section#work-gallery #desc .content__item .content__subtitle {
   margin: 0 0 0.5rem;
-  font-size: 1rem;
   font-weight: normal;
-}
-section#work-gallery #desc .content__item .content__text {
-  font-size: 0.85rem;
 }
 section#work-gallery #desc button.content__close {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  right: 10%;
   background: none;
   color: currentColor;
-  border: 0;
-  margin: 0;
-  padding: 0;
 }
 section#work-gallery #desc button.content__close:focus {
   outline: none;
 }
 section#work-gallery #desc button.content__close .icon--longarrow {
   width: 2rem;
+  margin: 0;
 }
 section#work-gallery .frame {
   position: fixed;
@@ -185,7 +207,7 @@ section#work-gallery .slideshow {
   margin: 0;
   height: 100vh;
   width: 100vw;
-  height: calc(100vh - 10rem);
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: 33% 33% 33%;
   grid-column-gap: 0.5%;
@@ -193,6 +215,7 @@ section#work-gallery .slideshow {
   grid-template-areas: "... slide ...";
 }
 section#work-gallery .slideshow .slideshow__deco {
+  overflow: hidden;
   grid-area: slide;
   background: var(--color-deco);
   width: 100%;
@@ -201,6 +224,7 @@ section#work-gallery .slideshow .slideshow__deco {
   position: relative;
   margin: -40px 0 0 0;
   right: -20px;
+  overflow: hidden;
 }
 section#work-gallery .slideshow .slide {
   width: 100%;
@@ -243,9 +267,14 @@ section#work-gallery .slideshow .slide .slide__title-wrap {
   position: relative;
   z-index: 1000;
 }
+section#work-gallery .slideshow .slide .slide__title-wrap .slide__title {
+  font-size: 3.25rem;
+  margin: 0 0 0.25rem;
+}
 section#work-gallery .slideshow .slide .slide__title-wrap .slide__title,
-section#work-gallery .slideshow .slide .slide__title-wrap .slide__subtitle {
-  display: none;
+section#work-gallery .slideshow .slide .slide__title-wrap .slide__subtitle,
+section#work-gallery .slideshow .slide .slide__title-wrap .slide__side {
+  display: block;
 }
 section#work-gallery .slideshow .slide .slide__title-wrap .slide__number {
   display: block;
@@ -298,13 +327,17 @@ section#work-gallery .slideshow .nav--prev svg {
 section#work-gallery .slideshow .slide--visible .slide__img-wrap {
   pointer-events: auto;
 }
+section#work-gallery .slideshow .slide--visible .slide__title-wrap {
+  position: absolute;
+  bottom: 0;
+}
 section#work-gallery .slideshow .slideshow--previewopen .slide {
   cursor: default;
 }
 section#work-gallery .slideshow .slide--current {
   pointer-events: auto;
 }
-section#work-gallery .content__item--current,
+section#work-gallery .content__item--current .content__item--current,
 section#work-gallery .content__item--current ~ .content__close {
   pointer-events: auto;
 }

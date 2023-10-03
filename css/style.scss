@@ -8,6 +8,11 @@
     --page-padding: 1.5rem 2rem;
 }
 
+html,body {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   --color-text: #f1f1f1;
   --color-bg: #0c0c0c;
@@ -22,9 +27,14 @@ body {
 	background-color: var(--color-bg);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+
+  &.s_no-scroll{overflow-y:hidden;}
 	
 }
-
+.modal-open {
+  overflow: hidden;
+}
 /* Page Loader */
 .js .loading::before {
 	content: '';
@@ -84,25 +94,40 @@ body {
 
 
 section#work-gallery {
+  position: relative;
+  width: 100%;
+  
   #desc {
-    position: fixed;
-    top: 10rem;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    // height: calc(100% - 10rem);
+    position: absolute;
+    top:60%;
+    left: 50%;
+    // width: 50%;
+    height: 50%;
+    backdrop-filter: 10px;
+    background-color: var(--my-bg);
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    //height: calc(100% - 10rem);
     pointer-events: none;
     z-index: 100;
-  
-    .content__item {
+    overflow: hidden;
+    .content__item{
       position: absolute;
       top: 0;
       right: 0;
       width: 100%;
       height: 100%;
+      margin: 0 auto;
       padding: 10vh 5vw;
-      overflow: auto;
-  
+      overflow: hidden;
+      display: flex;
+      flex-flow: column;
+      align-items: start;
+      justify-content: center;
+
       .content__number {
         font-weight: bold;
         
@@ -115,32 +140,29 @@ section#work-gallery {
   
       .content__title {	
         margin: 0.5rem 0;
-        font-size: 2rem;
       }
       .content__subtitle{
         margin: 0 0 0.5rem;
-        font-size: 1rem;
         font-weight: normal;
       }
-      .content__text {font-size: 0.85rem;}
+
     }
   
     button.content__close {
       position: absolute;
-      top: 1rem;
-      left: 1rem;
+      right: 10%;
+
+      //display: flex;
+      //flex-flow: column;
       background: none;
       color: currentColor;
-      border: 0;
-      margin: 0;
-      padding: 0;
-  
-      &:focus {
+      &:focus{
         outline: none;
       }
   
       .icon--longarrow {
         width: 2rem;
+        margin: 0;
       }
     }
   }
@@ -200,7 +222,8 @@ section#work-gallery {
     margin: 0;
     height: 100vh;
     width: 100vw;
-    height: calc(100vh - 10rem);
+    margin-top: 2rem;
+    // height: calc(100vh - 10rem);
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-column-gap: 0.5%;
@@ -208,6 +231,7 @@ section#work-gallery {
     grid-template-areas: '... slide ...';
   
     .slideshow__deco {
+      overflow: hidden;
       grid-area: slide;
       background: var(--color-deco);
       width: 100%;
@@ -216,6 +240,7 @@ section#work-gallery {
       position: relative;
       margin: -40px 0 0 0;
       right: -20px;
+      overflow: hidden;
     }
     .slide {
       width: 100%;
@@ -225,6 +250,7 @@ section#work-gallery {
       position: relative;
       height: 100%;
       grid-area: slide;
+
   
       .slide__img-wrap {
         width: 100%;
@@ -257,11 +283,21 @@ section#work-gallery {
         width: 100%;
         position: relative;
         z-index: 1000;
-  
-        .slide__title,
-        .slide__subtitle{
-          display: none;
+
+        .slide__title {
+          font-size: 3.25rem;
+          margin: 0 0 0.25rem;
         }
+        .slide__title ,
+        .slide__subtitle,
+        .slide__side {
+          display: block;
+        }
+        
+        .slide_title {
+
+        }
+        
         .slide__number {
           display: block;
           font-size: 2rem;
@@ -327,6 +363,10 @@ section#work-gallery {
       .slide__img-wrap  {
         pointer-events: auto;
       }
+      .slide__title-wrap {
+        position: absolute;
+        bottom: 0;
+      }
     }
     
     .slideshow--previewopen .slide {
@@ -338,6 +378,7 @@ section#work-gallery {
     }
     
   }
+  .content__item--current
   .content__item--current,
   .content__item--current ~ .content__close {
     pointer-events: auto;
@@ -377,6 +418,8 @@ section#work-gallery {
       pointer-events: auto;
     }
   }
+  
+  
   #desc {
     .content__title,
     .content__subtitle,
@@ -388,6 +431,3 @@ section#work-gallery {
   }
 
 }
-
-
-
