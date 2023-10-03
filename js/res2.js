@@ -58,7 +58,7 @@ function createUserList(users) {
 fetch("/data/data.json")
   .then(response => response.json())
   .then(data => {
-
+    console.log(data)
     const work1 = document.getElementById("work1");
     const work2 = document.getElementById("work2");
     const work3 = document.getElementById("work3");

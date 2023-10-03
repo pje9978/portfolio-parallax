@@ -70,7 +70,7 @@
 			</div>
 		</div>
 	</nav>
-	<nav class="lnb fixed bottom-12 left-1/2 -translate-x-1/2  z-[10000] border-gray-500/10 backdrop-blur-xl bg-white/80 text-[--my-bg] rounded-full px-3 py-2 shadow-2xl shadow-[--red] font-medium">
+	<nav class="lnb fixed bottom-12 left-1/2 -translate-x-1/2  z-[10000] border border-white backdrop-blur-sm bg-black/10  text-[--my-txt] rounded-full px-3 py-2 shadow-2xl shadow-[--red] font-medium">
 		<div class="container mx-auto px-5 py-2 flex justify-center gap-4">
 			<span class=" uppercase text-xl">Index</span>
 			<span class=" uppercase text-xl">work</span>
@@ -423,7 +423,11 @@
         </section>
 
         <!-- like -->
-        
+        <section id="work">
+            <section id="work1">
+                
+            </section>
+        </section>
 
         <!-- 더보기 기능 -->
         <!-- <div>
@@ -439,7 +443,8 @@
             <a href="#" id="load">더 보기</a>
         </div> -->
         <!-- Json data -->
-        <section id="work">
+        <!-- <section id="work">
+
             <div class="container mx-auto">
                 <h2 class="content content--full flex flex-col w-screen relative p-0">
                     <h2 class="content__title grid text-center" data-splitting data-effect10><span class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Work.</span></h2>
@@ -466,13 +471,8 @@
                     </div>
                 </section>
             </div>
-        </section>
+        </section> -->
 
-
-        
-        <section id="gallery">
-
-        </section>
     </main>
     <svg class="hidden">
         <symbol id="icon-arrow" viewBox="0 0 24 24">
@@ -493,10 +493,32 @@
             <polygon fill="#fff" fill-rule="nonzero" points="204 0 168.3 35.7 311.1 178.5 0 178.5 0 229.5 311.1 229.5 168.3 372.3 204 408 408 204"></polygon>
         </symbol>
     </svg>
-    <script>
-        slideshow.hideContent();
-    </script>
+    <footer class="p-[--page-padding]">
+        <svg class=" w-full" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+            <polygon class="w-full" points="5,5 195,10 185,185 10,195" />
+          
+            <!-- Common use case: embed HTML text into SVG -->
+            <foreignObject class="w-full text-center" y="15" width="100vh" height="100%">
+              <!--
+                In the context of SVG embedded in an HTML document, the XHTML
+                namespace could be omitted, but it is mandatory in the
+                context of an SVG document
+              -->
+                PAKR JI EUN
+     
+            </foreignObject>
+          </svg>
 
+        <div class="flex justify-between py-8">
+            <div class=" text-2xl">© 2023 <!-- Park-Ji-Eun. All Rights Reserved. -->
+            </div> 
+            <div class="titme text-2xl invisible md:visible"> ● TORONTO 오전 8:09</div>
+            <a href="#" class="underline text-2xl">BACK TO TOP</a>
+        </div>
+    </footer>
+
+
+    <script src="js/res.js"></script>
     <script src="js/res2.js"></script>
     <script src="js/script.js"></script>
     <script src="js/mouse-effect.js"></script>
