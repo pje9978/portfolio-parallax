@@ -1,49 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const slideItems = document.querySelector('.slide--visible');
-    
-    const popBtns = document.querySelectorAll('.content__close');
-    const desc = document.querySelectorAll('.desc');
-    
-    // 모달 팝업 열기 버튼 클릭 시
-    
- 
-
-    slideItems.addEventListener('click', () => {
-        console.log(slideItems)
-        const desc = slideItems.getElementsByClassName('desc');
-        for (let i = 0; i < desc.length; i++) {
-            desc[i].style.display = 'flex';
-        }
-    });
-
-        // function hidecontent(){
-        //     document.querySelector('.desc').style.display = 'none';
-        // }
-        // a.addEventListener('mouseleave',hidecontent)
-        // a.addEventListener('click', showContent);
-        // a.addEventListener('mouseenter', showContent);
+    const popupItem = document.querySelectorAll(".popup-item");
+    const popupContent = document.querySelectorAll(".popup-content");
+    const closeBtn =  document.querySelector(".closeBtn");
 
 
+    function openPopup() {
+        popupItem.forEach((item,index) => {
+            item.addEventListener("click", (e)=>{
+                e.preventDefault();
 
-    // 모달 팝업 닫기 버튼 클릭 시
-    popBtns.forEach((a,i) =>{
-        a.addEventListener('click', slideshow.hideContent);
-    });;
+                popupContent.forEach((content)=>{
+                    content.classList.remove("active");
+                    closeBtn.addEventListener('click', () => closePopup())
+                })
 
-    function descShow() {
-        const items = document.querySelectorAll(".section .item");
-        const content = document.getElementById("content");
-
-        items.forEach(function (item) {
-            item.addEventListener("click", function () {
-            const itemContent = this.textContent;
-            content.textContent = "Selected Item: " + itemContent;
-            });
-        });
+                popupItem[index].classList.add("active");
+                popupContent[index].classList.add("active")
+                closeBtn.classList.add("active")
+               
+            })
+        })
     }
-    descShow();
+    function closePopup() {
+        closeBtn.classList.remove("active");
+        popupContent.forEach((content)=>{
+            content.classList.remove("active");
+        })
+    }
+    openPopup();
+    closePopup();
 
+    
     var divs = document.querySelectorAll(".items");
     var visibleCount = 3; // 초기 보이는 갯수
     var increment = 2; // 클릭 시 추가로 보이는 갯수
@@ -74,9 +62,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var loadButton = document.getElementById("load");
     loadButton.addEventListener("click", showMoreDivs);
-
-
-
-
 
 });

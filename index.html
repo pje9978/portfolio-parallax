@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 	<title>Document</title>
-	<script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/dist/output.css">
 	<link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/mouse-effect.css">
@@ -13,6 +12,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
 	<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script>
     document.documentElement.className = "js";
@@ -49,6 +49,10 @@
                 background: var(--color-text);
             }
             .desc {@apply hidden;}
+            .popup-content,.closeBtn{
+                display: none;
+            }
+            .popup-content.active,.closeBtn.active{display: flex;}
 
         }
         
@@ -121,39 +125,50 @@
 
         <!-- Strength -->
         <section class="w-screen">
-            <div id="container" class="container mx-auto flex flex-col justify-center ">
+            <div id="container" class="container relative mx-auto flex flex-col justify-center ">
                 <h2 class="content__title grid text-center" data-splitting data-effect10>
                     <span class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Strength.</span>
                     <span><a class="underline text-xs opacity-40" href="https://store.gallup.com/c/en-sg/1/cliftonstrengths">갤럽 GALLUP 에서 조사한 강점 리포트</a></span>
                 </h2>
 
-                <div class="flex  flex-wrap justify-center items-center  p-[--page-padding] mt-4" data-splitting data-effect14>
-                    <div class="w-32 flex flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                <div class="flex flex-wrap justify-center items-center  p-[--page-padding] mt-4" data-splitting data-effect14>
+                    <div class="popup-item w-32 flex flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
                         <span class="text-xs font-thin tracking-widest">적응력</span>
                         <span class="font-medium">Adaptability</span>
                     </div>
-                    <div class="w-32 flex  flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                    <div class="popup-item w-32 flex  flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
                         <span class="text-xs font-thin tracking-widest">문제해결</span>
                         <span class="font-medium">Restorative</span>
                     </div>
-                    <div class="w-32 flex  flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                    <div class="popup-item w-32 flex  flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
                         <span class="text-xs font-thin tracking-widest">공감능력</span>
                         <span class="font-medium">Empathy</span>
                     </div>
-                    <div class="w-32 flex  flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                    <div class="popup-item w-32 flex  flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
                         <span class="text-xs font-thin tracking-widest">미래지향</span>
                         <span class="font-medium">Futuristic</span>
                     </div>
 
 
-                    <div class="w-32 flex flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                    <div class="popup-item w-32 flex flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
                         <span class="text-xs font-thin tracking-widest">긍정적</span>
                         <span class="font-medium">Positivity</span>
                     </div>
-                    <div class="w-32 flex flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                    <div class="popup-item w-32 flex flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
                         <span class="text-xs font-thin tracking-widest">지적사고</span>
                         <span class="font-medium">Intellection</span>
                     </div>
+                </div>
+                <div class="popup absolute">
+                    <div class="popup-content">1</div>
+                    <div class="popup-content">2</div>
+                    <div class="popup-content">3</div>
+                    <div class="popup-content">4</div>
+                    <div class="popup-content">5</div>
+                    <div class="popup-content">6</div>
+                    <button class="closeBtn">
+                        <svg class="hover:stroke-white hover:stroke-1" width="44px" height="44px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8e5de" stroke-width="0.512"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><line x1="20" y1="20" x2="44" y2="44"></line><line x1="44" y1="20" x2="20" y2="44"></line><rect x="8" y="8" width="48" height="48"></rect></g></svg>
+                    </button>  
                 </div>
                 <a class="text-center p-12 link" href="https://www.notion.so/GALLUP-5-b1c9b3e695064cf1a51e8175a170877e?pvs=4">자세히 보기</a>
             </div>
