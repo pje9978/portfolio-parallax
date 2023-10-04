@@ -361,7 +361,7 @@
     class Content {
         constructor(el) {
             this.DOM = {el: el};
-            console.log(el)
+            // console.log(el)
             this.DOM.desc = this.DOM.el.parentNode;
             this.DOM.number = this.DOM.el.querySelector('.content__number');
             this.DOM.title = this.DOM.el.querySelector('.content__title');

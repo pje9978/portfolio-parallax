@@ -21,18 +21,17 @@ function showHeroes(jsonObj) {
     const workData1 = jsonObj.work1;
     const workData2 = jsonObj.work2;
 
+    console.log(jsonObj.work2)
+
     for (var i = 0; i < workData1.length; i++) {
-        var section = document.createElement('section');
-        var h2Element = document.createElement('h2');
-        // var groupElement = document.createElement('div');
-        // var p1Element = document.createElement('p');
-        // var p2Element = document.createElement('span');
+        var myArticle = document.createElement('article');
+        var myH2 = document.createElement('h2');
+        var groupElement = document.createElement('div');
+        var p1Element = document.createElement('p');
+        var p2Element = document.createElement('span');
 
-        section.classList('workItem');
-        h2Element.textContent = workData1[i].title;
+        myH2.textContent = workData1[i].title;
         // myPara1.textContent = 'Secret identity: ' + workData1[i].secretIdentity;
-
-
         // myPara2.textContent = 'Age: ' + workData1[i].age;
         // myPara3.textContent = 'Superpowers:';
 
@@ -43,7 +42,7 @@ function showHeroes(jsonObj) {
         //     myList.appendChild(listItem);
         // }
 
-        myArticle.appendChild(h2Element);
+        myArticle.appendChild(myH2);
         // myArticle.appendChild(myPara1);
         // myArticle.appendChild(myPara2);
         // myArticle.appendChild(myPara3);
