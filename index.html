@@ -19,6 +19,7 @@
     var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
     supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
     </script>
+    
     <script>
 		tailwind.config = {
             // important:true,
@@ -49,6 +50,8 @@
                 background: var(--color-text);
             }
             .desc {@apply hidden;}
+            .popup {@apply hidden;}
+        
             .popup-content,.closeBtn{
                 display: none;
             }
@@ -130,44 +133,76 @@
                     <span class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Strength.</span>
                     <span><a class="underline text-xs opacity-40" href="https://store.gallup.com/c/en-sg/1/cliftonstrengths">갤럽 GALLUP 에서 조사한 강점 리포트</a></span>
                 </h2>
-
-                <div class="flex flex-wrap justify-center items-center  p-[--page-padding] mt-4" data-splitting data-effect14>
-                    <div class="popup-item w-32 flex flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                
+                <div class="relative flex flex-wrap justify-center items-center  p-[--page-padding] mt-4" data-splitting data-effect14>
+                    <div class="tooltip-top absolute top-0 text-sm -translate-x-1 flex justify-center items-center">Click Me</div>
+                    <div class="popup-item w-32 flex flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl cursor-pointer">
                         <span class="text-xs font-thin tracking-widest">적응력</span>
                         <span class="font-medium">Adaptability</span>
                     </div>
-                    <div class="popup-item w-32 flex  flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                    <div class="popup-item w-32 flex  flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl cursor-pointer">
                         <span class="text-xs font-thin tracking-widest">문제해결</span>
                         <span class="font-medium">Restorative</span>
                     </div>
-                    <div class="popup-item w-32 flex  flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                    <div class="popup-item w-32 flex  flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl cursor-pointer">
                         <span class="text-xs font-thin tracking-widest">공감능력</span>
                         <span class="font-medium">Empathy</span>
                     </div>
-                    <div class="popup-item w-32 flex  flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                    <div class="popup-item w-32 flex  flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl cursor-pointer">
                         <span class="text-xs font-thin tracking-widest">미래지향</span>
                         <span class="font-medium">Futuristic</span>
                     </div>
 
 
-                    <div class="popup-item w-32 flex flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
+                    <div class="popup-item w-32 flex flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl cursor-pointer">
                         <span class="text-xs font-thin tracking-widest">긍정적</span>
                         <span class="font-medium">Positivity</span>
                     </div>
-                    <div class="popup-item w-32 flex flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl">
-                        <span class="text-xs font-thin tracking-widest">지적사고</span>
-                        <span class="font-medium">Intellection</span>
-                    </div>
                 </div>
-                <div class="popup absolute">
-                    <div class="popup-content">1</div>
-                    <div class="popup-content">2</div>
-                    <div class="popup-content">3</div>
-                    <div class="popup-content">4</div>
-                    <div class="popup-content">5</div>
-                    <div class="popup-content">6</div>
-                    <button class="closeBtn">
-                        <svg class="hover:stroke-white hover:stroke-1" width="44px" height="44px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8e5de" stroke-width="0.512"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><line x1="20" y1="20" x2="44" y2="44"></line><line x1="44" y1="20" x2="20" y2="44"></line><rect x="8" y="8" width="48" height="48"></rect></g></svg>
+                <div class="popup absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/60 text-[--my-txt] backdrop-blur w-11/12 h-3/4 flex justify-center items-center">
+                    <div class="popup-content flex flex-col justify-center items-center m-4 p-4">
+                        <span class="text-xs font-thin tracking-widest">적응력</span>
+                        <span class="font-medium text-4xl">Adaptability</span>
+                        <h3 class="text-base opacity-80 mt-8 text-center leading-relaxed">저는 변화에 민감하고, 유연하며, 상황의 흐름에 따라 적응하는 것을 선호합니다. <br> <b>급변하는 미래에 민감하게 받아들이고 대처합니다</b></h3>
+                        <h4 class="block text-sm opacity-50 my-4" >
+                            #도전 #미래지향 #유연함 #창의력 #효율성 #끊임없는 공부
+                        </h4>
+                    </div>
+                    <div class="popup-content flex flex-col justify-center items-center m-4 p-4">
+                        <span class="text-xs font-thin tracking-widest">문제해결</span>
+                        <span class="font-medium text-4xl">Restorative</span>
+                        <h3 class="text-base opacity-80 mt-8 text-center leading-relaxed">저는 문제 분석하고 해결하는 과정을 즐깁니다.<br><b>문제를 해결하는 과정에서 창의적인 사고를 하고, 새로운 관점에서 문제를 바라보고, 기존의 방식에서 구애받지 않은 새로운 해결책을 도출합니다.</b></h3>
+                        <h4 class="block text-sm opacity-50 my-4" >
+                            #도전 #미래지향 #유연함 #창의성 #효율성 추구 #끊임없는 공부
+                        </h4>
+                    </div>
+                    <div class="popup-content flex flex-col justify-center items-center m-4 p-4">
+                        <span class="text-xs font-thin tracking-widest">공감능력</span>
+                        <span class="font-medium text-4xl">Empathy</span>
+                        <h3 class="text-base opacity-80 mt-8 text-center leading-relaxed">상대방의 상황과 감정들을 사람들의 감정을 잘 헤아릴 수 있고 다른 사람의 입장에서 한 번 더 생각합니다. <b>이러한 강점은 사용자의 니즈를 파악해 서비스를 제공하게 될 때 큰 도움이 되었습니다.</b></h3>
+                        <h4 class="block text-sm opacity-50 my-4" >
+                            #이해심 #감수성 #편안함 #안정감 #통찰력
+                        </h4>
+                    </div>
+                    <div class="popup-content flex flex-col justify-center items-center m-4 p-4">
+                        <span class="text-xs font-thin tracking-widest">미래지향</span>
+                        <span class="font-medium text-4xl">Futuristic</span>
+                        <h3 class="text-base opacity-80 mt-8 text-center leading-relaxed">새로운 기회와 도전으로 많은 아이디어와 가능성을 찾아내고 혁신을 추구합니다. 변화에 대한 유연성과 적응력에 뛰어납니다. <b>저는 적극적인 변화와 혁신을 통해 생산성을 향상합니다.</b></h3>
+                        <h4 class="block text-sm opacity-50 my-4" >
+                            #유연함 #변화 #혁신 #도전 #창의성 #예측 #비전 #변화
+                        </h4>
+                    </div>
+                    <div class="popup-content flex flex-col justify-center items-center m-4 p-4">
+                        <span class="text-xs font-thin tracking-widest">긍정적</span>
+                        <span class="font-medium text-4xl">Positivity</span>
+                        <h3 class="text-base opacity-80 mt-8 text-center leading-relaxed">저는 사람들의 긍정적인 모습을 잘 발견하고, 긍정적인 상황 속에서 그들을 돕는 것을 좋아합니다. <b>이러한 에너지와 긍정적인 힘으로 최고의 결과물을 낼 수 있습니다.</b></b></h3>
+                        <h4 class="block text-sm opacity-50 my-4" >
+                            #화합 #공감 #긍정적 #에너지 #유쾌 #존중 #배려
+                        </h4>
+                    </div>
+
+                    <button class="closeBtn absolute right-0 top-0 m-4">
+                        <svg class="hover:stroke-[--my-txt] stroke-[--my-txt] hover:stroke-2" width="44px" height="44px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8e5de" stroke-width="1"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><line x1="20" y1="20" x2="44" y2="44"></line><line x1="44" y1="20" x2="20" y2="44"></line><rect x="8" y="8" width="48" height="48"></rect></g></svg>
                     </button>  
                 </div>
                 <a class="text-center p-12 link" href="https://www.notion.so/GALLUP-5-b1c9b3e695064cf1a51e8175a170877e?pvs=4">자세히 보기</a>
@@ -185,7 +220,7 @@
                 <div class="slideshow__deco"></div>
                 <div class="slide relative">
                     <div class="slide__img-wrap">
-                        <div class="slide__img " style="background-image: url(img/1.jpg);"></div>
+                        <div class="slide__img " style="background-image: url(images/2016-2022_mercury/thumb/Apple_Watch_Full_Cover_Glass_case_A+_860_full.jpg);"></div>
                     </div>
                     <div class="slide__side">Memories &amp; Thoughts</div>
                     <div class="slide__title-wrap">
@@ -527,7 +562,7 @@
         <div class="flex justify-between py-8">
             <div class=" text-2xl">© 2023 <!-- Park-Ji-Eun. All Rights Reserved. -->
             </div> 
-            <div class="titme text-2xl invisible md:visible"> ● TORONTO 오전 8:09</div>
+            <div class="titme text-2xl invisible md:visible"> ● SEOUL <span id="currentTime"></span></div>
             <a href="#" class="underline text-2xl">BACK TO TOP</a>
         </div>
     </footer>

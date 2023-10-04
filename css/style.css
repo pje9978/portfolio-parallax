@@ -365,4 +365,25 @@ section#work-gallery .slideshow--previewopen .nav--prev {
 .js #desc .content__text,
 .js #desc .content__close {
   opacity: 0;
+}
+
+.tooltip-top {
+  /* Modify size here: */
+  --size: 100px;
+  --padding: 10px;
+  position: relative;
+  width: calc(var(--size) - var(--padding));
+  height: calc(var(--size) / 2);
+  background: #333;
+  padding: var(--padding);
+}
+.tooltip-top:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #333;
+  height: 16px;
+  width: 16px;
 }/*# sourceMappingURL=style.css.map */

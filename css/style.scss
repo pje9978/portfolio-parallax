@@ -429,3 +429,27 @@ section#work-gallery {
   }
 
 }
+
+.tooltip-top {
+  /* Modify size here: */
+  --size: 100px;
+  --padding: 10px;
+
+  position: relative;
+  width: calc(var(--size) - var(--padding));
+  height: calc(var(--size) / 2);
+  background: #333;
+  padding: var(--padding);
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #333;
+    height: 16px;
+    width: 16px;
+  }
+  
+}
