@@ -1,39 +1,38 @@
 {
   "work1": [
     { 
-    "title": "인공지능 음성 서비스 'Hi Avatar'",
-    "subTitle":"dfs",
-    "categroy":"개인 프로젝트",
-    "part":["기획","디자인","퍼블리싱"],
+    "title": "",
+    "subTitle":"",
+    "categroy":"",
+    "part":[""],
     "date":"2023-08",
     "device":["데스크탑","태블릿","모바일"],
     "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
-    "percent":"90Design : 2명 / Frontend : 4명 , Backend : 3명",
-    "dtl-html":"Data/data-plant-website.html",
-    "url":[
-      {"pdf":"https://naver.com"},
-      {"web":"https://naver.com"}
+    "percent":"",
+    "dtl-html":"",
+    "url":{
+      "pdf":"https://naver.com",
+      "web":"https://naver.com"
      
-    ],
+    },
     "review":""
     }
   ],
   "work2": [
     { 
-    "title": "인공지능 음성 서비스 'Hi Avatar'",
-    "subTitle":"dfs",
-    "categroy":"개인 프로젝트",
-    "part":["기획","디자인","퍼블리싱"],
+    "title": "",
+    "subTitle":"",
+    "categroy":"",
+    "part":[""],
     "date":"2023-08",
     "device":["데스크탑","태블릿","모바일"],
     "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
-    "percent":"90Design : 2명 / Frontend : 4명 , Backend : 3명",
-    "dtl-html":"Data/data-plant-website.html",
-    "url":[
-      {"pdf":"https://naver.com"},
-      {"web":"https://naver.com"}
-     
-    ],
+    "percent":"",
+    "dtl-html":"",
+    "url":{
+      "pdf":"https://naver.com",
+      "web":"https://naver.com"
+    },
     "review":""
     }
   ]
