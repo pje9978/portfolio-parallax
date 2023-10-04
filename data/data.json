@@ -1,15 +1,32 @@
 {
   "work1": [
     { 
-    "title": "",
-    "subTitle":"",
-    "categroy":"",
-    "part":[""],
+    "title": "1",
+    "subTitle":"2",
+    "categroy":"3",
+    "part":["1"],
     "date":"2023-08",
     "device":["데스크탑","태블릿","모바일"],
     "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
-    "percent":"",
-    "dtl-html":"",
+    "percent":"1",
+    "dtl-html":"1",
+    "url":{
+      "pdf":"https://naver.com",
+      "web":"https://naver.com"
+     
+    },
+    "review":"1"
+    },
+    { 
+    "title": "2",
+    "subTitle":"1",
+    "categroy":"1",
+    "part":["1"],
+    "date":"2023-08",
+    "device":["데스크탑","태블릿","모바일"],
+    "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
+    "percent":"1",
+    "dtl-html":"1",
     "url":{
       "pdf":"https://naver.com",
       "web":"https://naver.com"
