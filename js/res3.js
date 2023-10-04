@@ -1,4 +1,4 @@
-var section = document.querySelector('#work1');
+var sectionGroup = document.querySelector('#work1');
 
 // 1
 fetch(
@@ -10,27 +10,50 @@ fetch(
     console.log(JSON.stringify(json));
 
     // 3
-    showHeroes(json);
+    workData(json);
 
 }).catch(function(error) {
     console.log(error);
 });
 
 // 3
-function showHeroes(jsonObj) {
-    const workData1 = jsonObj.work1;
-    const workData2 = jsonObj.work2;
+function workData(data) {
+    const workData1 = data.work1;
+    const workData2 = data.work2;
 
-    console.log(jsonObj.work2)
-
+    // console.log(data.work2)
+    // for (var i = 0; i < data.length; i++){
+    //     console.log(i)
+    // }
     for (var i = 0; i < workData1.length; i++) {
-        var myArticle = document.createElement('article');
-        var myH2 = document.createElement('h2');
-        var groupElement = document.createElement('div');
+        console.log(data[i])
+        const title = workData1[i].title;
+        const subTitle = workData1[i].subTitle;
+        const categroy = workData1[i].categroy;
+        const part = workData1[i].part;
+        const date = workData1[i].date;
+        const device = workData1[i].device;
+        const lang = workData1[i].lang;
+        const percent = workData1[i].percent;
+        const url = workData1[i].url;
+        const review = workData1[i].review;
+
+
+
+        var sectionElement = document.createElement('section');
+        var h2Element = document.createElement('h2');
+        var elementGroup = document.createElement('div');
         var p1Element = document.createElement('p');
         var p2Element = document.createElement('span');
 
-        myH2.textContent = workData1[i].title;
+        h2Element.textContent = workData1[i].title;
+        // for(const key of )
+        // for (const partItem of part){
+        //     const spanPartElement = document.createElement("span");
+        //     spanPartElement.textContent=partItem;
+        //     divElement.appendChild(spanPartElement);
+        
+        // }
         // myPara1.textContent = 'Secret identity: ' + workData1[i].secretIdentity;
         // myPara2.textContent = 'Age: ' + workData1[i].age;
         // myPara3.textContent = 'Superpowers:';
@@ -42,12 +65,12 @@ function showHeroes(jsonObj) {
         //     myList.appendChild(listItem);
         // }
 
-        myArticle.appendChild(myH2);
+        sectionElement.appendChild(h2Element);
         // myArticle.appendChild(myPara1);
         // myArticle.appendChild(myPara2);
         // myArticle.appendChild(myPara3);
         // myArticle.appendChild(myList);
 
-        section.appendChild(myArticle);
+        sectionGroup.appendChild(sectionElement);
     }
 }

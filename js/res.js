@@ -31,27 +31,22 @@ fetch(
   
   // console.log(parsedData);
   // 3
-  workData(jsonData.work1);
-  workData(jsonData.work2);
+  work1Data(parsedData.work1);
 
 }).catch(function(error) {
   console.log(error);
 });
 const section = document.querySelector("#work1");
 
-function workData(work){
+function work1Data(work){
   for(const key in work)  {
-    const workItem = work[key];
+
     console.log(work[key])
-    for (const item of workItem) {
+    for (const item of workItems) {
       const divElement = document.createElement("div");
-      const h2Element = document.createElement("h2");
-      h2Element.textContent = item.title;
       divElement.appendChild(h2Element);
-      section.appendChild(divElement);
     }
   }
-
   // console.log(work)
   // work.forEach(element => {
   //   console.log(element.title)
