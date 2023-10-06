@@ -8,19 +8,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function openPopup() {
         popupItem.forEach((item, index) => {
-        item.addEventListener("click", (e) => {
-            e.preventDefault();
-            gsap.to(popup, { display: "flex", opacity: 1, duration: 0.5 });
-            
-            popupContent.forEach((content) => {
-            content.classList.remove("active");
-            closeBtn.addEventListener('click', () => closePopup())
+            item.addEventListener("click", (e) => {
+                e.preventDefault();
+                gsap.to(popup, { display: "flex", opacity: 1, duration: 0.5 });
+                
+                popupContent.forEach((content) => {
+                content.classList.remove("active");
+                closeBtn.addEventListener('click', () => closePopup())
+                });
+        
+                popupItem[index].classList.add("active");
+                popupContent[index].classList.add("active");
+                closeBtn.classList.add("active");
             });
-    
-            popupItem[index].classList.add("active");
-            popupContent[index].classList.add("active");
-            closeBtn.classList.add("active");
-        });
         });
     }
     
@@ -34,9 +34,42 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         }});
     }
-    
+
     openPopup();
     closePopup();
+
+
+    function goToPage(index) {
+        mySwiper.slideTo(index);
+    }
+    
+    // Swiper 컴포넌트 초기화
+    var bullet = ['1번', '2번', '3번'];
+    
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<div class="' + className + '"><span>' + (bullet[index]) + '</span></div>';
+        }
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+    // const slides = document.querySelectorAll('.swiper-slide');
+    const pagination = document.querySelector('.swiper-pagination');
+    const buttonLock = document.querySelector('.swiper-button-lock ');
+    pagination.style.width = '80%';
+    pagination.style.bottom = '0';
+    buttonLock.style.display = 'flex';
+
+    // slides.forEach(slide => {
+    //    slide.style.width = '50%';
+    // });
+
 
     // 현재 시간을 가져오는 함수
     function getCurrentTime() {
@@ -66,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var visibleCount = 3; // 초기 보이는 갯수
     var increment = 2; // 클릭 시 추가로 보이는 갯수
 
+
     function showMoreDivs(e) {
         e.preventDefault(); // 클릭 이벤트의 기본 동작 중지
 
@@ -90,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
         divs[j].style.display = "none";
     }
 
-    var loadButton = document.getElementById("load");
-    loadButton.addEventListener("click", showMoreDivs);
+    // var loadButton = document.getElementById("load");
+    // loadButton.addEventListener("click", showMoreDivs);
 
 });

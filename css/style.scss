@@ -1,8 +1,7 @@
 
 :root {
-
-    --my-bg : #0e0e0e;
-    --my-txt : #e8e5de;
+    --my-bg : hsl(0, 0%, 5%);
+    --my-txt : hsl(42, 18%, 89%);
     --link: #fff;
     --link-hover:#fff;
     --page-padding: 1.5rem 2rem;
@@ -15,7 +14,8 @@ html,body {
 
 body {
   --color-text: #f1f1f1;
-  --color-bg: #0c0c0c;
+  // --color-bg: #0c0c0c;
+  --color-bg: #0e0e0e;
   --color-link: #1ab3de;
   --color-link-hover: #f1f1f1;
   --color-deco: #141414;
@@ -28,13 +28,12 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   overflow: hidden;
-
-  &.s_no-scroll{overflow-y:hidden;}
-	
 }
+
 .modal-open {
   overflow: hidden;
 }
+
 /* Page Loader */
 .js .loading::before {
 	content: '';

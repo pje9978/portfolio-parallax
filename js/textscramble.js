@@ -63,7 +63,22 @@ class TextScramble {
   'Apply',
   'Like',
   'Concentrate',
-  'Endeavor'];
+  'Endeavor',
+  'Develop',
+  'Learn',
+  'Enjoy',
+  'Apply',
+  'Like',
+  'Concentrate',
+  'Endeavor',
+  'Develop',
+  'Learn',
+  'Enjoy',
+  'Apply',
+  'Like',
+  'Concentrate',
+  'Endeavor'
+];
   
   
   const el = document.querySelector('.text');

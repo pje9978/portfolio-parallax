@@ -54,7 +54,7 @@ function workData(data) {
             langElement.classList.add('lang');
 
             langItem.forEach((element) => {
-                const langItemElement = document.createElement('h5');
+                const langItemElement = document.createElement('span');
                 langItemElement.textContent = element;
                 langElement.appendChild(langItemElement);
             });
