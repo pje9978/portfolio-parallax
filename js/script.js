@@ -61,10 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     // const slides = document.querySelectorAll('.swiper-slide');
     const pagination = document.querySelector('.swiper-pagination');
-    const buttonLock = document.querySelector('.swiper-button-lock ');
-    pagination.style.width = '80%';
+    // const buttonLock = document.querySelector('.swiper-button-lock ');
+    pagination.style.width = '60%';
     pagination.style.bottom = '0';
-    buttonLock.style.display = 'flex';
 
     // slides.forEach(slide => {
     //    slide.style.width = '50%';
@@ -93,6 +92,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
        return ampm + " " + hours + ":" + minutes + " ";
     }
+
+    
     document.getElementById("currentTime").innerHTML = getCurrentTime();
 
     var divs = document.querySelectorAll(".items");

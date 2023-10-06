@@ -1001,7 +1001,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // nav 숨기기
     const showNav = gsap.from(".lnb", { 
-        yPercent: 200,
+        yPercent: 1000,
         paused: true,
         duration: 0.2
     }).progress(1);
