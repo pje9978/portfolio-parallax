@@ -1,4 +1,5 @@
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const wrapElements = (elems, wrapType, wrapClass) => {
         elems.forEach(char => {
@@ -1014,6 +1015,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    
+
 });
 

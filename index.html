@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/dist/output.css">
-    <link rel="stylesheet" href="/css/mouse-effect.css">
-    <link rel="stylesheet" href="/css/universe-bg.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mouse-effect.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="css/slide-style.css"> -->
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
 
-    <!-- <script>
+    <script>
     document.documentElement.className = "js";
     var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
     supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
-    </script> -->
+    </script>
 
     <script>
         tailwind.config = {
@@ -41,10 +40,6 @@
         }
     </script>
     <style type="text/tailwindcss">
-
-
-
-
         @layer utilities {
             .link {@apply underline opacity-40 text-xs;}
             .content {@apply flex  relative;}
@@ -74,14 +69,20 @@
             .editor-line {counter-increment: line;}
         }
         
+
     </style>
 </head>
 
 <body class="loading  bg-bgblack text-textwhite box-border">
-    <div id="stars" class="opacity-40"></div>
+
+    <div class="glow-container ">
+        <div class="ball"></div>
+        <div class="ball" style="--delay:-12s;--size:0.35;--speed:25s;"></div>
+        <div class="ball" style="--delay:-10s;--size:0.3;--speed:15s;"></div>
+    </div>
 
     <nav class="w-screen  bg-black z-50 border-b  border-textwhite">
-        <div class="container mx-auto ">
+        <div class="container mx-auto px-6">
             <div class="flex flex-wrap items-center ">
                 <h1 class="md:w-auto text-xl font-bold flex w-full justify-center items-center py-4 text-textwhite"><a
                         href="#">PORTFOLIO.</a></h1>
@@ -112,8 +113,10 @@
             <span class=" uppercase text-base">Contact</span>
         </div>
     </nav>
-    <main class="btn w-screen flex flex-col justify-center items-center">
-        <section class="intro sm:h-[70vh] h-[30vh] mt-32 grid place-items-center text-center">
+
+
+    <main class="btn relative z-10 w-screen flex flex-col justify-center items-center">
+        <section class="intro sm:h-[60vh] h-[30vh] mt-32 grid sm:mb-0 mb-40 place-items-center text-center">
             <div>
                 <span class="block text-xs tracking-widest">Web Publisher</span>
                 <span
@@ -124,13 +127,13 @@
             </div>
             <div class="grid place-items-center text-center overflow-x-clip">
                 <div
-                    class="border-t border-b border-[#e8e5de] cover w-screen mb-20 flex mt-[1vh] transform sm:-rotate-2 rotate-0  text-[--my-bg] opacity-100">
+                    class="border-t border-b border-[#e8e5de] cover w-screen mb-20 flex mt-[1vh] transform sm:-rotate-2 rotate-0  text-textwhite opacity-100">
                     <p
                         class="first-parallel tracking-widest font-light p-2 flex selection:bg-textwhite opacity-70 hover:opacity-100">
                     </p>
                 </div>
                 <div
-                    class="hidden sm:flex border-t border-b border-[#e8e5de] cover w-screen mb-20 flex transform rotate-2 text-[--my-bg] justify-end opacity-20">
+                    class="hidden sm:flex border-t border-b border-[#e8e5de] cover w-screen mb-20 flex transform rotate-2 text-textwhite justify-end opacity-20">
                     <p
                         class="second-parallel tracking-widest font-light p-2 flex selection:bg-textwhite opacity-70 hover:opacity-100">
                     </p>
@@ -140,7 +143,7 @@
 
         <!-- about -->
         <section id="about">
-            <div class="container mx-auto flex flex-col justify-center px-6 py-24">
+            <div class="container mx-auto flex flex-col justify-center px-6 pt-24">
                 <div
                     class="content w-full md:flex-row md:w-3/4 md:mx-auto flex flex-col  flex-wrap relative gap-8 items-start justify-items-start">
                     <div class="flex flex-col shrink-0 h-full w-1/3">
@@ -178,8 +181,8 @@
             <div id="container" class="container relative mx-auto flex flex-col justify-center px-6 py-24">
                 <h2 class="content__title grid text-center" data-splitting data-effect10>
                     <span class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Strength.</span>
-      
-                            <span>블럭을 클릭해보세요.</span>
+                    <span class="text-xs opacity-50">GALLUP 기관에서 진행한 강점 상위 5가지 결과</span>
+                    <span class="text-xs opacity-50"> 블럭을 클릭해보세요.</span>
                 </h2>
 
                 <div class="relative flex flex-wrap justify-center items-center  mt-4" data-splitting data-effect14>
@@ -277,7 +280,7 @@
                 </div>
 
                 <p class="flex flex-col z-1"></p>
-                    <a class="text-center p-6 link z-0"
+                <a class="text-center p-6 link z-0"
                     href="https://www.notion.so/GALLUP-5-b1c9b3e695064cf1a51e8175a170877e?pvs=4">자세히 보기</a>
             </div>
         </section>
@@ -385,15 +388,18 @@
         </section>
         gallery -->
 
-        <section id="work-gallery">
+        <!-- work -->
+        <section id="work">
             <h2 class="content content--full flex flex-col w-screen relative p-0">
                 <h2 class="content__title grid text-center" data-splitting data-effect10><span
-                    class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Work.</span>
-                    <span class="text-xs tracking-widest opacity-50 pb-10">프로젝트 이미지를 스크롤하거나 스와이프 해보세요.! </span></h2>
+                        class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Work.</span>
+                    <span class="text-xs tracking-widest opacity-50 pb-10">프로젝트 이미지를 스크롤하거나 스와이프 해보세요.! </span>
+                </h2>
             </h2>
 
-            <div class="swiper01 container w-full mx-auto px-6 relative shadow-2xl drop-shadow">
-                <div class="swiper-container  h-full relative  border border-[#e8e5de]/20 rounded-[5px] overflow-hidden">
+            <div class="swiper01 container w-full mx-auto px-6 relative  py-24 shadow-2xl drop-shadow">
+                <div
+                    class="swiper-container  h-full relative  border border-[#e8e5de]/20 rounded-[5px] overflow-hidden">
                     <nav class="h-12 border-b border-[#e8e5de]/20 w-full  flex justify-between items-center">
                         <div class="flex gap-3 shrink-0 ml-4">
                             <div class="w-4 h-4 bg-[#b22222] rounded-3xl"></div>
@@ -411,126 +417,473 @@
                     </nav>
 
 
-                    <div class="swiper-wrapper container mx-auto md:max-w-full  max-w-[360px] h-auto  relative bg-bgblack rounded-[5px] ">
-                        <div class="swiper-slide text-center text-[18px] bg-bgwhite  flex flex-wrap justify-center items-center border border-[#e8e5de]/20">
+                    <div
+                        class="swiper-wrapper container mx-auto sm:max-w-[fit-content] min-w-fit max-w-[280px] h-auto  relative bg-bgblack rounded-[5px] ">
+                        <div
+                            class="swiper-slide text-center text-[18px] bg-bgwhite  flex flex-wrap justify-center items-center border border-[#e8e5de]/20">
                             <div class="xl:w-1/3 w-full h-auto ">
-                                <div class="h-[50vh] ml-4 mt-4 mb-4 mr-4 bg-black flex flex-wrap justify-start rounded-[5px] overflow-hidden ">
-                                    <div class=" flex flex-col w-full items-start justify-start ">
+                                <div
+                                    class="h-[50vh] ml-4 mt-4 mb-4 mr-4 bg-black flex flex-wrap items-start justify-start rounded-[5px] overflow-hidden">
+                                    <div class="editorNav grow-0 flex w-full">
+                                        <div
+                                            class="h-8 leading-8 w-full text-xs text-white/50 tracking-widest bg-[#202020]/20">
+                                            HTML
+                                        </div>
                                         <div
                                             class="h-8 leading-8 w-full text-xs text-white/50 tracking-widest bg-[#202020]">
-                                            HTML</div>
-                                        <div class="w-full h-full ">
-                                            <div class="editor w-full h-full bg-bgblack font-[monospace] text-[15px] rounded-[5px]">
-                                                <div class=" editor-content  p-[15px] flex flex-col justify-start items-start content__title" data-splitting data-effect1>
-                                                    <div class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px] " >
-                                                        <span class="element text-[rgb(100,150,250)]">&lt;div class=<span
-                                                                class="quotes text-[rgb(150,150,150)]">"header"</span>&gt;</span>
-                                                    </div>
-                                                    <div class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
-                                                        <span class="tab mr-[15px]"></span>
-                                                        <span class="element text-[rgb(100,150,250)]">&lt;h1&gt;</span>My Blog<span
-                                                            class="element text-[rgb(100,150,250)]">&lt;/h1&gt;</span>
-                                                    </div>
-                                                    <div class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
-                                                        <span class="element text-[rgb(100,150,250)]">&lt;/div&gt;</span>
-                                                    </div>
-                                                    <div class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
-                                                        <span class="element text-[rgb(100,150,250)]">&lt;div class=<span
-                                                                class="quotes text-[rgb(150,150,150)]">"blog"</span>&gt;</span>
-                                                    </div>
-                                                    <div class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
-                                                        <span class="tab mr-[15px]"></span>
-                                                        <span class="element text-[rgb(100,150,250)]">&lt;div class=<span
-                                                                class="quotes text-[rgb(150,150,150)]">"blog-post"</span>&gt;</span>
-                                                    </div>
-                                                    <div class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
-                                                        <span class="tab mr-[15px]"></span><span class="tab mr-[15px]"></span>
-                                                        <span class="element text-[rgb(100,150,250)]">&lt;h3&gt;</span>My Blog Post<span
-                                                            class="element text-[rgb(100,150,250)]">&lt;/h3&gt;</span>
-                                                    </div>
-                                                    <div class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
-                                                        <span class="tab mr-[15px]"></span><span class="tab mr-[15px]"></span>
-                                                        <span class="element text-[rgb(100,150,250)]">&lt;p&gt;</span>A paragraph about in my
-                                                        blog.<span class="element text-[rgb(100,150,250)]">&lt;/p&gt;</span>
-                                                    </div>
-                                                    <div class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
-                                                        <span class="tab mr-[15px]"></span>
-                                                        <span class="element text-[rgb(100,150,250)]">&lt;/div&gt;</span>
-                                                    </div>
-                                                    <div class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
-                                                        <span class="element text-[rgb(100,150,250)]">&lt;/div&gt;</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
+                                            CSS
+                                        </div>
+                                        <div
+                                            class="h-8 leading-8 w-full text-xs text-white/50 tracking-widest bg-[#202020]">
+                                            JAVASCRIPT
                                         </div>
                                     </div>
-                                    <div class="flex w-full h-8 items-start justify-center">
-                                        <div
-                                            class="leading-8 w-full text-xs text-white/50 tracking-widest bg-[#202020]">
-                                            CSS</div>
-                                        <!-- <div class=""></div> -->
-                                    </div>
-                                    <div class="flex w-full items-start justify-center">
-                                        <div
-                                            class="h-8 w-full leading-8 text-xs text-white/50  tracking-widest bg-[#202020]">
-                                            CONSOLE</div>
-                                        <div class="flex-1 h-full"></div>
-                                    </div>
                                     <div
-                                        class="w-full h-8 leading-8 text-xs text-white/50  tracking-widest bg-[#202020]">
-                                        JAVASCRIPT</div>
-                                    <div class="flex h-8  w-full items-start justify-center">
-                                        <!-- <div class="flex-1 h-full"></div> -->
+                                        class="editorhtml grow w-full bg-bgblack font-[monospace] text-[15px] rounded-[5px]">
+                                        <div class=" editor-content  p-[15px] flex flex-col justify-start items-start content__title"
+                                            data-splitting data-effect1>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px] ">
+                                                <span class="element text-[rgb(100,150,250)]">&lt;div class=<span
+                                                        class="quotes text-[rgb(150,150,150)]">"header"</span>&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;h1&gt;</span>My
+                                                Blog<span class="element text-[rgb(100,150,250)]">&lt;/h1&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="element text-[rgb(100,150,250)]">&lt;/div&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="element text-[rgb(100,150,250)]">&lt;div class=<span
+                                                        class="quotes text-[rgb(150,150,150)]">"blog"</span>&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;div class=<span
+                                                        class="quotes text-[rgb(150,150,150)]">"blog-post"</span>&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span><span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;h3&gt;</span>My Blog
+                                                Post<span class="element text-[rgb(100,150,250)]">&lt;/h3&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span><span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;p&gt;</span>A
+                                                paragraph about in my
+                                                blog.<span class="element text-[rgb(100,150,250)]">&lt;/p&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;/div&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="element text-[rgb(100,150,250)]">&lt;/div&gt;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="console grow h-full">
+                                        <div
+                                            class="h-8 leading-8 w-full text-xs text-white/50 tracking-widest bg-[#202020]">
+                                            console
+                                        </div>
+                                        <div class="work flex flex-col w-full p-4 items-start font-[monospace] text-sm">
+                                            <p
+                                                class="title before:content-['>'] after:content-['title'] before:opacity-50 after:opacity-50">
+                                            </p>
+                                            <p class="title before:content-['>'] before:opacity-100">
+                                                GSAP/Tailwind 활용한 페러렉스 웹 포트폴리오.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="xl:w-2/3 w-full h-auto rounded-[5px]">
                                 <div class=" h-[50vh]  text-black xl:mt-4 xl:ml-0 mt-0 m-4 ">
-                                    <div class="browser-window-osx [box-shadow:0px_2px_3px_0px_rgba(50,_50,_50,_0.11)] border-[1px] border-[solid] xl:mt-4 mt-0  m-4 mr-4 ml-0 border-[#c3c3c3] w-full rounded-[5px] relative">
-                                        <div class="header bg-[#e8e8e8] h-[45px] rounded-tl-[5px] rounded-br-[0] rounded-tr-[5px] rounded-bl-[0] pl-[10px] pr-[10px] py-[10px]">
-                                          <div class="menu w-[70px] inline-block h-[25px]">
-                                            <span class="close mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#df7065]"></span>
-                                            <span class="minimize mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#e6bb46]"></span>
-                                            <span class="maximize mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#5bcc8b]"></span>
-                                          </div>
-                                          <div class="search bg-[white] w-1/2 inline-block h-[25px] rounded-[5px] relative overflow-hidden">
-                                            <p class="bg-[white] w-1/2 inline-block h-[25px] rounded-[5px] relative overflow-hidden"><span class="text-[#7ed321]">https://</span>tristanwhite.info</p>
-                                          </div>
+                                    <div
+                                        class="browser-window-osx [box-shadow:0px_2px_3px_0px_rgba(50,_50,_50,_0.11)] border-[1px] border-[solid] xl:mt-4 mt-0  m-4 mr-4 ml-0 border-[#c3c3c3] w-full rounded-[5px] relative">
+                                        <div
+                                            class="header bg-[#e8e8e8] h-[45px] rounded-tl-[5px] rounded-br-[0] rounded-tr-[5px] rounded-bl-[0] pl-[10px] pr-[10px] py-[10px]">
+                                            <div class="menu w-[70px] inline-block h-[25px]">
+                                                <span
+                                                    class="close mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#df7065]"></span>
+                                                <span
+                                                    class="minimize mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#e6bb46]"></span>
+                                                <span
+                                                    class="maximize mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#5bcc8b]"></span>
+                                            </div>
+                                            <div
+                                                class="search bg-[white] w-1/2 inline-block h-[25px] rounded-[5px] relative overflow-hidden">
+                                                <p
+                                                    class="bg-[white] w-1/2 inline-block h-[25px] rounded-[5px] relative overflow-hidden">
+                                                    <span class="text-[#7ed321]">https://</span>tristanwhite.info</p>
+                                            </div>
                                         </div>
-                                        <div class="window w-full h-full overflow-hidden scale-100 rounded-tl-[0] rounded-br-[5px] rounded-tr-[0] rounded-bl-[5px]">
-                                          <iframe class="w-full h-[75vh] border-[0] ml-[0] mr-[0] my-[0]" src="https://tristanwhite.info"></iframe>
+                                        <div
+                                            class="window w-full h-full overflow-hidden scale-100 rounded-tl-[0] rounded-br-[5px] rounded-tr-[0] rounded-bl-[5px]">
+                                            <iframe class="w-full h-[75vh] border-[0] ml-[0] mr-[0] my-[0]"
+                                                src="https://tristanwhite.info"></iframe>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div
-                            class="swiper-slide text-center text-[18px] bg-transparent flex justify-center items-center w-1/2  border border-[#e8e5de]/20">
-                            Slide 2
+                            class="swiper-slide text-center text-[18px] bg-bgwhite  flex flex-wrap justify-center items-center border border-[#e8e5de]/20">
+                            <div class="xl:w-1/3 w-full h-auto ">
+                                <div
+                                    class="h-[50vh] ml-4 mt-4 mb-4 mr-4 bg-black flex flex-wrap items-start justify-start rounded-[5px] overflow-hidden">
+                                    <div class="editorNav grow-0 flex w-full">
+                                        <div
+                                            class="h-8 leading-8 w-full text-xs text-white/50 tracking-widest bg-[#202020]/20">
+                                            HTML
+                                        </div>
+                                        <div
+                                            class="h-8 leading-8 w-full text-xs text-white/50 tracking-widest bg-[#202020]">
+                                            CSS
+                                        </div>
+                                        <div
+                                            class="h-8 leading-8 w-full text-xs text-white/50 tracking-widest bg-[#202020]">
+                                            JAVASCRIPT
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="editorhtml grow w-full bg-bgblack font-[monospace] text-[15px] rounded-[5px]">
+                                        <div class=" editor-content  p-[15px] flex flex-col justify-start items-start content__title"
+                                            data-splitting data-effect1>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px] ">
+                                                <span class="element text-[rgb(100,150,250)]">&lt;div class=<span
+                                                        class="quotes text-[rgb(150,150,150)]">"header"</span>&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;h1&gt;</span>My
+                                                Blog<span class="element text-[rgb(100,150,250)]">&lt;/h1&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="element text-[rgb(100,150,250)]">&lt;/div&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="element text-[rgb(100,150,250)]">&lt;div class=<span
+                                                        class="quotes text-[rgb(150,150,150)]">"blog"</span>&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;div class=<span
+                                                        class="quotes text-[rgb(150,150,150)]">"blog-post"</span>&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span><span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;h3&gt;</span>My Blog
+                                                Post<span class="element text-[rgb(100,150,250)]">&lt;/h3&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span><span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;p&gt;</span>A
+                                                paragraph about in my
+                                                blog.<span class="element text-[rgb(100,150,250)]">&lt;/p&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;/div&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="element text-[rgb(100,150,250)]">&lt;/div&gt;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="console grow h-full">
+                                        <div
+                                            class="h-8 leading-8 w-full text-xs text-white/50 tracking-widest bg-[#202020]">
+                                            console
+                                        </div>
+                                        <div class="work flex flex-col w-full p-4 items-start font-[monospace] text-sm">
+                                            <p
+                                                class="title before:content-['>'] after:content-['title'] before:opacity-50 after:opacity-50">
+                                            </p>
+                                            <p class="title before:content-['>'] before:opacity-100">
+                                                GSAP/Tailwind 활용한 페러렉스 웹 포트폴리오.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xl:w-2/3 w-full h-auto rounded-[5px]">
+                                <div class=" h-[50vh]  text-black xl:mt-4 xl:ml-0 mt-0 m-4 ">
+                                    <div
+                                        class="browser-window-osx [box-shadow:0px_2px_3px_0px_rgba(50,_50,_50,_0.11)] border-[1px] border-[solid] xl:mt-4 mt-0  m-4 mr-4 ml-0 border-[#c3c3c3] w-full rounded-[5px] relative">
+                                        <div
+                                            class="header bg-[#e8e8e8] h-[45px] rounded-tl-[5px] rounded-br-[0] rounded-tr-[5px] rounded-bl-[0] pl-[10px] pr-[10px] py-[10px]">
+                                            <div class="menu w-[70px] inline-block h-[25px]">
+                                                <span
+                                                    class="close mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#df7065]"></span>
+                                                <span
+                                                    class="minimize mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#e6bb46]"></span>
+                                                <span
+                                                    class="maximize mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#5bcc8b]"></span>
+                                            </div>
+                                            <div
+                                                class="search bg-[white] w-1/2 inline-block h-[25px] rounded-[5px] relative overflow-hidden">
+                                                <p
+                                                    class="bg-[white] w-1/2 inline-block h-[25px] rounded-[5px] relative overflow-hidden">
+                                                    <span class="text-[#7ed321]">https://</span>tristanwhite.info</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="window w-full h-full overflow-hidden scale-100 rounded-tl-[0] rounded-br-[5px] rounded-tr-[0] rounded-bl-[5px]">
+                                            <iframe class="w-full h-[75vh] border-[0] ml-[0] mr-[0] my-[0]"
+                                                src="https://tristanwhite.info"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                         <div
-                            class="swiper-slide text-center text-[18px] bg-transparent flex justify-center items-center w-1/2  border border-[#e8e5de]/20">
-                            Slide 3
+                            class="swiper-slide text-center text-[18px] bg-bgwhite  flex flex-wrap justify-center items-center border border-[#e8e5de]/20">
+                            <div class="xl:w-1/3 w-full h-auto ">
+                                <div
+                                    class="h-[50vh] ml-4 mt-4 mb-4 mr-4 bg-black flex flex-wrap items-start justify-start rounded-[5px] overflow-hidden">
+                                    <div class="editorNav grow-0 flex w-full">
+                                        <div
+                                            class="h-8 leading-8 w-full text-xs text-white/50 tracking-widest bg-[#202020]/20">
+                                            HTML
+                                        </div>
+                                        <div
+                                            class="h-8 leading-8 w-full text-xs text-white/50 tracking-widest bg-[#202020]">
+                                            CSS
+                                        </div>
+                                        <div
+                                            class="h-8 leading-8 w-full text-xs text-white/50 tracking-widest bg-[#202020]">
+                                            JAVASCRIPT
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="editorhtml grow w-full bg-bgblack font-[monospace] text-[15px] rounded-[5px]">
+                                        <div class=" editor-content  p-[15px] flex flex-col justify-start items-start content__title"
+                                            data-splitting data-effect1>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px] ">
+                                                <span class="element text-[rgb(100,150,250)]">&lt;div class=<span
+                                                        class="quotes text-[rgb(150,150,150)]">"header"</span>&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;h1&gt;</span>My
+                                                Blog<span class="element text-[rgb(100,150,250)]">&lt;/h1&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="element text-[rgb(100,150,250)]">&lt;/div&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="element text-[rgb(100,150,250)]">&lt;div class=<span
+                                                        class="quotes text-[rgb(150,150,150)]">"blog"</span>&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;div class=<span
+                                                        class="quotes text-[rgb(150,150,150)]">"blog-post"</span>&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span><span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;h3&gt;</span>My Blog
+                                                Post<span class="element text-[rgb(100,150,250)]">&lt;/h3&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span><span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;p&gt;</span>A
+                                                paragraph about in my
+                                                blog.<span class="element text-[rgb(100,150,250)]">&lt;/p&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="tab mr-[15px]"></span>
+                                                <span class="element text-[rgb(100,150,250)]">&lt;/div&gt;</span>
+                                            </div>
+                                            <div
+                                                class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
+                                                <span class="element text-[rgb(100,150,250)]">&lt;/div&gt;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="console grow h-full">
+                                        <div
+                                            class="h-8 leading-8 w-full text-xs text-white/50 tracking-widest bg-[#202020]">
+                                            console
+                                        </div>
+                                        <div class="work flex flex-col w-full p-4 items-start font-[monospace] text-sm">
+                                            <p
+                                                class="title before:content-['>'] after:content-['title'] before:opacity-50 after:opacity-50">
+                                            </p>
+                                            <p class="title before:content-['>'] before:opacity-100">
+                                                GSAP/Tailwind 활용한 페러렉스 웹 포트폴리오.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xl:w-2/3 w-full h-auto rounded-[5px]">
+                                <div class=" h-[50vh]  text-black xl:mt-4 xl:ml-0 mt-0 m-4 ">
+                                    <div
+                                        class="browser-window-osx [box-shadow:0px_2px_3px_0px_rgba(50,_50,_50,_0.11)] border-[1px] border-[solid] xl:mt-4 mt-0  m-4 mr-4 ml-0 border-[#c3c3c3] w-full rounded-[5px] relative">
+                                        <div
+                                            class="header bg-[#e8e8e8] h-[45px] rounded-tl-[5px] rounded-br-[0] rounded-tr-[5px] rounded-bl-[0] pl-[10px] pr-[10px] py-[10px]">
+                                            <div class="menu w-[70px] inline-block h-[25px]">
+                                                <span
+                                                    class="close mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#df7065]"></span>
+                                                <span
+                                                    class="minimize mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#e6bb46]"></span>
+                                                <span
+                                                    class="maximize mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#5bcc8b]"></span>
+                                            </div>
+                                            <div
+                                                class="search bg-[white] w-1/2 inline-block h-[25px] rounded-[5px] relative overflow-hidden">
+                                                <p
+                                                    class="bg-[white] w-1/2 inline-block h-[25px] rounded-[5px] relative overflow-hidden">
+                                                    <span class="text-[#7ed321]">https://</span>tristanwhite.info</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="window w-full h-full overflow-hidden scale-100 rounded-tl-[0] rounded-br-[5px] rounded-tr-[0] rounded-bl-[5px]">
+                                            <iframe class="w-full h-[75vh] border-[0] ml-[0] mr-[0] my-[0]"
+                                                src="https://tristanwhite.info"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
+
                 </div>
-                <!-- <div
-                    class="swiper-button-prev md:flex hidden after:content-['{'] after:font-black absolute 2xl:left-70 xl:left-30  md:left-30 sm:left-10 left-10 text-white cursor-pointer p-30 z-50">
-                </div>
-                <div
-                    class="swiper-button-next md:flex hidden after:content-['}'] after:font-black absolute 2xl:right-70 xl:right-30 md:right-30 sm:right-10 right-10 text-white cursor-pointer p-30 z-50">
-                </div> -->
+
                 <div class="swiper-pagination w-3/4 mx-auto relative bottom-0 flex bg-bgblack"></div>
 
+                <div class="icon1 flex justify-center">
+                    <svg class="animate-bounce " width="100px" height="100px" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" stroke="#e8e5de">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M15 11L12 8M12 8L9 11M12 8V16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                stroke="#e8e5de" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
             </div>
+        </section>
 
-            <!-- <div class="slideshow">
+            
+        <!-- Slider -->
+        <section class="gallery-slide opacity-100 w-screen overflow-hidden">
+            <!-- Slider -->
+            <h2 class="content__title grid text-center" data-splitting data-effect10>
+                <span class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Work.</span>
+                <span class="text-xs opacity-50">GALLUP 기관에서 진행한 강점 상위 5가지 결과</span>
+                <span class="text-xs opacity-50"> 블럭을 클릭해보세요.</span>
+            </h2>
+
+            <div class="swiper-container rfa-slide-container rfa-slide-container--chapter-select container mx-auto w-full h-[300px] ml-auto mr-auto relative h-[60vh] w-full top-0 right-0 bottom-0 left-0">
+                <!-- Slide Content -->
+                <div class="swiper-wrapper rfa-chap-sect-wrapper mt-12">
+                    <!-- Slides -->
+                    <div class="swiper-slide rfa-chap-sect-slide bg-center bg-no-repeat bg-cover box-border bg-[#cd2e42] flex flex-col justify-center items-center min-w-[320px] slide__chap1 w-2/5" data-hash="blackPanther">
+                        <div class="slide-cover"></div>
+                        <h3 class="">Black Panther</h3>
+        
+                        <a class="chap-btn--a" href="chapter1.html">
+                            <button class="button max-w-[250px] block px-[2em] py-[1em] border-[none] bg-none [color:inherit]  absolute antialiased focus:outline-[none] button--winona  hover:border-[#f5f5f5] hover:bg-[rgba(20,_5,_31,_0.1)]  after:absolute after:h-full after:top-[0] after:left-[0] after:opacity-0 after:text-[#f5f5f5]  button--border-thin border rounded button--round-s" data-text="Read Chapter">
+                                <span class="align-middle block">Read Chapter</span>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="swiper-slide rfa-chap-sect-slide bg-center bg-no-repeat bg-cover box-border bg-[#cd2e42] flex flex-col justify-center items-center min-w-[320px] slide__chap2 w-2/5" data-hash="storm">
+                        <div class="slide-cover"></div>
+                        <h3 class="">WAKANDA</h3>
+        
+                        <a class="chap-btn--a" href="chapter1.html">
+                            <button class="button max-w-[250px] block px-[2em] py-[1em] border-[none] bg-none [color:inherit]  absolute antialiased focus:outline-[none] button--winona  hover:border-[#f5f5f5] hover:bg-[rgba(20,_5,_31,_0.1)]  after:absolute after:h-full after:top-[0] after:left-[0] after:opacity-0 after:text-[#f5f5f5]  button--border-thin border rounded button--round-s" data-text="Read Chapter">
+                                <span>Read Chapter</span>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="swiper-slide rfa-chap-sect-slide bg-center bg-no-repeat bg-cover box-border bg-[#cd2e42] flex flex-col justify-center items-center min-w-[320px] slide__chap3 w-2/5" data-hash="lukeCage">
+                        <div class="slide-cover"></div>
+                        <h3 class="">HOW TRADITION AND FUTURISM INSPIRE T’CHALLA’S LOOK</h3>
+        
+                        <a class="chap-btn--a" href="chapter1.html">
+                            <button class="button max-w-[250px] block px-[2em] py-[1em] border-[none] bg-none [color:inherit]  absolute antialiased focus:outline-[none] button--winona  hover:border-[#f5f5f5] hover:bg-[rgba(20,_5,_31,_0.1)]  after:absolute after:h-full after:top-[0] after:left-[0] after:opacity-0 after:text-[#f5f5f5]  button--border-thin border rounded button--round-s" data-text="Read Chapter">
+                                <span>Read Chapter</span>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="swiper-slide rfa-chap-sect-slide bg-center bg-no-repeat bg-cover box-border bg-[#cd2e42] flex flex-col justify-center items-center min-w-[320px] slide__chap4 w-2/5" data-hash="bishop">
+                        <div class="slide-cover"></div>
+                        <h3 class="">WHAT INSPIRES THE WAKANDAN WARDROBE</h3>
+        
+                        <a class="chap-btn--a" href="chapter1.html">
+                            <button class="button max-w-[250px] block px-[2em] py-[1em] border-[none] bg-none [color:inherit]  absolute antialiased focus:outline-[none] button--winona  hover:border-[#f5f5f5] hover:bg-[rgba(20,_5,_31,_0.1)]  after:absolute after:h-full after:top-[0] after:left-[0] after:opacity-0 after:text-[#f5f5f5]  button--border-thin border rounded button--round-s" data-text="Read Chapter">
+                                <span class="align-middle block">Read Chapter</span>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="swiper-slide rfa-chap-sect-slide bg-center bg-no-repeat bg-cover box-border bg-[#cd2e42] flex flex-col justify-center items-center min-w-[320px] slide__chap5 w-2/5" data-hash="blade">
+                        <div class="slide-cover"></div>
+                        <h3 class="">AFROCENTRIC AESTHETICS BEYOND BLACK PANTHER</h3>
+        
+                        <a class="chap-btn--a" href="chapter1.html">
+                            <button class="button max-w-[250px] block px-[2em] py-[1em] border-[none] bg-none [color:inherit]  absolute antialiased focus:outline-[none] button--winona  hover:border-[#f5f5f5] hover:bg-[rgba(20,_5,_31,_0.1)]  after:absolute after:h-full after:top-[0] after:left-[0] after:opacity-0 after:text-[#f5f5f5]  button--border-thin border rounded button--round-s" data-text="Read Chapter">
+                                <span class="align-middle block">Read Chapter</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+        
+                <!-- If we need pagination -->
+                <div id="rfaPagePagination" class="swiper-pagination hide-swiper-pagination"></div>
+            </div>
+        
+        </section>
+
+        <!-- gallery -->
+        <section id="work-gallery">
+            <h2 class="content content--full flex flex-col w-screen relative p-0">
+                <h2 class="content__title grid text-center" data-splitting data-effect10><span
+                        class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Work.</span></h2>
+            </h2>
+
+            <div class="slideshow">
                 <div class="slideshow__deco"></div>
                 <div class="slide relative">
                     <div class="slide__img-wrap">
-                        <div class="slide__img " style="background-image: url(images/2016-2022_mercury/thumb/Apple_Watch_Full_Cover_Glass_case_A+_860_full.jpg);"></div>
+                        <img src="images/2016-2022_mercury/thumb/Apple_Watch_Full_Cover_Glass_case_A+_860_full.jpg" alt="" class="slide__img">
                     </div>
                     <div class="slide__side">Memories &amp; Thoughts</div>
                     <div class="slide__title-wrap">
@@ -541,8 +894,8 @@
                 </div>
                 <div class="slide relative">
                     <div class="slide__img-wrap">
-                        <div class="slide__img " style="background-image: url(img/2.jpg);"></div>
-
+                        <!-- <div class="slide__img " style="background-image: url(img/2.jpg);"></div> -->
+                        <img src="img/2.jpg" alt="" class="slide__img">
                     </div>
                     <div class="slide__side">Random Roam</div>
                     <div class="slide__title-wrap">
@@ -553,7 +906,8 @@
                 </div>
                 <div class="slide">
                     <div class="slide__img-wrap">
-                        <div class="slide__img " style="background-image: url(img/3.jpg);"></div>
+                        <!-- <div class="slide__img " style="background-image: url(img/3.jpg);"></div> -->
+                        <img src="img/3.jpg" alt="" class="slide__img">
                     </div>
                     <div class="slide__side">Arbitrary Words</div>
                     <div class="slide__title-wrap">
@@ -565,6 +919,7 @@
                 <div class="slide">
                     <div class="slide__img-wrap">
                         <div class="slide__img " style="background-image: url(img/4.jpg);"></div>
+                        <img src="img/4.jpg" alt="" class="slide__img">
                     </div>
                     <div class="slide__side">Haunted Drift</div>
                     <div class="slide__title-wrap">
@@ -575,7 +930,8 @@
                 </div>
                 <div class="slide">
                     <div class="slide__img-wrap">
-                        <div class="slide__img " style="background-image: url(img/5.jpg);"></div>
+                        <!-- <div class="slide__img " style="background-image: url(img/5.jpg);"></div> -->
+                        <img src="img/5.jpg" alt="" class="slide__img">
                     </div>
                     <div class="slide__side">Fun Diverge</div>
                     <div class="slide__title-wrap">
@@ -586,7 +942,8 @@
                 </div>
                 <div class="slide">
                     <div class="slide__img-wrap">
-                        <div class="slide__img " style="background-image: url(img/6.jpg);"></div>
+                        <!-- <div class="slide__img " style="background-image: url(img/6.jpg);"></div> -->
+                        <img src="img/6.jpg" alt="" class="slide__img">
                     </div>
                     <div class="slide__side">Hopes &amp; Dreams</div>
                     <div class="slide__title-wrap">
@@ -611,55 +968,127 @@
                 <div class="content__item">
                     <span class="content__number text-xs tracking-widest">1</span>
                     <h3 class="content__title text-3xl font-medium">Automation</h3>
-                    <h4 class="content__subtitle text-lg">A tree needs to be your friend if you're going to paint him</h4>
-                    <div class="content__text leading-relaxed text-base">Just let this happen. We just let this flow right out of our minds. Just relax and let it flow. That easy. Let's put some happy little clouds in our world. It's a very cold picture, I may have to go get my coat. It’s about to freeze me to death. This is gonna be a happy little seascape. Let's go up in here, and start having some fun The least little bit can do so much. Work on one thing at a time. Don't get carried away - we have plenty of time. Put your feelings into it, your heart, it's your world. These trees are so much fun. I get started on them and I have a hard time stopping.</div>
+                    <h4 class="content__subtitle text-lg">A tree needs to be your friend if you're going to paint him
+                    </h4>
+                    <div class="content__text leading-relaxed text-base">Just let this happen. We just let this flow
+                        right out of our minds. Just relax and let it flow. That easy. Let's put some happy little
+                        clouds in our world. It's a very cold picture, I may have to go get my coat. It’s about to
+                        freeze me to death. This is gonna be a happy little seascape. Let's go up in here, and start
+                        having some fun The least little bit can do so much. Work on one thing at a time. Don't get
+                        carried away - we have plenty of time. Put your feelings into it, your heart, it's your world.
+                        These trees are so much fun. I get started on them and I have a hard time stopping.</div>
                 </div>
                 <div class="content__item">
                     <span class="content__number text-xs tracking-widest">2</span>
                     <h3 class="content__title text-3xl font-medium">Machines</h3>
                     <h4 class="content__subtitle text-lg">This is probably the greatest thing to happen in my life</h4>
-                    <div class="content__text leading-relaxed text-base">We're not trying to teach you a thing to copy. We're just here to teach you a technique, then let you loose into the world. Now, we're going to fluff this cloud. We don't have anything but happy trees here. Let's do that again. Use what you see, don't plan it. Let's go up in here, and start having some fun The least little bit can do so much. Work on one thing at a time. Don't get carried away - we have plenty of time. Put your feelings into it, your heart, it's your world. These trees are so much fun. I get started on them and I have a hard time stopping.</div>
+                    <div class="content__text leading-relaxed text-base">We're not trying to teach you a thing to copy.
+                        We're just here to teach you a technique, then let you loose into the world. Now, we're going to
+                        fluff this cloud. We don't have anything but happy trees here. Let's do that again. Use what you
+                        see, don't plan it. Let's go up in here, and start having some fun The least little bit can do
+                        so much. Work on one thing at a time. Don't get carried away - we have plenty of time. Put your
+                        feelings into it, your heart, it's your world. These trees are so much fun. I get started on
+                        them and I have a hard time stopping.</div>
                 </div>
                 <div class="content__item">
                     <span class="content__number text-xs tracking-widest">3</span>
                     <h3 class="content__title text-3xl font-medium">Coexistence</h3>
                     <h4 class="content__subtitle text-lg">The only guide is your heart</h4>
-                    <div class="content__text">Let's go up in here, and start having some fun The least little bit can do so much. Work on one thing at a time. Don't get carried away - we have plenty of time. Put your feelings into it, your heart, it's your world. These trees are so much fun. I get started on them and I have a hard time stopping. But we're not there yet, so we don't need to worry about it. Now let's put some happy little clouds in here. What the devil. A thin paint will stick to a thick paint. I'm going to mix up a little color. </div>
+                    <div class="content__text">Let's go up in here, and start having some fun The least little bit can
+                        do so much. Work on one thing at a time. Don't get carried away - we have plenty of time. Put
+                        your feelings into it, your heart, it's your world. These trees are so much fun. I get started
+                        on them and I have a hard time stopping. But we're not there yet, so we don't need to worry
+                        about it. Now let's put some happy little clouds in here. What the devil. A thin paint will
+                        stick to a thick paint. I'm going to mix up a little color. </div>
                 </div>
                 <div class="content__item">
                     <span class="content__number text-xs tracking-widest">4</span>
                     <h3 class="content__title text-3xl font-medium">Bellamio</h3>
                     <h4 class="content__subtitle text-lg">The only prerequisite is that it makes you happy</h4>
-                    <div class="content__text">See. We take the corner of the brush and let it play back-and-forth. This is unplanned it really just happens. I'm sort of a softy, I couldn't shoot Bambi except with a camera. I guess I'm a little weird. I like to talk to trees and animals. That's okay though; I have more fun than most people. We'll play with clouds today. Didn't you know you had that much power? You can move mountains. You can do anything. Let's go up in here, and start having some fun The least little bit can do so much. Work on one thing at a time. Don't get carried away - we have plenty of time. Put your feelings into it, your heart, it's your world. These trees are so much fun. I get started on them and I have a hard time stopping.</div>
+                    <div class="content__text">See. We take the corner of the brush and let it play back-and-forth. This
+                        is unplanned it really just happens. I'm sort of a softy, I couldn't shoot Bambi except with a
+                        camera. I guess I'm a little weird. I like to talk to trees and animals. That's okay though; I
+                        have more fun than most people. We'll play with clouds today. Didn't you know you had that much
+                        power? You can move mountains. You can do anything. Let's go up in here, and start having some
+                        fun The least little bit can do so much. Work on one thing at a time. Don't get carried away -
+                        we have plenty of time. Put your feelings into it, your heart, it's your world. These trees are
+                        so much fun. I get started on them and I have a hard time stopping.</div>
                 </div>
                 <div class="content__item">
                     <span class="content__number text-xs tracking-widest">5</span>
                     <h3 class="content__title text-3xl font-medium">Pastures</h3>
                     <h4 class="content__subtitle text-lg">Let's go up in here, and start having some fun</h4>
-                    <div class="content__text">So often we avoid running water, and running water is a lot of fun. Everyone is going to see things differently - and that's the way it should be. A big strong tree needs big strong roots. Steve wants reflections, so let's give him reflections. We don't have to be committed. We are just playing here. Making all those little fluffies that live in the clouds. Let's go up in here, and start having some fun The least little bit can do so much. Work on one thing at a time. Don't get carried away - we have plenty of time. Put your feelings into it, your heart, it's your world. These trees are so much fun. I get started on them and I have a hard time stopping.</div>
+                    <div class="content__text">So often we avoid running water, and running water is a lot of fun.
+                        Everyone is going to see things differently - and that's the way it should be. A big strong tree
+                        needs big strong roots. Steve wants reflections, so let's give him reflections. We don't have to
+                        be committed. We are just playing here. Making all those little fluffies that live in the
+                        clouds. Let's go up in here, and start having some fun The least little bit can do so much. Work
+                        on one thing at a time. Don't get carried away - we have plenty of time. Put your feelings into
+                        it, your heart, it's your world. These trees are so much fun. I get started on them and I have a
+                        hard time stopping.</div>
                 </div>
                 <div class="content__item">
                     <span class="content__number text-xs tracking-widest">6</span>
                     <h3 class="content__title text-3xl font-medium">Focus</h3>
                     <h4 class="content__subtitle text-lg">This is unplanned it really just happens</h4>
-                    <div class="content__text">But we're not there yet, so we don't need to worry about it. Now let's put some happy little clouds in here. What the devil. A thin paint will stick to a thick paint. I'm going to mix up a little color. We’ll use Van Dyke Brown, Permanent Red, and a little bit of Prussian Blue. Let's go up in here, and start having some fun The least little bit can do so much. Work on one thing at a time. Don't get carried away - we have plenty of time. Put your feelings into it, your heart, it's your world. These trees are so much fun. I get started on them and I have a hard time stopping.</div>
+                    <div class="content__text">But we're not there yet, so we don't need to worry about it. Now let's
+                        put some happy little clouds in here. What the devil. A thin paint will stick to a thick paint.
+                        I'm going to mix up a little color. We’ll use Van Dyke Brown, Permanent Red, and a little bit of
+                        Prussian Blue. Let's go up in here, and start having some fun The least little bit can do so
+                        much. Work on one thing at a time. Don't get carried away - we have plenty of time. Put your
+                        feelings into it, your heart, it's your world. These trees are so much fun. I get started on
+                        them and I have a hard time stopping.</div>
                 </div>
                 <button class="content__close">
                     <svg class="icon icon--longarrow">
                         <use xlink:href="#icon-longarrow"></use>
                     </svg>
                 </button>
-            </div> -->
-        </section>
+            </div>
 
+
+        </section>
+        <!-- <section id="slideshow">
+            <div class="entire-content">
+                <div class="content-carrousel">
+                    <figure class="shadow"><img
+                            src="https://images.pexels.com/photos/758733/pexels-photo-758733.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                    </figure>
+                    <figure class="shadow"><img
+                            src="https://images.pexels.com/photos/21261/pexels-photo.jpg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                    </figure>
+                    <figure class="shadow"><img
+                            src="https://images.pexels.com/photos/567973/pexels-photo-567973.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                    </figure>
+                    <figure class="shadow"><img
+                            src="https://images.pexels.com/photos/776653/pexels-photo-776653.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                    </figure>
+                    <figure class="shadow"><img
+                            src="https://images.pexels.com/photos/54630/japanese-cherry-trees-flowers-spring-japanese-flowering-cherry-54630.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                    </figure>
+                    <figure class="shadow"><img
+                            src="https://images.pexels.com/photos/131046/pexels-photo-131046.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                    </figure>
+                    <figure class="shadow"><img
+                            src="https://images.pexels.com/photos/302515/pexels-photo-302515.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                    </figure>
+                    <figure class="shadow"><img
+                            src="https://images.pexels.com/photos/301682/pexels-photo-301682.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                    </figure>
+                    <figure class="shadow"><img
+                            src="https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                    </figure>
+                </div>
+            </div>
+        </section> -->
         <!-- skill -->
         <section id="skill"
             class="flex-col before:content-[''] before:absolute before:left-1/2 before:translate-x-1/2 before:w-[1px] before:h-[2rem] before:bg-white before:mt-8 py-12 ">
-            <div class="container mx-auto flex flex-col justify-center mt-20" data-splitting data-effect14>
+            <div class="container mx-auto flex flex-col justify-center px-6 py-24" data-splitting data-effect14>
 
-                <h2 class="content__title grid text-center" data-splitting data-effect10><span
-                        class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Skill.</span></h2>
-
+                <h2 class="content__title grid text-center" data-splitting data-effect10>
+                    <span class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Skill.</span>
+                </h2>
                 <div
                     class="md:flex-row md:w-3/4 md:mx-auto flex flex-col  flex-wrap relative gap-8 items-start justify-items-start">
                     <div class="w-full flex flex-col shrink-0 h-full justify-center items-center">
@@ -770,7 +1199,7 @@
 
         <!-- edu -->
         <section id="edu">
-            <div class="container w-screen mx-auto flex flex-col justify-start">
+            <div class="container w-screen mx-auto flex flex-col justify-start px-6 py-24">
                 <h2 class="content content--full flex flex-col w-screen relative p-0">
                     <h2 class="content__title grid text-center" data-splitting data-effect10><span
                             class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Education.</span></h2>
@@ -865,7 +1294,42 @@
                 </section>
             </div>
         </section> -->
+        <section id="contact">
+            <div class="container mx-auto">
+                <h2 class="content w-full flex flex-col w-screen relative p-0">
+                    <h2 class="content__title grid text-center" data-splitting data-effect10><span
+                            class="md:text-[10vw] font-larger text-[15vw]  opacity-80">CONTACT.</span>
+                        <span class="text-3xl tracking-widest opacity-50 pb-10">Want to work together on a
+                            project?</span>
+                    </h2>
+                </h2>
+                <div class="flex flex-wrap w-full justify-center">
+                    <div class="form md:w-1/2 w-full">
+                        <form class="px-24">
+                            <p class="flex flex-col mb-6">
+                                <input type="text" id="name" name="name" placeholder="Hong Gil Dong"
+                                    class="peer w-full bg-transparent border border-[#e8e5de]/50 text-white bg-opacity-50 focus:border-[#e8e5de]/100 focus:caret-[#e8e5de]/80  focus:ring-1  focus:ring-[#e8e5de] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out z-10 placeholder-[#e8e5de]/20">
+                                <label for="name"
+                                    class="order-first peer-focus:text-[#e8e5de]/100 tracking-widest text-xs text-[#e8e5de]/50 mb-1">Name</label>
+                            </p>
+                            <p class="flex flex-col mb-6">
+                                <input type="text" id="email" name="email" placeholder="you@example.com"
+                                    class="peer w-full bg-transparent border border-[#e8e5de]/50 text-white bg-opacity-50 focus:border-[#e8e5de]/100 focus:caret-[#e8e5de]/80  focus:ring-1  focus:ring-[#e8e5de] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out z-10 placeholder-[#e8e5de]/20">
+                                <label for="email"
+                                    class="order-first peer-focus:text-[#e8e5de]/100 tracking-widest text-xs text-[#e8e5de]/50 mb-1">Email</label>
+                            </p>
+                            <p class="flex flex-col mb-6">
 
+                                <textarea name="" id="" cols="30" rows="10"
+                                    class="peer w-full bg-transparent border border-[#e8e5de]/50 text-white bg-opacity-50 focus:border-[#e8e5de]/100 focus: caret-[#e8e5de]/80  focus:ring-2  focus:ring-[#e8e5de] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out z-10 placeholder-[#e8e5de]/20"></textarea>
+                                <label for="message"
+                                    class=" order-first peer-focus:text-[#e8e5de]/100 tracking-widest text-xs text-[#e8e5de]/50 mb-1">Message</label>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <svg class="hidden">
         <symbol id="icon-arrow" viewBox="0 0 24 24">
@@ -893,66 +1357,58 @@
     <footer>
         <svg class=" w-full" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
             <polygon class="w-full" points="5,5 195,10 185,185 10,195" />
-
             <!-- Common use case: embed HTML text into SVG -->
             <foreignObject class="w-full text-center" y="15" width="100vh" height="100%">
-                <!--
+                <!--¸
                 In the context of SVG embedded in an HTML document, the XHTML
                 namespace could be omitted, but it is mandatory in the
                 context of an SVG document
               -->
                 PAKR JI EUN
-
             </foreignObject>
         </svg>
+        <div class="container mx-auto px-6 py-24">
+            <div class="flex justify-between px-8">
+                <div class=" text-2xl">© 2023 <!-- Park-Ji-Eun. All Rights Reserved. -->
+                </div>
+                <div class="time text-2xl flex justify-center items-center sm:flex relative gap-3">
+                    <span class="relative flex h-3 w-3">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-bgwhite opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-bgwhite"></span>
+                    </span>
+                    <span>SEOUL</span>
+                    <span id="currentTime"></span>
 
-        <div class="flex justify-between py-8">
-            <div class=" text-2xl">© 2023 <!-- Park-Ji-Eun. All Rights Reserved. -->
+                </div>
+                <a href="#" class="underline text-2xl">TOP</a>
             </div>
-            <div class="titme text-2xl invisible md:visible"> ● SEOUL <span id="currentTime"></span></div>
-            <a href="#" class="underline text-2xl">BACK TO TOP</a>
         </div>
     </footer>
+    <!-- gallery -->
 
-
-    <!-- <script src="js/res.js"></script> -->
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 4,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 5,
-                    spaceBetween: 50,
-                },
-            },
-        });
-    </script>
     <script src="js/res3.js"></script>
     <!-- <script src="js/res2.js"></script> -->
     <script src="js/mouse-effect.js"></script>
     <script src="js/marquee-effect.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/charming.min.js"></script>
-    <script src="js/TweenMax.min.js"></script>
-    <!-- <script src="js/demo.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/sliiide.min.js"></script>
+    
+
+
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/charming.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/demo.js"></script>
     <script src="js/textscramble.js"></script>
     <script src="js/splitting.js"></script>
     <script src="js/script.js"></script>

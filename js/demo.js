@@ -247,6 +247,14 @@
         setCurrent(isContentOpen) {
             this.isCurrent = true;
             this.DOM.el.classList.add('slide--current', 'slide--visible');
+            const imgElement = this.DOM.el.querySelector('.slide__img');
+            const imgURL = imgElement.getAttribute('src');
+            this.DOM.deco = document.querySelector('.slideshow__deco');
+            console.log(this.DOM.deco)
+
+            this.DOM.deco.style.backgroundImage = `url(${imgURL})`;
+            this.DOM.deco.style.filter = 'blur(50px) saturate(1)';
+
             // Position it on the current´s position.
             this.position(isContentOpen ? 5 : 2);
         }
@@ -275,9 +283,10 @@
             return this.isLeft;
         }
         // Check if the slide is the current one.
-        // isPositionedCenter() {
-        //     return this.isCurrent;
-        // }
+        isPositionedCenter() {
+            // return this.isCurrent;
+            return;
+        }
         // Reset classes and state.
         reset() {
             this.isRight = this.isLeft = this.isCurrent = false;
@@ -480,8 +489,10 @@
             this.DOM.el.classList.add('slideshow--previewopen');
             TweenMax.to(this.DOM.deco, .8, {
                 ease: Power4.easeInOut,
-                scaleX: winsize.width/this.DOM.deco.offsetWidth,
-                scaleY: winsize.height/this.DOM.deco.offsetHeight,
+                // scaleX: winsize.width/this.DOM.deco.offsetWidth,
+                // scaleY: winsize.height/this.DOM.deco.offsetHeight,
+                width: '100vw',
+                // height: '100vh',
                 x: -20,
                 y: 20,
                
@@ -506,8 +517,10 @@
 
             TweenMax.to(this.DOM.deco, .8, {
                 ease: Power4.easeInOut,
-                scaleX: 1,
-                scaleY: 1,
+                width: '100%',
+                // height: '100%',
+                // scaleX: 1,
+                // scaleY: 1,
                 x: 0,
                 y: 0
             });
