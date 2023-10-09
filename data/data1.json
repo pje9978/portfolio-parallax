@@ -1,0 +1,57 @@
+{
+  "work1": [
+    { 
+    "title": "패럴렉스 웹 포트폴리오",
+    "subTitle":"GSAP/Tailwind 활용한 페러렉스 웹 포트폴리오.",
+    "categroy":"3",
+    "part":["기획","디자인","퍼블리싱"],
+    "date":"2023-10",
+    "device":["데스크탑","태블릿","모바일"],
+    "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
+    "percent":"80% (20% 소스 활용)",
+    "dtl-html":"1",
+    "url":{
+      "pdf":"https://naver.com",
+      "web":"https://naver.com"
+     
+    },
+    "images":["","",""],
+    "review":"1"
+    },
+    { 
+    "title": "2",
+    "subTitle":"1",
+    "categroy":"1",
+    "part":["1"],
+    "date":"2023-08",
+    "device":["데스크탑","태블릿","모바일"],
+    "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
+    "percent":"1",
+    "dtl-html":"1",
+    "url":{
+      "pdf":"https://naver.com",
+      "web":"https://naver.com"
+     
+    },
+    "review":""
+    }
+  ],
+  "work2": [
+    { 
+    "title": "",
+    "subTitle":"",
+    "categroy":"",
+    "part":[""],
+    "date":"2023-08",
+    "device":["데스크탑","태블릿","모바일"],
+    "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
+    "percent":"",
+    "dtl-html":"",
+    "url":{
+      "pdf":"https://naver.com",
+      "web":"https://naver.com"
+    },
+    "review":""
+    }
+  ]
+}

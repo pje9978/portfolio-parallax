@@ -23,10 +23,6 @@ body {
   background: #0d0d0d;
 }
 
-.modal-open {
-  overflow: hidden;
-}
-
 @layer utilities {
   .nav-after {
     @apply after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[3px] after:bg-[#eee] after:ease-in after:duration-300;
@@ -43,31 +39,81 @@ body {
     animation-play-state: paused;
   }
 }
-.slide__chap1 {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/chapterImg_1.png");
+.swiper-slide:nth-child(1) {
+  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-ip-case2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.swiper-slide:nth-child(2) {
+  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-pencil-cover.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.swiper-slide:nth-child(3) {
+  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-watch-case.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.swiper-slide:nth-child(4) {
+  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-gal-case1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.swiper-slide:nth-child(5) {
+  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-ip-case.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.swiper-slide:nth-child(6) {
+  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-airpod-case.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.swiper-slide:nth-child(7) {
+  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-buds-case.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.swiper-slide:nth-child(8) {
+  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-buds-case2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.swiper-slide:nth-child(9) {
+  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-cardholder.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.swiper-slide:nth-child(10) {
+  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-gal-case2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.swiper-slide:nth-child(11) {
+  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-z-case1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.swiper-slide:nth-child(12) {
+  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-z-case2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.slide__chap2 {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/chapterImg_2.png");
-}
-
-.slide__chap3 {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/chapterImg_3.png");
-}
-
-.slide__chap4 {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/chapterImg_4.png");
-}
-
-.slide__chap5 {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/chapterImg_5.jpg");
-}
-
-.slide4,
-.slide5,
-.slide6,
-.slide7 {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/mobile_cover.jpg");
+.modal-open {
+  overflow: hidden;
 }
 
 .bg-pin .char {
@@ -371,7 +417,7 @@ section#work-gallery #desc .content__item {
   overflow: hidden;
   display: flex;
   flex-flow: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
 }
 section#work-gallery #desc .content__item .content__number {
@@ -666,6 +712,9 @@ section#work-gallery .slideshow--previewopen .nav--prev {
   transform: translate(-50%, 0);
   transition-delay: 2.5s;
   transition: all 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  -moz-transition: all 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  -ms-transition: all 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  -o-transition: all 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .gallery-slide.show-cover {
   transform: translate(0, 0);
@@ -758,6 +807,9 @@ section#work-gallery .slideshow--previewopen .nav--prev {
 }
 
 .rfa-sl-container-start {
+  background-blend-mode: multiply;
+  background-color: #0e0e0e;
+  background-blend-mode: hard-light;
   top: 0;
   right: 0;
   bottom: 0;
@@ -950,13 +1002,13 @@ section#work-gallery .slideshow--previewopen .nav--prev {
   .rfa-chap-sect-wrapper .swiper-slide-prev,
   .rfa-chap-sect-wrapper .swiper-slide-next {
     height: 80%;
-    background-color: #cd2e42;
+    background-color: black;
     transition: height 300ms;
   }
   .swiper-slide-prev .slide-cover,
   .swiper-slide-next .slide-cover,
   .slide-cover {
-    background-color: #cd2e42;
+    background-color: black;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -965,18 +1017,23 @@ section#work-gallery .slideshow--previewopen .nav--prev {
     opacity: 0.75;
     transition: opacity 300ms;
   }
+  .swiper-slide-active {
+    height: !important;
+  }
   .swiper-slide-active .slide-cover {
     position: absolute;
     opacity: 0;
     transition: opacity 300ms, transform 310ms 100ms;
     height: 100%;
     width: 100%;
-    background-color: #cd2e42;
+    background-color: #black;
     z-index: 2;
     transform: scale(0);
   }
+  /*Tablet*/
+  /*    Desktop    */
 }
-@media only screen and (min-width: 736px) {
+@media only screen and (min-width: 667px) and (min-width: 736px) {
   /* 736px */
   /*-------------------------------------------------------*/
   /* Homepage: 736
@@ -993,8 +1050,7 @@ section#work-gallery .slideshow--previewopen .nav--prev {
   /* Swiper: 736
   /*-------------------------------------------------------*/
 }
-/*Tablet*/
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 667px) and (min-width: 768px) {
   /* 768 */
   /*-------------------------------------------------------*/
   /* Please Rotate Device: 768
@@ -1069,7 +1125,7 @@ section#work-gallery .slideshow--previewopen .nav--prev {
     bottom: 15%;
   }
 }
-@media only screen and (min-width: 812px) {
+@media only screen and (min-width: 667px) and (min-width: 812px) {
   /* 812 */
   /*-------------------------------------------------------*/
   /* Please Rotate Device: 812
@@ -1078,8 +1134,7 @@ section#work-gallery .slideshow--previewopen .nav--prev {
     display: flex;
   }
 }
-/*    Desktop    */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 667px) and (min-width: 1024px) {
   /* 1024 */
   /*-------------------------------------------------------*/
   /* Video: 1024
@@ -1109,7 +1164,7 @@ section#work-gallery .slideshow--previewopen .nav--prev {
     bottom: 12%;
   }
 }
-@media only screen and (min-width: 1140px) {
+@media only screen and (min-width: 667px) and (min-width: 1140px) {
   /* 1140 */
   /*-------------------------------------------------------*/
   /* Swiper: 1140
@@ -1131,10 +1186,10 @@ section#work-gallery .slideshow--previewopen .nav--prev {
     width: 550px;
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 667px) and (min-width: 1440px) {
   /* 1440 */
 }
-@media only screen and (min-width: 1662px) {
+@media only screen and (min-width: 667px) and (min-width: 1662px) {
   /* 1662px */
   /*-------------------------------------------------------*/
   /* Homepage: 1662

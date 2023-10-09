@@ -10,20 +10,17 @@
 
 }
 
+
 html,body {
   width: 100%;
   height: 100%;
 }
+
 *, *::before, *::after { box-sizing:border-box }
 
 body {
 	margin:0;
   background:#0d0d0d;
-
-}
-
-.modal-open {
-  overflow: hidden;
 }
 
 
@@ -46,30 +43,55 @@ body {
     animation-play-state: paused;
   }
 }
+// variables
+$galleryImg:"../../portfolio/work/2016-2022_mercury/thumb";
 
 // image url
-.slide__chap1 {
-	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/chapterImg_1.png');
-}
-.slide__chap2 {
-	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/chapterImg_2.png');
-}
-.slide__chap3 {
-	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/chapterImg_3.png');
-}
-.slide__chap4 {
-	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/chapterImg_4.png');
-}
-.slide__chap5 {
-	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/chapterImg_5.jpg');
-}
-.slide4,
-.slide5,
-.slide6, 
-.slide7 {
-	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/mobile_cover.jpg');
-}
+$galleryUrls: (
+thum-ip-case2,
+  thum-pencil-cover,
+  thum-watch-case,
+  thum-gal-case1,
+  thum-ip-case,
+  thum-airpod-case,
+  thum-buds-case,
+  thum-buds-case2,
+  thum-cardholder,
+  thum-gal-case2,
+  thum-z-case1,
+  thum-z-case2
+);
 
+.swiper-slide {
+  @each $galleryUrl in $galleryUrls{
+    $i : index($galleryUrls,$galleryUrl);
+    &:nth-child(#{$i}){
+      background-image: url("#{$galleryImg}/#{$galleryUrl}.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      
+   
+    }
+  }
+}
+// .slide__chap1 {background-image: url('../../portfolio/work/2016-2022_mercury/thumb/thum-airpod-case.jpg');}
+// .slide__chap2 {background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/chapterImg_2.png');}
+// .slide__chap3 {background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/chapterImg_3.png');}
+// .slide__chap4 {background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/chapterImg_4.png');}
+// .slide__chap5 {background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/chapterImg_5.jpg');}
+// .slide4,
+// .slide5,
+// .slide6, 
+// .slide7 {
+// 	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/mobile_cover.jpg');
+// }
+
+
+
+.modal-open {
+  overflow: hidden;
+}
 
 
 
@@ -303,7 +325,7 @@ section#work-gallery {
       overflow: hidden;
       display: flex;
       flex-flow: column;
-      align-items: start;
+      align-items: flex-start;
       justify-content: center;
 
       .content__number {
@@ -781,7 +803,9 @@ section#work-gallery {
 }
 
 .rfa-sl-container-start{
-
+  background-blend-mode: multiply;
+  background-color: #0e0e0e;
+  background-blend-mode: hard-light;
   top: 0;
   right: 0;
   bottom: 0;
@@ -1023,6 +1047,7 @@ z-index: 6;
 /*-------------------------------------------------------*/
 .slide-links-container {
   width: 399px;
+  
 }
 
 }
@@ -1039,18 +1064,19 @@ z-index: 6;
   transform: translate(0, -50%);
   -webkit-transition: height 300ms;
     transition: height 300ms;
+
 }
 .rfa-chap-sect-wrapper .swiper-slide-prev, 
 .rfa-chap-sect-wrapper .swiper-slide-next {
   height: 80%;
-  background-color: #cd2e42;
+  background-color: black;
   -webkit-transition: height 300ms;
     transition: height 300ms;
 }
 .swiper-slide-prev .slide-cover,
 .swiper-slide-next .slide-cover,
 .slide-cover {
-  background-color: #cd2e42;
+  background-color: black;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -1069,7 +1095,7 @@ z-index: 6;
       transition: opacity 300ms, transform 310ms 100ms;
     height: 100%;
     width: 100%;
-    background-color: #cd2e42;
+    background-color: #black;
     z-index: 2;
     transform: scale(0);
   }
@@ -1141,6 +1167,10 @@ z-index: 6;
 /*-------------------------------------------------------*/
 /* Swiper: 768
 /*-------------------------------------------------------*/
+.rfa-slide-container {
+
+
+}
 .rfa-chap-sect-slide {
   height: 80%;
 }
@@ -1274,4 +1304,4 @@ z-index: 6;
   .rfa-sl-container-start h1, .rfa-sl-container-start p, .hp-cta-wrapper {
     width: 590px;
   }
-}
+}}

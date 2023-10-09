@@ -60,12 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
     pagination.style.width = '60%';
     pagination.style.bottom = '0';
 
-    // slides.forEach(slide => {
-    //    slide.style.width = '50%';
-    // });
-
-
-
     // 현재 시간을 가져오는 함수
     function getCurrentTime() {
         var date = new Date();
@@ -124,10 +118,19 @@ document.addEventListener("DOMContentLoaded", function () {
     // var loadButton = document.getElementById("load");
     // loadButton.addEventListener("click", showMoreDivs);
 
+	const slideActive = document.querySelector('.swiper-slide.swiper-slide-active');
 
+	const siblingIndex = Array.from(slideActive.parentNode.children).indexOf(slideActive) + 2;
+	const nthChildSelector = `.swiper-slide:nth-child(${siblingIndex})`;
+	const url = window.getComputedStyle(document.querySelector(nthChildSelector));
+	console.log(document.querySelector(`.swiper-slide:nth-child(${siblingIndex})`).style)
 
+	// this.DOM.deco = document.querySelector('.slideshow__deco');
+	// console.log(this.DOM.deco)
 
-    
+	// this.DOM.deco.style.backgroundImage = `url(${imgURL})`;
+	// this.DOM.deco.style.filter = 'blur(50px) saturate(1)';
+
 
 });
 $(document).ready(function () {
@@ -153,6 +156,7 @@ $(document).ready(function () {
 	/* Swiper Slides 1
 	-------------------------------------------------------*/
 	var mySwiper = new Swiper(".rfa-slide-container--chapter-select", {
+		initialSlide: 1,
 		direction: "horizontal",
 		keyboardControl: true,
 		paginationType: "bullets",
@@ -197,6 +201,7 @@ $(document).ready(function () {
 	/* Swiper Slides 2
 	-------------------------------------------------------*/
 	var mySwiperTwo = new Swiper(".rfa-slide-container--chapter", {
+		initialSlide: 1,
 		slidesPerView: 1,
 		direction: "horizontal",
 		keyboardControl: true,
@@ -211,6 +216,7 @@ $(document).ready(function () {
 	/* Swiper Two-way Nav Control
 	-------------------------------------------------------*/
 	var slideLinks = new Swiper(".slide-links-container", {
+		initialSlide: 1,
 		direction: "horizontal",
 		spaceBetween: 0,
 		centeredSlides: true,
