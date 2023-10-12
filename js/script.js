@@ -37,29 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     openPopup();
     closePopup();
-
-    // Swiper 컴포넌트 초기화
-    var bullet = ['1번', '2번', '3번'];
-    
-    var swiper1 = new Swiper('#work .swiper-container', {
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<div class="' + className + '"><span>' + (bullet[index]) + '</span></div>';
-        }
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-    // const slides = document.querySelectorAll('.swiper-slide');
-    const pagination = document.querySelector('.swiper-pagination');
-    // const buttonLock = document.querySelector('.swiper-button-lock ');
-    pagination.style.width = '60%';
-    pagination.style.bottom = '0';
-
+	
     // 현재 시간을 가져오는 함수
     function getCurrentTime() {
         var date = new Date();
@@ -90,49 +68,101 @@ document.addEventListener("DOMContentLoaded", function () {
     var visibleCount = 3; // 초기 보이는 갯수
     var increment = 2; // 클릭 시 추가로 보이는 갯수
 
-
-    function showMoreDivs(e) {
-        e.preventDefault(); // 클릭 이벤트의 기본 동작 중지
-
-        for (
-        var i = visibleCount;
-        i < Math.min(visibleCount + increment, divs.length);
-        i++
-        ) {
-        divs[i].style.display = "block";
-        }
-        visibleCount += increment;
-
-        if (visibleCount >= divs.length) {
-        // 컨텐츠 남아있는지 확인
-        alert("게시물의 끝입니다."); // 컨텐츠 없을 시 alert 창 띄우기
-        loadButton.removeEventListener("click", showMoreDivs);
-        loadButton.disabled = true;
-        }
-    }
-
     for (var j = visibleCount; j < divs.length; j++) {
         divs[j].style.display = "none";
+
     }
 
-    // var loadButton = document.getElementById("load");
-    // loadButton.addEventListener("click", showMoreDivs);
 
-	const slideActive = document.querySelector('.swiper-slide.swiper-slide-active');
+    // Swiper 컴포넌트 초기화
+    var bullet = ['1번', '2번', '3번'];
+    
+    var swiper1 = new Swiper('#work .swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<div class="' + className + '"><span>' + (bullet[index]) + '</span></div>';
+        }
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
 
-	const siblingIndex = Array.from(slideActive.parentNode.children).indexOf(slideActive) + 2;
-	const nthChildSelector = `.swiper-slide:nth-child(${siblingIndex})`;
-	const url = window.getComputedStyle(document.querySelector(nthChildSelector));
-	console.log(document.querySelector(`.swiper-slide:nth-child(${siblingIndex})`).style)
+    const pagination = document.querySelector('.swiper-pagination');
+ 
+    pagination.style.width = '60%';
+    pagination.style.bottom = '0';
 
-	// this.DOM.deco = document.querySelector('.slideshow__deco');
-	// console.log(this.DOM.deco)
 
-	// this.DOM.deco.style.backgroundImage = `url(${imgURL})`;
-	// this.DOM.deco.style.filter = 'blur(50px) saturate(1)';
 
+	var mySwiper = new Swiper(".rfa-slide-container--chapter-select", {
+		initialSlide: 1,
+		direction: "horizontal",
+		keyboardControl: true,
+		paginationType: "bullets",
+		pagination: ".swiper-pagination",
+		paginationClickable: true,
+		breakpoints: {
+		  320: {
+			slidesPerView: 1,
+			spaceBetween: 0,
+			centeredSlides:false
+		  },
+		  414:{
+			  slidesPerView :1 ,
+			  spaceBetween :0 ,
+			  centeredSlides:false
+		  },
+			 1024:{
+			  slidesPerView:"auto",
+			  spaceBetween :50 ,
+			  centeredSlides:true
+		  },
+		  2560:{
+			  slidesPerView:"auto",
+			  spaceBetween :50 ,
+			  centeredSlides:true
+		 }
+		  
+	  },
+		
+		mousewheelControl:true, 
+		spaceBetween :0,
+		
+		hashnav:true, 
+		hashnavWatchState:true,
+		
+		onInit:function(){
+			console.log("Hey Guys");
+			updateBackgroundImage();
+		},
+		on:{
+			slideChange:function(){
+			updateBackgroundImage();
+		}
+		}
+	});
+	  
+	function updateBackgroundImage() {
+		const activeSlide = document.querySelector('.rfa-chap-sect-slide.swiper-slide-active');
+	
+		if (activeSlide) {
+		  const backgroundImage = window.getComputedStyle(activeSlide).getPropertyValue('background-image');
+		  const url = backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
+		  const rfaSlideContainer = document.querySelector('.slide-deco');
+		  rfaSlideContainer.style.backgroundImage = `url(${url})`;
+		  rfaSlideContainer.style.filter = 'blur(50px) saturate(1)';
+		  console.log(backgroundImage);
+	   }
+	}
+	
 
 });
+
+
 $(document).ready(function () {
 	"use strict";
 

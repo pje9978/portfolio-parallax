@@ -7,8 +7,10 @@ fetch(
     }).then(function (json) {
         // 2
         console.log(JSON.stringify(json));
-        const jsonData = JSON.stringify(json)
+        // const jsonData = JSON.stringify(json)
         // 3
+        const jsonData = JSON.parse(JSON.stringify(json));
+
         workData(jsonData);
         console.log(jsonData)
 
@@ -21,28 +23,27 @@ fetch(
     
 function workData(data) {
     console.log(data)
-
     const sections = document.querySelectorAll('.workItem');
 
-    for (const key in data) {
+    Object.keys(data).forEach((key, index) => {
+        const section = sections[index];
+        const item = data[key];
+        console.log((data[key]))
         
-        const workItems = data[key]
-        console.log(JSON.stringify(data.work1))
-
-        Object.entries(workItems).forEach(([key,value]) => {
-             workItems[key] = value;
-            
-            const div = document.createElement('div');
-            const divtitle = document.createElement('div');
-            div.classList.add(key);
-            /* div.dataset[key] = value; */
-            divtitle.textContent = key;
-            div.textContent = value;
-            
-            section.querySelector('.console').appendChild(divtitle);
-            section.querySelector('.console').appendChild(div);
-        });
-    }
+        Object.keys(item).forEach(subKey => {
+          const value = item[subKey];
+          
+          const div = document.createElement('div');
+          const divtitle = document.createElement('div');
+          div.classList.add(subKey);
+          /* div.dataset[subKey] = value; */
+          divtitle.textContent = subKey;
+          div.textContent = value;
+          
+          section.querySelector('.work').appendChild(divtitle);
+          section.querySelector('.work').appendChild(div);
+         });
+      });
  
     // for (const key in data) {
     //     console.log(key);

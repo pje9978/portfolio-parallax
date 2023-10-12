@@ -247,13 +247,26 @@
         setCurrent(isContentOpen) {
             this.isCurrent = true;
             this.DOM.el.classList.add('slide--current', 'slide--visible');
-            const imgElement = this.DOM.el.querySelector('.slide__img');
-            const imgURL = imgElement.getAttribute('src');
-            this.DOM.deco = document.querySelector('.slideshow__deco');
-            console.log(this.DOM.deco)
+            // const imgElement = this.DOM.el.querySelector('.slide__img');
+            // console.log(this.DOM.el)
+            // const imgURL = imgElement.getAttribute('src');
+            // this.DOM.deco = document.querySelector('.slideshow__deco');
+            // console.log(this.DOM.deco)
 
-            this.DOM.deco.style.backgroundImage = `url(${imgURL})`;
-            this.DOM.deco.style.filter = 'blur(50px) saturate(1)';
+            // this.DOM.deco.style.backgroundImage = `url(${imgURL})`;
+            // this.DOM.deco.style.filter = 'blur(50px) saturate(1)';
+
+            const bgSlide = document.querySelector(".slideshow__deco");
+            const currSlide = document.querySelector(".slide.slide--current.slide--visible .slide__img");
+            const backgroundImageUrl = getComputedStyle(currSlide).backgroundImage;
+            
+            bgSlide.style.backgroundImage = backgroundImageUrl;
+            bgSlide.style.width = "80vw";
+            bgSlide.style.height = "100vh";
+            bgSlide.style.filter = 'blur(50px) saturate(1)';
+            bgSlide.style.opacity = '0.3';
+            bgSlide.style.backgroundSize = 'contain';
+
 
             // Position it on the current´s position.
             this.position(isContentOpen ? 5 : 2);
@@ -263,6 +276,7 @@
             this.isRight = this.isCurrent = false;
             this.isLeft = true;
             this.DOM.el.classList.add('slide--visible');
+            this.DOM.el.classList.add('slide--left');
             // Position it on the left position.
             this.position(isContentOpen ? 0 : 1);
         }
@@ -271,6 +285,7 @@
             this.isLeft = this.isCurrent = false;
             this.isRight = true;
             this.DOM.el.classList.add('slide--visible');
+            this.DOM.el.classList.add('slide--right');
             // Position it on the right position.
             this.position(isContentOpen ? 4 : 3);
         }
@@ -290,7 +305,7 @@
         // Reset classes and state.
         reset() {
             this.isRight = this.isLeft = this.isCurrent = false;
-            this.DOM.el.classList = 'slide';
+            this.DOM.el.className = 'slide';
         }
         // hide() {
         //     TweenMax.set(this.DOM.imgWrap, {x:0, y:0, rotationX:0, rotationY:0, rotationZ:0, opacity:0});
@@ -481,31 +496,31 @@
             window.addEventListener('resize', this.resizeFn);
         }
         showContent() {
-            this.DOM.el.parentNode.style.opacity = '1';
-            if ( this.isContentOpen || this.isAnimating ) return;
-            allowTilt = false;
-            this.isContentOpen = true;
+            // this.DOM.el.parentNode.style.opacity = '1';
+            // if ( this.isContentOpen || this.isAnimating ) return;
+            // allowTilt = false;
+            // this.isContentOpen = true;
             
-            this.DOM.el.classList.add('slideshow--previewopen');
-            TweenMax.to(this.DOM.deco, .8, {
-                ease: Power4.easeInOut,
-                // scaleX: winsize.width/this.DOM.deco.offsetWidth,
-                // scaleY: winsize.height/this.DOM.deco.offsetHeight,
-                width: '100vw',
-                // height: '100vh',
-                x: -20,
-                y: 20,
+            // this.DOM.el.classList.add('slideshow--previewopen');
+            // TweenMax.to(this.DOM.deco, .8, {
+            //     ease: Power4.easeInOut,
+            //     // scaleX: winsize.width/this.DOM.deco.offsetWidth,
+            //     // scaleY: winsize.height/this.DOM.deco.offsetHeight,
+            //     width: '100vw',
+            //     // height: '100vh',
+            //     x: -20,
+            //     y: 20,
                
-            });
-            // Move away right/left slides.
-            this.prevSlide.moveToPosition({position: -2});
-            this.nextSlide.moveToPosition({position: 2});
-            // Position the current slide and reset its image scale value.
-            this.currentSlide.moveToPosition({position: 3, resetImageScale: true});
-            // Show content and back arrow (to close the content).
-            this.contents[this.current].show();
-            // Hide texts.
-            this.currentSlide.hideTexts(true);
+            // });
+            // // Move away right/left slides.
+            // this.prevSlide.moveToPosition({position: -2});
+            // this.nextSlide.moveToPosition({position: 2});
+            // // Position the current slide and reset its image scale value.
+            // this.currentSlide.moveToPosition({position: 3, resetImageScale: true});
+            // // Show content and back arrow (to close the content).
+            // this.contents[this.current].show();
+            // // Hide texts.
+            // this.currentSlide.hideTexts(true);
         }
         hideContent() {
             if ( !this.isContentOpen || this.isAnimating ) return;
@@ -518,7 +533,7 @@
             TweenMax.to(this.DOM.deco, .8, {
                 ease: Power4.easeInOut,
                 width: '100%',
-                // height: '100%',
+                height: '100%',
                 // scaleX: 1,
                 // scaleY: 1,
                 x: 0,
@@ -573,7 +588,7 @@
             // Move slides (the previous, current, next and upcoming slide).
             this.prevSlide.moveToPosition({position: direction === 'next' ? -2 : 0, delay: direction === 'next' ? 0 : 0.14}).then(() => {
                 if ( direction === 'next' ) {
-                    // this.prevSlide.hide();
+                    this.prevSlide.hide();
                 }
             });
             
@@ -584,7 +599,7 @@
             
             this.nextSlide.moveToPosition({position: direction === 'next' ? 0 : 2, delay: direction === 'next' ? 0.14 : 0 }).then(() => {
                 if ( direction === 'prev' ) {
-                    // this.nextSlide.hide();
+                    this.nextSlide.hide();
                 }
             });
 
@@ -599,7 +614,7 @@
                 // Reset classes.
                 [this.nextSlide,this.currentSlide,this.prevSlide].forEach(slide => slide.reset());
                 this.render();
-                allowTilt = true;
+                // allowTilt = true;
                 this.isAnimating = false;
             });
         }
@@ -619,4 +634,6 @@
     // Preload all the images in the page..
     const loader = document.querySelector('.loader');
     imagesLoaded(document.querySelectorAll('.slide__img'), {background: true}, () => document.body.classList.remove('loading'));
+
 }
+
