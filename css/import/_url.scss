@@ -1,0 +1,48 @@
+
+// variables
+$imgPath:"../images/gallery";
+
+// index gallery image url
+$galleryThumbUrls: (
+  thumb-flip-glass,
+  thumb-flip-luster2,
+  thumb-ip-jelly,
+  thumb-watch-case,
+  thumb-pencil,
+  thumb-flip-pard,
+  thumb-airpod-silicone,
+  thumb-ip-silicone,
+  thumb-buds-jelly
+);
+
+$galleryDtlUrls: (
+  dtl-flip-glass,
+  dtl-flip-luster,
+  dtl-ip-jelly,
+  dtl-watch-case,
+  dtl-pencil,
+  dtl-flip-pard,
+  dtl-airpod-silicone,
+  dtl-ip-silicone,
+  dtl-buds-jelly
+);
+.slide {
+  @each $galleryThumbUrl in $galleryThumbUrls {
+    $i: index($galleryThumbUrls, $galleryThumbUrl);
+    &:nth-child(#{$i}) {
+      .slide__img {
+        background-image: url("#{$imgPath}/#{$galleryThumbUrl}.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}
+
+//proj1 images url 
+
+#web_plantShop {
+  .macbook .viewport{ background-image: url("../../images/subpages/proj1/intro.png");}
+
+}

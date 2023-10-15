@@ -1,229 +1,16 @@
-
-:root {
-    --bg-black : hsl(0, 0%, 5%);
-    --text-black : hsl(0, 0%, 5%);
-    --text-white : hsl(42, 18%, 89%);
-    --bg-white : hsl(42, 18%, 89%);
-    --primary: #ffefe5;
-    --secondary: #0A3FFF;
-    --page-padding: 1.5rem 2rem;
-    --bg:#1a1a1a;
-    --min-size:200px;
-}
-
-
-html,body {
-  width: 100%;
-  height: 100%;
-}
-
-*, *::before, *::after { box-sizing:border-box }
-
-body {
-	margin:0;
-  background:#0d0d0d;
-}
-
-
-@layer utilities {
-    .nav-after {
-      @apply after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[3px] after:bg-[#eee] after:ease-in after:duration-300;
-    }
-}
-
-@keyframes loaderAnim {
-	to {
-		opacity: 1;
-		transform: scale3d(0.5,0.5,1);
-	}
-}
-
-
-@media (prefers-reduced-motion: reduce) {
-  .icon-group {
-    animation-play-state: paused;
-  }
-}
-
-
-// variables
-$imgPath:"../images/gallery";
-
-// image url
-$galleryThumbUrls: (
-  thumb-flip-glass,
-  thumb-flip-luster2,
-  thumb-ip-jelly,
-  thumb-watch-case,
-  thumb-pencil,
-  thumb-flip-pard,
-  thumb-airpod-silicone,
-  thumb-ip-silicone,
-  thumb-buds-jelly
-);
-
-$galleryDtlUrls: (
-  dtl-flip-glass,
-  dtl-flip-luster,
-  dtl-ip-jelly,
-  dtl-watch-case,
-  dtl-pencil,
-  dtl-flip-pard,
-  dtl-airpod-silicone,
-  dtl-ip-silicone,
-  dtl-buds-jelly
-);
-.slide {
-  @each $galleryThumbUrl in $galleryThumbUrls {
-    $i: index($galleryThumbUrls, $galleryThumbUrl);
-    &:nth-child(#{$i}) {
-      .slide__img {
-        background-image: url("#{$imgPath}/#{$galleryThumbUrl}.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-    }
-  }
-}
-
-
-// .slide__img:nth-child(1){background: url("../images/gallery/thumb-airpod-silicone.jpg")}
-// .slide__img:nth-child(2){background: url("../images/gallery/thumb-buds-jelly.jpg")}
-
-
-// variables
-$galleryImg:"../../portfolio/work/2016-2022_mercury/thumb";
-
-// image url
-$galleryUrls: (
-thum-ip-case2,
-  thum-pencil-cover,
-  thum-watch-case,
-  thum-gal-case1,
-  thum-ip-case,
-  thum-airpod-case,
-  thum-buds-case,
-  thum-buds-case2,
-  thum-cardholder,
-  thum-gal-case2,
-  thum-z-case1,
-  thum-z-case2
-);
-
-.rfa-chap-sect-slide {
-  @each $galleryUrl in $galleryUrls{
-    $i : index($galleryUrls,$galleryUrl);
-    &:nth-child(#{$i}){
-      background-image: url("#{$galleryImg}/#{$galleryUrl}.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      
-   
-    }
-  }
-}
-
+@import "./common/base";
+@import "./lib/loading";
+@import "./lib/bgGradient";
+@import "./lib/macbook";
+@import "./import/url";
 
 .modal-open {
   overflow: hidden;
 }
 
-
 .bg-pin .char {display: inline !important; }
 
 
-.ball {
-  --delay:0s;
-  --size:0.4;
-  --speed: 20s;
-  aspect-ratio:1;
-  width:calc( 150% * var(--size) );
-  background: linear-gradient(259.53deg, #0A3FFF 6.53%, #ffb58b 95.34%);
-  filter:blur( 10vw );
-  border-radius:50%;
-  position:absolute;
-  top:0;
-  left:0;
-  mix-blend-mode:luminosity;
-  animation: loop var(--speed) infinite linear;
-  animation-delay: var(--delay);
-  transform-origin: 50% 50%;
-  opacity:0.4;
-  -webkit-animation: loop var(--speed) infinite linear;
-  z-index: 1;
-}
-
-@keyframes loop {
-  0% { transform: translate3D( 0%, 51%, 0 ) rotate(0deg); }
-  5% { transform: translate3D( 8%, 31%, 0 ) rotate(18deg); }
-  10% { transform: translate3D( 22%, 13%, 0 ) rotate(36deg); -webkit-transform: translate3D( 22%, 13%, 0 ) rotate(36deg); -moz-transform: translate3D( 22%, 13%, 0 ) rotate(36deg); -ms-transform: translate3D( 22%, 13%, 0 ) rotate(36deg); -o-transform: translate3D( 22%, 13%, 0 ) rotate(36deg); }
-  15% { transform: translate3D( 40%, 2%, 0 ) rotate(54deg); }
-  20% { transform: translate3D( 46%, 21%, 0 ) rotate(72deg); }
-  25% { transform: translate3D( 50%, 47%, 0 ) rotate(90deg); }
-  30% { transform: translate3D( 53%, 80%, 0 ) rotate(108deg); }
-  35% { transform: translate3D( 59%, 98%, 0 ) rotate(125deg); }
-  40% { transform: translate3D( 84%, 89%, 0 ) rotate(144deg); }
-  45% { transform: translate3D( 92%, 68%, 0 ) rotate(162deg); }
-  50% { transform: translate3D( 99%, 47%, 0 ) rotate(180deg); }
-  55% { transform: translate3D( 97%, 21%, 0 ) rotate(198deg); }
-  60% { transform: translate3D( 80%, 7%, 0 ) rotate(216deg); -webkit-transform: translate3D( 80%, 7%, 0 ) rotate(216deg); -moz-transform: translate3D( 80%, 7%, 0 ) rotate(216deg); -ms-transform: translate3D( 80%, 7%, 0 ) rotate(216deg); -o-transform: translate3D( 80%, 7%, 0 ) rotate(216deg); }
-  65% { transform: translate3D( 68%, 25%, 0 ) rotate(234deg); }
-  70% { transform: translate3D( 59%, 41%, 0 ) rotate(251deg); }
-  75% { transform: translate3D( 50%, 63%, 0 ) rotate(270deg); }
-  80% { transform: translate3D( 38%, 78%, 0 ) rotate(288deg); }
-  85% { transform: translate3D( 21%, 92%, 0 ) rotate(306deg); }
-  90% { transform: translate3D( 3%, 79%, 0 ) rotate(324deg); }
-  100% { transform: translate3D( 0%, 51%, 0 ) rotate(360deg); }
-  
-}
-
-.glow-container {
-  //overflow-x:hidden;
-  //overflow-y: hidden;
-  position:fixed;
-  opacity: 0.3;
-  width:100%;
-  max-height:100%;
-
-}
-
-/* Page Loader */
-.js .loading::before {
-	content: '';
-	position: fixed;
-	z-index: 100000;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: var(--color-bg);
-}
-
-.js .loading::after {
-	content: '';
-	position: fixed;
-	z-index: 100000;
-	top: 50%;
-	left: 50%;
-	width: 60px;
-	height: 60px;
-	margin: -30px 0 0 -30px;
-	pointer-events: none;
-	border-radius: 50%;
-	opacity: 0.4;
-	background: var(--color-link);
-	animation: loaderAnim 0.7s linear infinite alternate forwards;
-}
-
-// .hidden {
-// 	position: absolute;
-// 	overflow: hidden;
-// 	width: 0;
-// 	height: 0;
-// 	pointer-events: none;
-// }
 
 .message {
 	position: relative;
@@ -463,8 +250,8 @@ section#gallery {
         z-index: 1000;
 
         .slide__title {
-          font-size: 3.25rem;
-          margin: 0 0 0.25rem;
+          // font-size: 3.25rem;
+          // margin: 0 0 0.25rem;
         }
         .slide__title ,
         .slide__subtitle,

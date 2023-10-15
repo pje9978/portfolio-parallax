@@ -16,13 +16,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="js/include.js"></script>
    
     <script>
         document.documentElement.className = "js";
         var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
         supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
     </script>
-   <script>
+    <script>
         tailwind.config = {
             // important:true,
             theme: {
@@ -70,47 +71,37 @@
 </head>
 
 <body class="loading  bg-bgblack text-textwhite box-border">
+    <div include-html="./pages/common/gnb.html"></div>
+    <div include-html="./pages/common/lnb.html"></div>
+    <div include-html="./pages/common/bgGradient.html"></div>
 
-    <div class="glow-container ">
-        <div class="ball"></div>
-        <div class="ball" style="--delay:-12s;--size:0.35;--speed:25s;"></div>
-        <div class="ball" style="--delay:-10s;--size:0.3;--speed:15s;"></div>
+    <div id="loading-screen" class="page hidden fixed  left-0 top-0 w-full h-full flex justify-center items-center bg-[--primary]">
+        <div class="loading-blurbs w-[400px] h-[180px] text-center relative">
+          <code class="python">
+            print("<strong>Loading...</strong>")
+          </code>
+           <code class="typescript">
+            console.log("<strong>Loading...</strong>")
+          </code>
+         <code class="ruby">
+            puts "<strong>Loading...</strong>"
+          </code>
+          <code class="csharp">System.Console.WriteLine("<strong>Loading...</strong>");
+          </code>
+          <code class="cplusplus">
+            std::cout &lt;&lt; "<strong>Loading...</strong>" &lt;&lt; std::endl;
+          </code>
+          <code class="java">
+            System.out.println("<strong>Loading...</strong>");
+          </code>
+          <code class="swift">
+            println("<strong>Loading...</strong>")
+          </code>
+          <code class="php">
+            echo "<strong>Loading...</strong>"
+          </code> 
+        </div>
     </div>
-
-    <nav class="w-screen  bg-black z-50 border-b  border-textwhite">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-wrap items-center ">
-                <h1 class="md:w-auto text-xl font-bold flex w-full justify-center items-center py-4 text-textwhite"><a
-                        href="#">PORTFOLIO.</a></h1>
-                <ul
-                    class="md:w-auto md:flex-row flex h-full flex-wrap w-full justify-center ml-auto items-center text-base  h-[60px]">
-                    <li class="relative h-[60px]"><a href="#intro"
-                            class="block p-5 opacity-50 text-center text-textwhite text-xs nav-after hover:opacity-100 hover:after:w-full">{
-                            Portfolio }</a></li>
-                    <li class="relative h-[60px]"><a href="#work"
-                            class="block p-5 opacity-50 text-center text-textwhite text-xs nav-after hover:opacity-100 hover:after:w-full">{
-                            Work }</a></li>
-                    <li class="relative h-[60px]"><a href="#work"
-                            class="block p-5 opacity-50 text-center text-textwhite text-xs nav-after hover:opacity-100 hover:after:w-full">{
-                            Gallery }</a></li>
-                    <li class="relative h-[60px]"><a href="#contact"
-                            class="block p-5 opacity-50 text-center text-textwhite text-xs nav-after hover:opacity-100 hover:after:w-full">{
-                            Contact }</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <nav
-        class="lnb fixed -bottom-6 left-1/2 -translate-x-1/2  z-[10000] border border-white backdrop-blur-sm bg-black/60  text-textwhite rounded-full  shadow-2xl shadow-[--red] font-medium mix-blend-difference">
-        <div class="container mx-auto px-6 py-3 flex justify-center gap-4">
-            <span class=" uppercase text-base">Index</span>
-            <span class=" uppercase text-base">work</span>
-            <span class=" uppercase text-base">About</span>
-            <span class=" uppercase text-base">Contact</span>
-        </div>
-    </nav>
-
-
     <main class="btn relative z-10 w-screen flex flex-col justify-center items-center">
         <section class="intro sm:h-[60vh] h-[30vh] mt-32 grid sm:mb-0 mb-40 place-items-center text-center">
             <div>
@@ -151,8 +142,7 @@
                         <p class="leading-relaxed font-small text-lg font-normal mt-4">
                             저는 다양한 경험 속에서 많은 문제들을 마주했습니다. 남들보다 문제를 많이 생각하고 발견하며, 그 문제를 반드시 해결해야 했습니다. 그 과정은 저를 성장시키고
                             발전시킵니다. 그리고 사람을 기본적으로 애정하는 마음이 있어, 사람들의 긍정적인 면을 많이 발견합니다. 협업에 있어 긍정적인 커뮤니케이션을 할 수 있습니다.
-                            저는 다양한 경험 속에서 많은 문제들을 마주했습니다. 남들보다 문제를 많이 생각하고 발견하며, 그 문제를 반드시 해결해야 했습니다. 그 과정은 저를 성장시키고
-                            발전시킵니다. 그리고 사람을 기본적으로 애정하는 마음이 있어, 사람들의 긍정적인 면을 많이 발견합니다. 협업에 있어 긍정적인 커뮤니케이션을 할 수 있습니다.
+                            생산성 향상 시키는 것을 좋아해 계속해서 새로운 것을 습득해서 작업 흐름을 최적화합니다. 따라서 저는 사용자 경험을 개선해 사용자의 생산성을 향상시키겠습니다.
                         </p>
                     </h2>
 
@@ -171,8 +161,8 @@
             <div id="container" class="container relative mx-auto flex flex-col justify-center px-6 py-24">
                 <h2 class="content__title grid text-center" data-splitting data-effect10>
                     <span class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Strength.</span>
-                    <span class="text-xs opacity-50 -mt-2"><a href="https://store.gallup.com/p/en-sg/10003/cliftonstrengths-34" class="underline"> GALLUP 기관에서</a> 진행한 강점 상위 5가지 결과</span>
-                    <a class="text-center p-6 link z-0 opacity-80 text-xs underline"
+                    <span class="text-xs opacity-50 -mt-2"><a href="https://store.gallup.com/p/en-sg/10003/cliftonstrengths-34" class="underline after:content-['_↗']"> GALLUP 기관에서</a> 진행한 강점 상위 5가지 결과</span>
+                    <a class="text-center p-6 link z-0 opacity-80 text-xs underline  after:content-['_↗']"
                     href="https://www.notion.so/GALLUP-5-b1c9b3e695064cf1a51e8175a170877e?pvs=4">강점 보고서 자세히 보기</a>
                 </h2>
 
@@ -230,7 +220,7 @@
                         <span class="text-xs font-thin tracking-widest">공감능력</span>
                         <span class="font-medium text-4xl">Empathy</span>
                         <h3 class="text-base opacity-80 mt-8 text-center leading-relaxed">상대방의 상황과 감정들을 사람들의 감정을 잘 헤아릴 수
-                            있고 다른 사람의 입장에서 한 번 더 생각합니다. <b>이러한 강점은 사용자의 니즈를 파악해 서비스를 제공하게 될 때 큰 도움이 되었습니다.</b></h3>
+                            있고 다른 사람의 입장에서 한 번 더 생각합니다. <b>이러한 강점은 사용자의 니즈를 파악해 서비스를 제공하겠습니다.</b></h3>
                         <h4 class="block text-sm opacity-50 my-4">
                             #이해심 #감수성 #편안함 #안정감 #통찰력
                         </h4>
@@ -272,7 +262,7 @@
                 <p class="flex flex-col z-1"></p>
 
                 <div class="icon1 flex flex-col justify-center animate-bounce items-center mt-12">
-                    <span class="text-xs opacity-80 z-0"> 블럭을 클릭해보세요.</span>
+                    <span class="text-xs opacity-80 z-0"> 최근 작업한 순으로 작업하였습니다.</span>
                     <svg class="mt-2" width="40px" height="40px" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg" stroke="#e8e5de">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -294,8 +284,12 @@
             <div class="container md:container-2xl mx-auto flex flex-col justify-center px-6 pt-24">
                 <h2 class="content__title grid text-center" data-splitting data-effect10>
                     <span class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Work.</span>
-                    <span class="text-xs tracking-widest opacity-50 -mt-2">스크롤하거나 스와이프 해보세요.! </span>
                 </h2>
+                <h3 class="w-3/4 mx-auto text-center text-3xl text-textwhite font-semibold mt-2 ">
+                    My latest projects:<br> 
+                    <span class=" text-textwhite opacity-50">Here you can see
+                        some of my latest designs and projects</span>
+                </h3>
                 <div class="swiper01 w-full relative mt-12">
                     <div class="swiper-container  h-full relative  border border-[#e8e5de]/20 rounded-[5px] overflow-hidden">
                         <nav class="h-12 border-b border-[#e8e5de]/20 w-full  flex justify-between items-center">
@@ -316,7 +310,7 @@
                         <div class="swiper-wrapper container mx-auto sm:max-w-[fit-content] min-w-fit max-w-[280px] h-auto  relative bg-bgblack rounded-[5px] ">
                             <div class="swiper-slide workItem text-center text-[18px] bg-bgwhite  flex flex-wrap justify-center items-center border  border-[#e8e5de]/20">
                                 <div class="xl:w-1/3 w-full h-auto ">
-                                    <div class="h-[60vh] ml-4 mt-4 mb-4 mr-4 bg-black flex flex-wrap items-start justify-start rounded-[5px] overflow-hidden">
+                                    <div class="ml-4 mt-4 mb-4 mr-4 bg-black flex flex-wrap items-start justify-start rounded-[5px] overflow-hidden">
                                         <div class="editorNav grow-0 flex w-full">
                                             <div class="h-8 leading-8 w-full text-xs text-white/50 tracking-widest bg-[#202020]/20">
                                                 HTML
@@ -343,23 +337,23 @@
                                                     <span class="element text-[rgb(100,150,250)]">&lt;/div&gt;</span>
                                                 </div>
                                                 <div class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
-                                                    <span class="element text-[rgb(100,150,250)]">&lt;div class=<span class="quotes text-[rgb(150,150,150)]">"blog"</span>&gt;</span>
+                                                    <span class="element text-[rgb(100,150,250)]">&lt;div class=<span class="quotes text-[rgb(150,150,150)]">"Project"</span>&gt;</span>
                                                 </div>
                                                 <div class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
                                                     <span class="tab mr-[15px]"></span>
-                                                    <span class="element text-[rgb(100,150,250)]">&lt;div class=<span class="quotes text-[rgb(150,150,150)]">"blog-post"</span>&gt;</span>
+                                                    <span class="element text-[rgb(100,150,250)]">&lt;div class=<span class="quotes text-[rgb(150,150,150)]">"Project-Introduction"</span>&gt;</span>
                                                 </div>
                                                 <div
                                                     class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
                                                     <span class="tab mr-[15px]"></span><span class="tab mr-[15px]"></span>
-                                                    <span class="element text-[rgb(100,150,250)]">&lt;h3&gt;</span>My Blog
+                                                    <span class="element text-[rgb(100,150,250)]">&lt;h3&gt;</span> 공간을 경험하다 - GrowBy 
                                                     Post<span class="element text-[rgb(100,150,250)]">&lt;/h3&gt;</span>
                                                 </div>
                                                 <div class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
                                                     <span class="tab mr-[15px]"></span><span class="tab mr-[15px]"></span>
-                                                    <span class="element text-[rgb(100,150,250)]">&lt;p&gt;</span>A
-                                                    paragraph about in my
-                                                    blog.<span class="element text-[rgb(100,150,250)]">&lt;/p&gt;</span>
+                                                    <span class="element text-[rgb(100,150,250)]">&lt;p&gt;</span>
+                                                        flex를 활용한 식물 웹 쇼핑 사이트
+                                                    <span class="element text-[rgb(100,150,250)]">&lt;/p&gt;</span>
                                                 </div>
                                                 <div
                                                     class="editor-line m-[5px] text-[rgb(195,215,225)] [content-increment:line] before:content-[counter(line)] before:mr-[15px]">
@@ -401,19 +395,15 @@
                                 <div class="xl:w-2/3 w-full h-auto rounded-[5px] overflow-hidden">
                                     <div class="min-h-[60vh] text-black xl:mt-4 xl:ml-0 mt-0 m-4 ">
                                         <div class="browser-window-osx [box-shadow:0px_2px_3px_0px_rgba(50,_50,_50,_0.11)] border-[1px] border-[solid] xl:mt-4 mt-0  m-4 mr-4 ml-0 border-[#c3c3c3] w-full rounded-[5px] relative">
-                                            <div class="header bg-[#e8e8e8] h-[45px] rounded-tl-[5px] rounded-br-[0] rounded-tr-[5px] rounded-bl-[0] pl-[10px] pr-[10px] py-[10px]">
-                                                <div class="menu w-[70px] inline-block h-[25px]">
-                                                    <span
-                                                        class="close mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#df7065]"></span>
-                                                    <span
-                                                        class="minimize mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#e6bb46]"></span>
-                                                    <span
-                                                        class="maximize mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#5bcc8b]"></span>
+                                            <div class="header flex justify-center items-center bg-[#e8e8e8] h-[45px] rounded-tl-[5px] rounded-br-[0] rounded-tr-[5px] rounded-bl-[0] pl-[10px] pr-[10px] py-[10px]">
+                                                <div class="menu w-[70px] flex h-[25px]">
+                                                    <span class="close mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#df7065]"></span>
+                                                    <span class="minimize mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#e6bb46]"></span>
+                                                    <span class="maximize mx-[4px] my-[6px] p-0 h-[12px] w-[12px] block float-left rounded-[50%] bg-[#5bcc8b]"></span>
                                                 </div>
-                                                <div
-                                                    class="search bg-[white] w-1/2 inline-block h-[25px] rounded-[5px] relative overflow-hidden">
-                                                    <a href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/">
-                                                        <span class="text-[--secondary]">https://</span>webplantShop.info
+                                                <div class="search  flex items-center justify-center bg-[white] w-1/2  h-[25px]  rounded-[5px] relative overflow-hidden">
+                                                    <a href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/" class="text-xs leading-[25px]">
+                                                        <span class="text-[--secondary] ">https://</span>webplantShop.info
                                                     </a>
                                 
                                                 </div>
@@ -449,10 +439,13 @@
         
         
         <section id="gallery">
-
             <h2 class="content content--full flex flex-col w-screen relative p-0">
-                <h2 class="content__title grid text-center" data-splitting data-effect10><span
-                        class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Gallery.</span></h2>
+                <h2 class="content__title grid text-center" data-splitting data-effect10>
+                    <span class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Gallery.</span>
+                    <span>Here you can see
+                        some of my latest
+                        designs and projects</span>
+                </h2>
             </h2>
 
             <div class="slideshow py-24">
@@ -464,8 +457,8 @@
                     <div class="slide__side">Memories &amp; Thoughts</div>
                     <div class="slide__title-wrap">
                         <span class="slide__number">1</span>
-                        <h3 class="slide__title">Automation</h3>
-                        <h4 class="slide__subtitle">A tree needs to be your friend if you're going to paint him</h4>
+                        <h3 class="slide__title font-medium text-2xl mb-4">Glass Flim</h3>
+                        <h4 class="slide__subtitle text-sm opacity-80">제품 특성에 맞게 깨끗하고 글래스에 집중 표현</h4>
                     </div>
                 </div>
                 <div class="slide relative h-[60vh] sm:h-[80vh]">
@@ -476,8 +469,8 @@
                     <div class="slide__side">Random Roam</div>
                     <div class="slide__title-wrap">
                         <span class="slide__number">2</span>
-                        <h3 class="slide__title">Machines</h3>
-                        <h4 class="slide__subtitle">This is probably the greatest thing to happen in my life</h4>
+                        <h3 class="slide__title font-medium text-2xl mb-4">Juster Case</h3>
+                        <h4 class="slide__subtitle text-sm opacity-80">광택이 나는 제품 특성에 맞도록 반사 효과를 통해서 광택을 강조</h4>
                     </div>
                 </div>
                 <div class="slide relative h-[60vh]  sm:h-[80vh]">
@@ -485,11 +478,11 @@
                         <div class="slide__img"></div>
 
                     </div>
-                    <div class="slide__side">Arbitrary Words</div>
+                    <div class="slide__side">Transparency Case</div>
                     <div class="slide__title-wrap">
                         <span class="slide__number">3</span>
-                        <h3 class="slide__title">Coexistence</h3>
-                        <h4 class="slide__subtitle">The only guide is your heart</h4>
+                        <h3 class="slide__title font-medium text-2xl mb-4">Transparency Case</h3>
+                        <h4 class="slide__subtitle text-sm opacity-80">투명 제품 특성에 맞도록 조명을 활용해서 깨끗함과 투명함 강조</h4>
                     </div>
                 </div>
                 <div class="slide relative h-[60vh]  sm:h-[80vh]">
@@ -497,11 +490,11 @@
                         <div class="slide__img"></div>
                     
                     </div>
-                    <div class="slide__side">Haunted Drift</div>
+                    <div class="slide__side">Watch Transparency Case</div>
                     <div class="slide__title-wrap">
                         <span class="slide__number">4</span>
-                        <h3 class="slide__title">Bellamio</h3>
-                        <h4 class="slide__subtitle">The only prerequisite is that it makes you happy</h4>
+                        <h3 class="slide__title font-medium text-2xl mb-4">Watch Transparency Case</h3>
+                        <h4 class="slide__subtitle text-sm opacity-80">제품과 워치 본연의 색상과의 어우러짐과 투명함을 강조</h4>
                     </div>
                 </div>
                 <div class="slide relative h-[60vh]  sm:h-[80vh]">
@@ -509,11 +502,11 @@
                         <div class="slide__img"></div>
   
                     </div>
-                    <div class="slide__side">Fun Diverge</div>
+                    <div class="slide__side">Pencil cover</div>
                     <div class="slide__title-wrap">
                         <span class="slide__number">5</span>
-                        <h3 class="slide__title">Pastures</h3>
-                        <h4 class="slide__subtitle">Let's go up in here, and start having some fun</h4>
+                        <h3 class="slide__title font-medium text-2xl mb-4">Pencil cover</h3>
+                        <h4 class="slide__subtitle text-sm opacity-80">다양한 컬러로 구성된 제품 특성에 맞게 색상을 강조</h4>
                     </div>
                 </div>
                 <div class="slide relative h-[60vh]  sm:h-[80vh]">
@@ -524,8 +517,20 @@
                     <div class="slide__side">Hopes &amp; Dreams</div>
                     <div class="slide__title-wrap">
                         <span class="slide__number">6</span>
-                        <h3 class="slide__title">Focus</h3>
-                        <h4 class="slide__subtitle">This is unplanned it really just happens</h4>
+                        <h3 class="slide__title font-medium text-2xl mb-4">Pard Case</h3>
+                        <h4 class="slide__subtitle text-sm opacity-80">부드러운 질감의 제품 특성을 살리며 고급스러움을 강조</h4>
+                    </div>
+                </div>
+                <div class="slide relative h-[60vh]  sm:h-[80vh]">
+                    <div class="slide__img-wrap">
+                        <div class="slide__img"></div>
+
+                    </div>
+                    <div class="slide__side">Silicone Case</div>
+                    <div class="slide__title-wrap">
+                        <span class="slide__number">6</span>
+                        <h3 class="slide__title font-medium text-2xl mb-4">Silicone Case</h3>
+                        <h4 class="slide__subtitle text-sm opacity-80">다양한 컬러 구성의 제품을 강조하고 파스텔 분위기를 강조</h4>
                     </div>
                 </div>
                 <div class="slide relative h-[60vh]  sm:h-[80vh]">
@@ -536,8 +541,8 @@
                     <div class="slide__side">Hopes &amp; Dreams</div>
                     <div class="slide__title-wrap">
                         <span class="slide__number">6</span>
-                        <h3 class="slide__title">Focus</h3>
-                        <h4 class="slide__subtitle">This is unplanned it really just happens</h4>
+                        <h3 class="slide__title font-medium text-2xl mb-4">Macaron Case</h3>
+                        <h4 class="slide__subtitle text-sm opacity-80">다양한 컬러 구성의 제품을 강조하고 파스텔 분위기를 강조</h4>
                     </div>
                 </div>
                 <div class="slide relative h-[60vh]  sm:h-[80vh]">
@@ -548,20 +553,8 @@
                     <div class="slide__side">Hopes &amp; Dreams</div>
                     <div class="slide__title-wrap">
                         <span class="slide__number">6</span>
-                        <h3 class="slide__title">Focus</h3>
-                        <h4 class="slide__subtitle">This is unplanned it really just happens</h4>
-                    </div>
-                </div>
-                <div class="slide relative h-[60vh]  sm:h-[80vh]">
-                    <div class="slide__img-wrap">
-                        <div class="slide__img"></div>
-
-                    </div>
-                    <div class="slide__side">Hopes &amp; Dreams</div>
-                    <div class="slide__title-wrap">
-                        <span class="slide__number">6</span>
-                        <h3 class="slide__title">Focus</h3>
-                        <h4 class="slide__subtitle">This is unplanned it really just happens</h4>
+                        <h3 class="slide__title font-medium text-2xl mb-4">Transparency Case</h3>
+                        <h4 class="slide__subtitle text-sm opacity-80">투명 제품 특성에 맞도록 조명을 활용해서 깨끗함과 투명함 강조</h4>
                     </div>
                 </div>
                 <div class="slideshow__deco"></div>
@@ -577,7 +570,7 @@
                 </button>
             </div>
 
-            <div class="content w-[90%] sm:w-[50%] md:w-[50%] lg:w-[45%] xl:w-[30%]" id="desc">
+            <div class="hidden content w-[90%] sm:w-[50%] md:w-[50%] lg:w-[45%] xl:w-[30%]" id="desc">
                 <div class="content__item">
                     <span class="content__number text-xs tracking-widest">1</span>
                     <h3 class="content__title text-3xl font-medium">Automation</h3>
@@ -659,7 +652,20 @@
                 </button>
             </div>
 
-
+            <div class="icon1 animate-bounce flex justify-center flex-col items-center mt-20">
+                <span class="text-xs opacity-80 z-0 text-center"> 이미지를 클릭해 <br> 다양한 그래픽 디자인을 확인하세요.</span>
+                <svg class=" mt-2" width="40px" height="40px" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke="#e8e5de">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M15 11L12 8M12 8L9 11M12 8V16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                            stroke="#e8e5de" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                    </g>
+                </svg>
+            </div>
         </section>
         
 
@@ -674,12 +680,13 @@
                 <div
                     class="md:flex-row md:w-3/4 md:mx-auto flex flex-col  flex-wrap relative gap-8 items-start justify-items-start">
                     <div class="w-full flex flex-col shrink-0 h-full justify-center items-center">
-                        <span class="text-xs tracking-widest selection:bg-yellow-300 selection:text-yellow-900">{ Skill
+                        <span class="text-xs tracking-widest">{ Skill
                             }</span>
-                        <h1
-                            class="text-center text-3xl text-textwhite font-semibold selection:bg-yellow-300 selection:text-yellow-900 mt-2 ">
-                            My focused technologies:<br> <span class="text-textwhite opacity-50">current areas of
-                                proficiency</span></h1>
+                        <h1 class="text-center text-3xl text-textwhite font-semibold mt-2 ">
+                            My focused technologies:<br> 
+                            <span class="text-textwhite opacity-50">current areas of
+                                proficiency</span>
+                        </h1>
 
                     </div>
                     <h2 class="content__title content__title--left grow w-full flex-1">
@@ -784,7 +791,7 @@
                 </h2>
                 <div class="content md:flex-row md:mx-auto md:items-start items-center flex flex-col relative gap-8  justify-items-start">
                     <div class="md:mr-12 md:w-1/4 md:items-start md:justify-left flex flex-col h-full justify-center items-center">
-                        <span class="text-xs tracking-widest selection:bg-yellow-300 selection:text-yellow-900 text-center">{
+                        <span class="text-xs tracking-widest selection:bg-yellow-300 text-center">{
                             eductaion }</span>
             
                     </div>
@@ -834,15 +841,35 @@
 
         <section id="contact">
             <div class="container mx-auto">
+
                 <h2 class="content w-full flex flex-col w-screen relative p-0">
-                    <h2 class="content__title grid text-center" data-splitting data-effect10><span
-                            class="md:text-[10vw] font-larger text-[15vw]  opacity-80">CONTACT.</span>
-                        <span class="text-3xl tracking-widest opacity-50 pb-10 -mt-2">Want to work together on a
+                    <h2 class="content__title grid text-center " data-splitting data-effect10><span
+                            class="md:text-[10vw] font-larger text-[15vw]  opacity-100">Contact.</span>
+                        <span class="w-3/4 mx-auto text-3xl opacity-60 pb-10 -mt-2 font-semibold">Want to work together on a
                             project?</span>
                     </h2>
                 </h2>
                 <div class="flex flex-wrap w-full justify-center">
-                    <div class="form md:w-1/2 w-full">
+                    <section class="flex flex-col justify-center items-center gap-4  tracking-widests ">
+                        <p class="text-2xl">Web Publisher</p>
+                        <p class="email relative flex  justify-center items-center">
+                            <a href="mailto:pje9978@gmail.com" class="copy-button left-0  after:content-['|'] after:mx-1 text-xs  opacity-50 hover:bg-[--primary] hover:text-[--secondary]">📧 pje9978@gmail.com</a>
+                            <span class="feedback flex w-1/2 text-center items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:left-full ml-0 md:ml-4 bg-[--primary] text-[--secondary] rounded text-xs font-medium text-xs opacity-50">
+                            </span>
+                            <span class="after:content-['|'] after:mx-1 text-xs  opacity-50 hover:bg-[--primary] hover:text-[--secondary]"> Notion</span>
+                            <span class="after:content-['|'] after:mx-1 text-xs  opacity-50">+82 10 6563 9978</span>
+                            <span class="after:mx-1 text-xs  opacity-50"> Gwanak-gu, Seoul</span>
+                        </p>
+
+                        <p class="flex flex-col text-xs  w-full justify-center items-center opacity-50">
+
+
+                        </p>
+            
+
+                     
+                    </section>
+                    <div class="form md:w-1/2 w-full hidden ">
                         <form class="px-24">
                             <p class="flex flex-col mb-6">
                                 <input type="text" id="name" name="name" placeholder="Hong Gil Dong"
@@ -869,66 +896,16 @@
             </div>
         </section>
     </main>
-    <svg class="hidden">
-        <symbol id="icon-arrow" viewBox="0 0 24 24">
-            <title>arrow</title>
-            <polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 " />
-        </symbol>
-        <symbol id="icon-drop" viewBox="0 0 24 24">
-            <title>drop</title>
-            <path
-                d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z" />
-            <path
-                d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z" />
-        </symbol>
-        <symbol id="icon-longarrow" viewBox="0 0 54 24">
-            <title>longarrow</title>
-            <path
-                d="M.42 11.158L12.38.256c.333-.27.696-.322 1.09-.155.395.166.593.467.593.903v6.977h38.87c.29 0 .53.093.716.28.187.187.28.426.28.716v5.98c0 .29-.093.53-.28.716a.971.971 0 0 1-.716.28h-38.87v6.977c0 .416-.199.717-.592.903-.395.167-.759.104-1.09-.186L.42 12.62a1.018 1.018 0 0 1 0-1.462z" />
-        </symbol>
-        <symbol id="icon-navarrow" viewBox="0 0 408 408">
-            <title>navarrow</title>
-            <polygon fill="#fff" fill-rule="nonzero"
-                points="204 0 168.3 35.7 311.1 178.5 0 178.5 0 229.5 311.1 229.5 168.3 372.3 204 408 408 204"></polygon>
-        </symbol>
-    </svg>
-    <footer>
-        <svg class=" w-full" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
-            <polygon class="w-full" points="5,5 195,10 185,185 10,195" />
-            <!-- Common use case: embed HTML text into SVG -->
-            <foreignObject class="w-full text-center" y="15" width="100vh" height="100%">
-                <!--¸
-                In the context of SVG embedded in an HTML document, the XHTML
-                namespace could be omitted, but it is mandatory in the
-                context of an SVG document
-              -->
-                PAKR JI EUN
-            </foreignObject>
-        </svg>
-        <div class="container mx-auto px-6 py-12">
-            <div class="flex justify-between px-8">
-                <div class=" text-2xl">© 2023 <!-- Park-Ji-Eun. All Rights Reserved. -->
-                </div>
-                <div class="time text-2xl flex justify-center items-center sm:flex relative gap-3">
-                    <span class="relative flex h-3 w-3">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-bgwhite opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-bgwhite"></span>
-                    </span>
-                    <span>SEOUL</span>
-                    <span id="currentTime" class="hidden sm:flex"></span>
 
-                </div>
-                <a href="#" class="underline text-2xl">TOP</a>
-            </div>
-        </div>
-    </footer>
+    <div include-html="./pages/common/footer.html"></div>
     <!-- gallery -->
 
-    <script src="js/res3.js"></script>
-    <!-- <script src="js/res2.js"></script> -->
-    <script src="js/mouse-effect.js"></script>
-    <script src="js/marquee-effect.js"></script>
+    <script>
+        includeHTML();
+    </script>
+    <script src="js/res1.js"></script>
+    <script src="js/lib/mouse-effect.js"></script>
+    <script src="js/lib/marquee-effect.js"></script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -936,19 +913,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
-  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/614007/sliiide.min.js"></script>
-    
-
-
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/charming.min.js"></script>
-    <script src="js/TweenMax.min.js"></script>
-    <script src="js/demo.js"></script>
-    <script src="js/textscramble.js"></script>
-    <script src="js/splitting.js"></script>
+    <script src="js/lib/imagesloaded.pkgd.min.js"></script>
+    <script src="js/lib/charming.min.js"></script>
+    <script src="js/lib/TweenMax.min.js"></script>
+    <script src="js/lib/demo.js"></script>
+    <script src="js/lib/textscramble.js"></script>
+    <script src="js/lib/splitting.js"></script>
     <script src="js/script.js"></script>
 </body>
 

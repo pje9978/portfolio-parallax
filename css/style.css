@@ -22,14 +22,10 @@ html, body {
 
 body {
   margin: 0;
-  background: #0d0d0d;
+  background: var(--bg-black);
+  color: var(--text-white);
 }
 
-@layer utilities {
-  .nav-after {
-    @apply after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[3px] after:bg-[#eee] after:ease-in after:duration-300;
-  }
-}
 @keyframes loaderAnim {
   to {
     opacity: 1;
@@ -41,145 +37,71 @@ body {
     animation-play-state: paused;
   }
 }
-.slide:nth-child(1) .slide__img {
-  background-image: url("../images/gallery/thumb-flip-glass.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.slide:nth-child(2) .slide__img {
-  background-image: url("../images/gallery/thumb-flip-luster2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.slide:nth-child(3) .slide__img {
-  background-image: url("../images/gallery/thumb-ip-jelly.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.slide:nth-child(4) .slide__img {
-  background-image: url("../images/gallery/thumb-watch-case.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.slide:nth-child(5) .slide__img {
-  background-image: url("../images/gallery/thumb-pencil.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.slide:nth-child(6) .slide__img {
-  background-image: url("../images/gallery/thumb-flip-pard.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.slide:nth-child(7) .slide__img {
-  background-image: url("../images/gallery/thumb-airpod-silicone.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.slide:nth-child(8) .slide__img {
-  background-image: url("../images/gallery/thumb-ip-silicone.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.slide:nth-child(9) .slide__img {
-  background-image: url("../images/gallery/thumb-buds-jelly.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.loading-blurbs code {
+  --animation-duration: 500ms;
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  animation-name: move;
+  animation-duration: calc(var(--animation-duration) * 8);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  opacity: 0;
+  color: var(--secondary);
 }
 
-.rfa-chap-sect-slide:nth-child(1) {
-  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-ip-case2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+@keyframes move {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-170px);
+  }
 }
-.rfa-chap-sect-slide:nth-child(2) {
-  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-pencil-cover.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.rfa-chap-sect-slide:nth-child(3) {
-  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-watch-case.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.rfa-chap-sect-slide:nth-child(4) {
-  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-gal-case1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.rfa-chap-sect-slide:nth-child(5) {
-  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-ip-case.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.rfa-chap-sect-slide:nth-child(6) {
-  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-airpod-case.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.rfa-chap-sect-slide:nth-child(7) {
-  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-buds-case.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.rfa-chap-sect-slide:nth-child(8) {
-  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-buds-case2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.rfa-chap-sect-slide:nth-child(9) {
-  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-cardholder.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.rfa-chap-sect-slide:nth-child(10) {
-  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-gal-case2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.rfa-chap-sect-slide:nth-child(11) {
-  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-z-case1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.rfa-chap-sect-slide:nth-child(12) {
-  background-image: url("../../portfolio/work/2016-2022_mercury/thumb/thum-z-case2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.loading-blurbs code.typescript {
+  animation-delay: var(--animation-duration);
 }
 
-.modal-open {
-  overflow: hidden;
+.loading-blurbs code.ruby {
+  animation-delay: calc(var(--animation-duration) * 2);
 }
 
-.bg-pin .char {
-  display: inline !important;
+.loading-blurbs code.csharp {
+  animation-delay: calc(var(--animation-duration) * 3);
+}
+
+.loading-blurbs code.cplusplus {
+  animation-delay: calc(var(--animation-duration) * 4);
+}
+
+.loading-blurbs code.java {
+  animation-delay: calc(var(--animation-duration) * 5);
+}
+
+.loading-blurbs code.swift {
+  animation-delay: calc(var(--animation-duration) * 6);
+}
+
+.loading-blurbs code.php {
+  animation-delay: calc(var(--animation-duration) * 7);
+}
+
+.glow-container {
+  position: fixed;
+  opacity: 0.3;
+  width: 100%;
+  max-height: 100%;
 }
 
 .ball {
-  --delay:0s;
-  --size:0.4;
+  --delay: 0s;
+  --size: 0.4;
   --speed: 20s;
   aspect-ratio: 1;
   width: calc(150% * var(--size));
@@ -268,39 +190,185 @@ body {
     transform: translate3D(0%, 51%, 0) rotate(360deg);
   }
 }
-.glow-container {
-  position: fixed;
-  opacity: 0.3;
-  width: 100%;
-  max-height: 100%;
+.macbook {
+  padding: 4% 6%;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
-/* Page Loader */
-.js .loading::before {
+.screen {
+  background: #000;
+  border-radius: 3% 3% 0.5% 0.5%/5%;
+  margin: 0 auto;
+  /* for aspect ratio */
+  position: relative;
+  width: 80%;
+}
+
+.screen:before {
+  border: 2px solid #cacacc;
+  border-radius: 3% 3% 0.5% 0.5%/5%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8) inset, 0 0 1px 2px rgba(255, 255, 255, 0.3) inset;
   content: "";
-  position: fixed;
-  z-index: 100000;
-  top: 0;
+  display: block;
+  /* for aspect ratio ~67:100 */
+  padding-top: 67%;
+}
+
+.screen:after {
+  content: "";
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  position: absolute;
+  bottom: 0.75%;
+  left: 0.5%;
+  padding-top: 1%;
+  width: 99%;
+}
+
+.viewport {
+  position: absolute;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--color-bg);
+  right: 0;
+  top: 0;
+  margin: 4.3% 3.2%;
+  background: #333;
 }
 
-.js .loading::after {
+.base {
+  /* for aspect ratio */
+  position: relative;
+  width: 100%;
+}
+
+.base:before {
   content: "";
-  position: fixed;
-  z-index: 100000;
-  top: 50%;
-  left: 50%;
-  width: 60px;
-  height: 60px;
-  margin: -30px 0 0 -30px;
-  pointer-events: none;
-  border-radius: 50%;
-  opacity: 0.4;
-  background: var(--color-link);
-  animation: loaderAnim 0.7s linear infinite alternate forwards;
+  display: block;
+  /* for aspect ratio ~33:1000*/
+  padding-top: 3.3%;
+  /* stylin */
+  background: linear-gradient(#eaeced, #edeef0 55%, #fff 55%, #8a8b8f 56%, #999ba0 61%, #4B4B4F 84%, #262627 89%, rgba(0, 0, 0, 0.01) 98%);
+  border-radius: 0 0 10% 10%/0 0 50% 50%;
+}
+
+.base::after {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.8) 0.5%, rgba(0, 0, 0, 0.4) 3.3%, transparent 15%, rgba(255, 255, 255, 0.8) 50%, transparent 85%, rgba(0, 0, 0, 0.4) 96.7%, rgba(255, 255, 255, 0.8) 99.5%, rgba(0, 0, 0, 0.5) 100%);
+  content: "";
+  height: 53%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.notch {
+  background: #ddd;
+  border-radius: 0 0 7% 7%/0 0 95% 95%;
+  box-shadow: -5px -1px 3px rgba(0, 0, 0, 0.2) inset, 5px -1px 3px rgba(0, 0, 0, 0.2) inset;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -3.5%;
+  z-index: 2;
+  /* for aspect ratio */
+  position: relative;
+  width: 14%;
+}
+
+.notch:before {
+  content: "";
+  display: block;
+  /* for aspect ratio ~1:10 */
+  padding-top: 10%;
+}
+
+/* Screenshot Hover Scroll Additions
+-------------------------------------------------------------- */
+.macbook .viewport {
+  transition: background-position 3s ease;
+  background-position: 0 0;
+  background-size: 100% auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.macbook:hover .viewport {
+  background-position: 0 100%;
+}
+
+.macbook .viewport:after {
+  background: radial-gradient(circle at right bottom, transparent 75%, rgba(255, 255, 255, 0.05) 75%, transparent);
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.slide:nth-child(1) .slide__img {
+  background-image: url("../images/gallery/thumb-flip-glass.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.slide:nth-child(2) .slide__img {
+  background-image: url("../images/gallery/thumb-flip-luster2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.slide:nth-child(3) .slide__img {
+  background-image: url("../images/gallery/thumb-ip-jelly.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.slide:nth-child(4) .slide__img {
+  background-image: url("../images/gallery/thumb-watch-case.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.slide:nth-child(5) .slide__img {
+  background-image: url("../images/gallery/thumb-pencil.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.slide:nth-child(6) .slide__img {
+  background-image: url("../images/gallery/thumb-flip-pard.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.slide:nth-child(7) .slide__img {
+  background-image: url("../images/gallery/thumb-airpod-silicone.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.slide:nth-child(8) .slide__img {
+  background-image: url("../images/gallery/thumb-ip-silicone.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.slide:nth-child(9) .slide__img {
+  background-image: url("../images/gallery/thumb-buds-jelly.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#web_plantShop .macbook .viewport {
+  background-image: url("../../images/subpages/proj1/intro.png");
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.bg-pin .char {
+  display: inline !important;
 }
 
 .message {
@@ -504,10 +572,6 @@ section#gallery .slideshow .slide .slide__title-wrap {
   width: 100%;
   position: relative;
   z-index: 1000;
-}
-section#gallery .slideshow .slide .slide__title-wrap .slide__title {
-  font-size: 3.25rem;
-  margin: 0 0 0.25rem;
 }
 section#gallery .slideshow .slide .slide__title-wrap .slide__title,
 section#gallery .slideshow .slide .slide__title-wrap .slide__subtitle,

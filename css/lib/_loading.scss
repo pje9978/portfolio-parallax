@@ -1,0 +1,73 @@
+
+@keyframes loaderAnim {
+	to {
+		opacity: 1;
+		transform: scale3d(0.5,0.5,1);
+	}
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-group {
+    animation-play-state: paused;
+  }
+}
+
+
+.loading-blurbs code {
+  --animation-duration: 500ms;
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  animation-name: move;
+  animation-duration: calc(var(--animation-duration) * 8);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  opacity: 0;
+  color: var(--secondary);
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  
+  50% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translateY(-170px);
+  }
+}
+
+.loading-blurbs code.typescript {
+  animation-delay: var(--animation-duration) ;
+}
+
+.loading-blurbs code.ruby {
+  animation-delay: calc(var(--animation-duration) * 2);
+}
+
+.loading-blurbs code.csharp {
+  animation-delay: calc(var(--animation-duration) * 3);
+}
+
+.loading-blurbs code.cplusplus {
+  animation-delay: calc(var(--animation-duration) * 4);
+}
+
+.loading-blurbs code.java {
+  animation-delay: calc(var(--animation-duration) * 5);
+}
+
+.loading-blurbs code.swift {
+  animation-delay: calc(var(--animation-duration) * 6);
+}
+
+.loading-blurbs code.php {
+  animation-delay: calc(var(--animation-duration) * 7);
+}

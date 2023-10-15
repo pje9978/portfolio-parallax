@@ -1,3 +1,37 @@
+window.addEventListener('load', function() {
+	var loadingScreen = document.getElementById('loading-screen');
+	
+	// 문서가 완전히 로드된 후에 실행되는 함수
+	function showContent() {
+	  // 로딩 화면 제거
+	  loadingScreen.parentNode.removeChild(loadingScreen);
+	  
+	  // #content 내용 보이기 (필요한 경우 추가적인 스타일 변경 처리)
+	  document.getElementById('content').style.visibility = 'visible';
+	}
+	
+	// 이미지가 모두 로드될 때까지 대기
+	var images = document.getElementsByTagName('img');
+	var loadedImagesCount = images.length;
+	
+	function imageLoaded() {
+	  loadedImagesCount--;
+	  if (loadedImagesCount === 0) {
+		showContent();
+	  }
+	 }
+  
+	 for (var i = 0; i < images.length; i++) {
+	   if (images[i].complete) {
+		 imageLoaded();
+	   } else {
+		 images[i].addEventListener('load', imageLoaded);
+	   }
+	 }
+  });
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const popup = document.querySelector(".popup");
@@ -38,6 +72,55 @@ document.addEventListener("DOMContentLoaded", function () {
     openPopup();
     closePopup();
 	
+
+	function copyToClipboard(text) {
+		return new Promise(function(resolve, reject) {
+		  navigator.clipboard.writeText(text)
+			.then(function() {
+			  resolve();
+			})
+			.catch(function(error) {
+			  reject(error);
+			});
+		});
+	  }
+	  
+	  function handleCopyButtonClick() {
+		var emailElements = document.getElementsByClassName('email');
+		var feedbackElements = document.getElementsByClassName('feedback');
+	  
+		// 모든 이메일 주소 처리
+		for (var i = 0; i < emailElements.length; i++) {
+		  var emailElement = emailElements[i];
+		  var feedbackElement = feedbackElements[i];
+	  
+		  // 이메일 주소 가져오기
+		  var email = emailElement.textContent;
+	  
+		  // 클립보드에 복사하기
+		  copyToClipboard(email)
+			.then(function() {
+			  // 성공적으로 복사되었을 때 피드백 메시지 표시
+			  feedbackElement.textContent = 'COPY!';
+			})
+			.catch(function(error) {
+			  // 복사 실패 시 에러 메시지 표시
+			//   feedbackElement.textContent = '복사 실패: ' + error;
+			});
+	  
+		  // 일정 시간 후에 피드백 메시지 제거
+		  setTimeout(function() {
+			feedbackElement.textContent = '';
+		  }, 2000);
+		}
+	  }
+	  
+	  var copyButtons = document.getElementsByClassName('copy-button');
+	  for (var i = 0; i < copyButtons.length; i++) {
+		copyButtons[i].addEventListener('click', handleCopyButtonClick);
+	  }
+	  
+
     // 현재 시간을 가져오는 함수
     function getCurrentTime() {
         var date = new Date();
@@ -72,6 +155,8 @@ document.addEventListener("DOMContentLoaded", function () {
         divs[j].style.display = "none";
 
     }
+
+
 
 
     // Swiper 컴포넌트 초기화
@@ -145,17 +230,17 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 		}
 	});
-	  
+	
 	function updateBackgroundImage() {
 		const activeSlide = document.querySelector('.rfa-chap-sect-slide.swiper-slide-active');
 	
 		if (activeSlide) {
-		  const backgroundImage = window.getComputedStyle(activeSlide).getPropertyValue('background-image');
-		  const url = backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
-		  const rfaSlideContainer = document.querySelector('.slide-deco');
-		  rfaSlideContainer.style.backgroundImage = `url(${url})`;
-		  rfaSlideContainer.style.filter = 'blur(50px) saturate(1)';
-		  console.log(backgroundImage);
+			const backgroundImage = window.getComputedStyle(activeSlide).getPropertyValue('background-image');
+			const url = backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
+			const rfaSlideContainer = document.querySelector('.slide-deco');
+			rfaSlideContainer.style.backgroundImage = `url(${url})`;
+			rfaSlideContainer.style.filter = 'blur(50px) saturate(1)';
+			console.log(backgroundImage);
 	   }
 	}
 	

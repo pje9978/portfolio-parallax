@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="../../js/include.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+	<script>
+        document.documentElement.className = "js";
+        var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
+        supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+    </script>
+	<style type="text/tailwindcss">
+		@layer utilities {
+			.content {@apply flex  relative;}
+			.char-lg { @apply text-lg;}
+			.nav-after {
+				@apply after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-textwhite after:ease-in after:duration-300;
+			}
+			.info_after{
+				@apply after:content-[''] after:absolute after:left-1/2 after:w-[1px] after:h-[2rem] after:bg-white after:top-full after:mt-4;
+			}
+			.hiddenItem {@apply hidden;}
+			h1,h2,h3,h4,h5,p,span{@apply selection:bg-[--primary] selection:text-[--secondary];}
+			.desc {@apply hidden;}
+			.popup {@apply hidden;}
+			.popup-content,.closeBtn{
+				display: none;
+			}
+			.popup-content.active,.closeBtn.active{display: flex;}
+			.swiper-pagination-bullet{@apply w-full min-h-[30px] bg-transparent opacity-100;}
+			.swipter-pagination-bullet.swiper-pagination-bullet-active {@apply  opacity-100 bg-white;}
+			.swiper-pagination-bullet-active{@apply w-full}
+			.swiper-pagination-bullet-active:before{@apply content-[""] block absolute border-t-[10px_solid_transparent] border-r-[10px_solid_transparent] border-b-[10px_solid_transparent] border-l-[10px_solid_pink] [transition:all_.5_ease-in-out];}
+			.editor-line {counter-increment: line;}
+
+		}
+		
+
+	</style>
+</head>
+<body id="web_plantShop" class="">
+	<div include-html="../../pages/common/gnb.html"></div>
+    <div include-html="../../pages/common/bgGradient.html"></div>
+	<main class="bg-bgwhite">
+		<div class="container mx-auto px-6">
+			<!-- infro -->
+			<section class="w-full">
+				<div class="introArea text-center py-12 relative">
+					<p class="text-xs tracking-widest flex flex-col mb-12 opacity-50 after:content-[''] after:w-[1px] after:mx-auto  after:h-[20px] after:bg-[--primary] after:mt-12">
+						<span class=" rounded px-1 leading-3">Web Design</span>
+						<span class=" rounded px-1 leading-3">Web Publishing</span>
+					</p>
+
+					<h2 class="text-4xl font-medium">Apple Parallax</h2>
+					<h3 class="text-sm leading-relaxed w-2/3 mx-auto">애플 스타일의 최신 트렌드를 반영하여 페럴렉스 반응형 웹페이지 제작하였습니다.</h3>
+					<p>
+						<span class="text-xs underline decoration-[--primary]">JavaScript</span>
+						<span class="text-xs underline decoration-[--primary]">HTML</span>
+						<span class="text-xs underline decoration-[--primary]">TailwindCSS</span>
+					</p>
+					<!-- device icon -->
+					<div class="deviceArea group flex justify-center items-center gap-3 mt-12">
+						<div class="desktop flex flex-col justify-center items-center">
+							<svg class="w-[44px] opacity-60" fill="#ffefe5" viewBox="0 0 64 64" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title></title><path d="M55.88,45H42.32a2,2,0,0,1,0-4H53.88V37.55a2,2,0,0,1,4,0V43A2,2,0,0,1,55.88,45Z"></path><path d="M21.87,45H8.13a2,2,0,0,1-2-2V10.78a2,2,0,0,1,2-2H55.88a2,2,0,0,1,2,2v16a2,2,0,0,1-4,0v-14H10.13V41H21.87a2,2,0,0,1,0,4Z"></path><path d="M33.19,19.3H24.77a2,2,0,0,1,0-4h8.42a2,2,0,0,1,0,4Z"></path><path d="M39.23,19.3H39a2,2,0,0,1,0-4h.25a2,2,0,0,1,0,4Z"></path><path d="M42.13,53.72H21.87a2,2,0,0,1-2-2V43a2,2,0,0,1,2-2H42.13a2,2,0,0,1,2,2v8.68A2,2,0,0,1,42.13,53.72Zm-18.26-4H40.13V45H23.87Z"></path><path d="M48.4,53.72H15.6a2,2,0,1,1,0-4H48.4a2,2,0,1,1,0,4Z"></path></g></svg>
+							<span class="tracking-widest text-xs opacity-40">Desktop</span>
+						</div>
+						<div class="tablet flex flex-col justify-center items-center">
+							<svg class="w-[44px] opacity-60" fill="#ffefe5" viewBox="0 0 64 64" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title></title><path d="M56.75,52.44h-6a2,2,0,0,1,0-4h4V15.56H9.25V48.44H39.5a2,2,0,0,1,0,4H7.25a2,2,0,0,1-2-2V13.56a2,2,0,0,1,2-2h49.5a2,2,0,0,1,2,2V50.44A2,2,0,0,1,56.75,52.44Z"></path><path d="M36.37,44.68H27.63a2,2,0,0,1,0-4h8.74a2,2,0,0,1,0,4Z"></path></g></svg>
+							<span class="tracking-widest text-xs opacity-40">Tablet</span>
+						</div>
+						<div class="mobile flex flex-col justify-center items-center">
+							<svg class="w-[44px] opacity-60" fill="#ffefe5" viewBox="0 0 64 64" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title></title><path d="M47,59.5H17a2,2,0,0,1-2-2V6.5a2,2,0,0,1,2-2H47a2,2,0,0,1,2,2v6.23a2,2,0,1,1-4,0V8.5H19v47H45V24.27a2,2,0,1,1,4,0V57.5A2,2,0,0,1,47,59.5Z"></path><path d="M36.5,51h-9a2,2,0,0,1,0-4h9a2,2,0,0,1,0,4Z"></path></g></svg>
+							<span class="tracking-widest text-xs opacity-40">Mobile</span>
+						</div>
+					</div>
+				</div>
+				<div include-html="../../pages/common/macbook.html"></div>
+				<section>
+
+
+				</section>
+			</section>
+
+			<!-- pages -->
+			<section>
+				<h2 class="content__title grid text-center" data-splitting data-effect10>
+                    <span class="md:text-[10vw] font-larger text-[15vw]  opacity-80 -mt-2">pages.</span>
+                </h2>
+				<!-- pages -->
+				<section class="flex flex-wrap items-stretch">
+					<div class="w-1/3 ">
+						<div class="p-2 ">
+							<div class="title relative">
+								<div class="before:content-[''] before:absolute before:w-[2px] before:h-1/2 before:-translate-y-1/2 before:block before:bg-white before:left-0 before:top-1/2 p-4">
+									<h4 class="text-2xl font-medium">Web Design</h4>
+									<p class="text-sm opacity-80">애플 페럴렉스 디자인</p>
+								</div>
+							</div>
+							<img src="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/images/capture/main-1.png" alt="" class="w-full md:w-[320px]">
+						</div>
+					</div>
+					<div class="w-1/3 self-center">
+						<div class="p-2">
+							<div class="title relative">
+								<div class="before:content-[''] before:absolute before:w-[2px] before:h-1/2 before:-translate-y-1/2 before:block before:bg-white before:left-0 before:top-1/2 p-4">
+									<h4 class="text-2xl font-medium">Web Design</h4>
+									<p class="text-sm opacity-80">애플 페럴렉스 디자인</p>
+								</div>
+							</div>
+							<img src="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/images/capture/detail-1.png" alt="" class="w-full md:w-[320px]">
+						</div>
+					</div>
+					<div class="w-1/3 self-end">
+						<div class="p-2">
+							<div class="title relative">
+								<div class="before:content-[''] before:absolute before:w-[2px] before:h-1/2 before:-translate-y-1/2 before:block before:bg-white before:left-0 before:top-1/2 p-4">
+									<h4 class="text-2xl font-medium">Web Design</h4>
+									<p class="text-sm opacity-80">애플 페럴렉스 디자인</p>
+								</div>
+							</div>
+							<img src="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/images/capture/feed-1.png" alt="" class="w-full md:w-[320px]">
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="text-gray-600 body-font">
+				<div class="container px-5 py-24 mx-auto">
+					<div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline-block w-8 h-8 text-gray-400 mb-8" viewBox="0 0 975.036 975.036">
+							<path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+					</svg>
+					<p class="leading-relaxed text-lg">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware. Man bun next level coloring book skateboard four loko knausgaard. Kitsch keffiyeh master cleanse direct trade indigo juice before they sold out gentrify plaid gastropub normcore XOXO 90's pickled cindigo jean shorts. Slow-carb next level shoindigoitch ethical authentic, yr scenester sriracha forage franzen organic drinking vinegar.</p>
+					<span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-8 mb-6"></span>
+					<h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">HOLDEN CAULFIELD</h2>
+					<p class="text-gray-500">Senior Product Designer</p>
+				  </div>
+				</div>
+			</section>
+			<!-- slide -->
+			<section id="intro">
+				<section id="gallery">
+					<div class="slideshow py-24">
+						<div class="slide relative h-[60vh] sm:h-[80vh]">
+							<div class="slide__img-wrap">
+								<div class="slide__img"></div>
+							</div>
+							<div class="slide__side">Memories &amp; Thoughts</div>
+							<div class="slide__title-wrap">
+								<span class="slide__number">1</span>
+								<h3 class="slide__title font-medium text-2xl mb-4">Glass Flim</h3>
+								<h4 class="slide__subtitle text-sm opacity-80">제품 특성에 맞게 깨끗하고 글래스에 집중 표현</h4>
+							</div>
+						</div>
+						<div class="slide relative h-[60vh] sm:h-[80vh]">
+							<div class="slide__img-wrap">
+								<div class="slide__img"></div>
+		
+							</div>
+							<div class="slide__side">Random Roam</div>
+							<div class="slide__title-wrap">
+								<span class="slide__number">2</span>
+								<h3 class="slide__title font-medium text-2xl mb-4">Juster Case</h3>
+								<h4 class="slide__subtitle text-sm opacity-80">광택이 나는 제품 특성에 맞도록 반사 효과를 통해서 광택을 강조</h4>
+							</div>
+						</div>
+						<div class="slide relative h-[60vh]  sm:h-[80vh]">
+							<div class="slide__img-wrap">
+								<div class="slide__img"></div>
+		
+							</div>
+							<div class="slide__side">Transparency Case</div>
+							<div class="slide__title-wrap">
+								<span class="slide__number">3</span>
+								<h3 class="slide__title font-medium text-2xl mb-4">Transparency Case</h3>
+								<h4 class="slide__subtitle text-sm opacity-80">투명 제품 특성에 맞도록 조명을 활용해서 깨끗함과 투명함 강조</h4>
+							</div>
+						</div>
+						<div class="slide relative h-[60vh]  sm:h-[80vh]">
+							<div class="slide__img-wrap">
+								<div class="slide__img"></div>
+		
+							</div>
+							<div class="slide__side">Watch Transparency Case</div>
+							<div class="slide__title-wrap">
+								<span class="slide__number">4</span>
+								<h3 class="slide__title font-medium text-2xl mb-4">Watch Transparency Case</h3>
+								<h4 class="slide__subtitle text-sm opacity-80">제품과 워치 본연의 색상과의 어우러짐과 투명함을 강조</h4>
+							</div>
+						</div>
+						<div class="slide relative h-[60vh]  sm:h-[80vh]">
+							<div class="slide__img-wrap">
+								<div class="slide__img"></div>
+		
+							</div>
+							<div class="slide__side">Pencil cover</div>
+							<div class="slide__title-wrap">
+								<span class="slide__number">5</span>
+								<h3 class="slide__title font-medium text-2xl mb-4">Pencil cover</h3>
+								<h4 class="slide__subtitle text-sm opacity-80">다양한 컬러로 구성된 제품 특성에 맞게 색상을 강조</h4>
+							</div>
+						</div>
+						<div class="slide relative h-[60vh]  sm:h-[80vh]">
+							<div class="slide__img-wrap">
+								<div class="slide__img"></div>
+		
+							</div>
+							<div class="slide__side">Hopes &amp; Dreams</div>
+							<div class="slide__title-wrap">
+								<span class="slide__number">6</span>
+								<h3 class="slide__title font-medium text-2xl mb-4">Pard Case</h3>
+								<h4 class="slide__subtitle text-sm opacity-80">부드러운 질감의 제품 특성을 살리며 고급스러움을 강조</h4>
+							</div>
+						</div>
+						<div class="slide relative h-[60vh]  sm:h-[80vh]">
+							<div class="slide__img-wrap">
+								<div class="slide__img"></div>
+		
+							</div>
+							<div class="slide__side">Silicone Case</div>
+							<div class="slide__title-wrap">
+								<span class="slide__number">6</span>
+								<h3 class="slide__title font-medium text-2xl mb-4">Silicone Case</h3>
+								<h4 class="slide__subtitle text-sm opacity-80">다양한 컬러 구성의 제품을 강조하고 파스텔 분위기를 강조</h4>
+							</div>
+						</div>
+						<div class="slide relative h-[60vh]  sm:h-[80vh]">
+							<div class="slide__img-wrap">
+								<div class="slide__img"></div>
+		
+							</div>
+							<div class="slide__side">Hopes &amp; Dreams</div>
+							<div class="slide__title-wrap">
+								<span class="slide__number">6</span>
+								<h3 class="slide__title font-medium text-2xl mb-4">Macaron Case</h3>
+								<h4 class="slide__subtitle text-sm opacity-80">다양한 컬러 구성의 제품을 강조하고 파스텔 분위기를 강조</h4>
+							</div>
+						</div>
+						<div class="slide relative h-[60vh]  sm:h-[80vh]">
+							<div class="slide__img-wrap">
+								<div class="slide__img"></div>
+		
+							</div>
+							<div class="slide__side">Hopes &amp; Dreams</div>
+							<div class="slide__title-wrap">
+								<span class="slide__number">6</span>
+								<h3 class="slide__title font-medium text-2xl mb-4">Transparency Case</h3>
+								<h4 class="slide__subtitle text-sm opacity-80">투명 제품 특성에 맞도록 조명을 활용해서 깨끗함과 투명함 강조</h4>
+							</div>
+						</div>
+						<div class="slideshow__deco"></div>
+						<button class="nav nav--prev">
+							<svg class="icon icon--navarrow-prev">
+								<use xlink:href="#icon-navarrow"></use>
+							</svg>
+						</button>
+						<button class="nav nav--next">
+							<svg class="icon icon--navarrow-next">
+								<use xlink:href="#icon-navarrow"></use>
+							</svg>
+						</button>
+					</div>
+		
+					<div class="hidden content w-[90%] sm:w-[50%] md:w-[50%] lg:w-[45%] xl:w-[30%]" id="desc">
+						<div class="content__item">
+							<span class="content__number text-xs tracking-widest">1</span>
+							<h3 class="content__title text-3xl font-medium">Automation</h3>
+							<h4 class="content__subtitle text-lg">A tree needs to be your friend if you're going to paint him
+							</h4>
+							<div class="content__text leading-relaxed text-base">Just let this happen. We just let this flow
+								right out of our minds. Just relax and let it flow. That easy. Let's put some happy little
+								clouds in our world. It's a very cold picture, I may have to go get my coat. It’s about to
+								freeze me to death. This is gonna be a happy little seascape. Let's go up in here, and start
+								having some fun The least little bit can do so much. Work on one thing at a time. Don't get
+								carried away - we have plenty of time. Put your feelings into it, your heart, it's your world.
+								These trees are so much fun. I get started on them and I have a hard time stopping.</div>
+						</div>
+						<div class="content__item">
+							<span class="content__number text-xs tracking-widest">2</span>
+							<h3 class="content__title text-3xl font-medium">Machines</h3>
+							<h4 class="content__subtitle text-lg">This is probably the greatest thing to happen in my life</h4>
+							<div class="content__text leading-relaxed text-base">We're not trying to teach you a thing to copy.
+								We're just here to teach you a technique, then let you loose into the world. Now, we're going to
+								fluff this cloud. We don't have anything but happy trees here. Let's do that again. Use what you
+								see, don't plan it. Let's go up in here, and start having some fun The least little bit can do
+								so much. Work on one thing at a time. Don't get carried away - we have plenty of time. Put your
+								feelings into it, your heart, it's your world. These trees are so much fun. I get started on
+								them and I have a hard time stopping.</div>
+						</div>
+						<div class="content__item">
+							<span class="content__number text-xs tracking-widest">3</span>
+							<h3 class="content__title text-3xl font-medium">Coexistence</h3>
+							<h4 class="content__subtitle text-lg">The only guide is your heart</h4>
+							<div class="content__text">Let's go up in here, and start having some fun The least little bit can
+								do so much. Work on one thing at a time. Don't get carried away - we have plenty of time. Put
+								your feelings into it, your heart, it's your world. These trees are so much fun. I get started
+								on them and I have a hard time stopping. But we're not there yet, so we don't need to worry
+								about it. Now let's put some happy little clouds in here. What the devil. A thin paint will
+								stick to a thick paint. I'm going to mix up a little color. </div>
+						</div>
+						<div class="content__item">
+							<span class="content__number text-xs tracking-widest">4</span>
+							<h3 class="content__title text-3xl font-medium">Bellamio</h3>
+							<h4 class="content__subtitle text-lg">The only prerequisite is that it makes you happy</h4>
+							<div class="content__text">See. We take the corner of the brush and let it play back-and-forth. This
+								is unplanned it really just happens. I'm sort of a softy, I couldn't shoot Bambi except with a
+								camera. I guess I'm a little weird. I like to talk to trees and animals. That's okay though; I
+								have more fun than most people. We'll play with clouds today. Didn't you know you had that much
+								power? You can move mountains. You can do anything. Let's go up in here, and start having some
+								fun The least little bit can do so much. Work on one thing at a time. Don't get carried away -
+								we have plenty of time. Put your feelings into it, your heart, it's your world. These trees are
+								so much fun. I get started on them and I have a hard time stopping.</div>
+						</div>
+						<div class="content__item">
+							<span class="content__number text-xs tracking-widest">5</span>
+							<h3 class="content__title text-3xl font-medium">Pastures</h3>
+							<h4 class="content__subtitle text-lg">Let's go up in here, and start having some fun</h4>
+							<div class="content__text">So often we avoid running water, and running water is a lot of fun.
+								Everyone is going to see things differently - and that's the way it should be. A big strong tree
+								needs big strong roots. Steve wants reflections, so let's give him reflections. We don't have to
+								be committed. We are just playing here. Making all those little fluffies that live in the
+								clouds. Let's go up in here, and start having some fun The least little bit can do so much. Work
+								on one thing at a time. Don't get carried away - we have plenty of time. Put your feelings into
+								it, your heart, it's your world. These trees are so much fun. I get started on them and I have a
+								hard time stopping.</div>
+						</div>
+						<div class="content__item">
+							<span class="content__number text-xs tracking-widest">6</span>
+							<h3 class="content__title text-3xl font-medium">Focus</h3>
+							<h4 class="content__subtitle text-lg">This is unplanned it really just happens</h4>
+							<div class="content__text">But we're not there yet, so we don't need to worry about it. Now let's
+								put some happy little clouds in here. What the devil. A thin paint will stick to a thick paint.
+								I'm going to mix up a little color. We’ll use Van Dyke Brown, Permanent Red, and a little bit of
+								Prussian Blue. Let's go up in here, and start having some fun The least little bit can do so
+								much. Work on one thing at a time. Don't get carried away - we have plenty of time. Put your
+								feelings into it, your heart, it's your world. These trees are so much fun. I get started on
+								them and I have a hard time stopping.</div>
+						</div>
+						<button class="content__close">
+							<svg class="icon icon--longarrow">
+								<use xlink:href="#icon-longarrow"></use>
+							</svg>
+						</button>
+					</div>
+		
+					<div class="icon1 animate-bounce flex justify-center flex-col items-center mt-20">
+						<span class="text-xs opacity-80 z-0 text-center"> 이미지를 클릭해 <br> 다양한 그래픽 디자인을 확인하세요.</span>
+						<svg class=" mt-2" width="40px" height="40px" viewBox="0 0 24 24" fill="none"
+							xmlns="http://www.w3.org/2000/svg" stroke="#e8e5de">
+							<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+							<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+							<g id="SVGRepo_iconCarrier">
+								<path
+									d="M15 11L12 8M12 8L9 11M12 8V16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+									stroke="#e8e5de" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round">
+								</path>
+							</g>
+						</svg>
+					</div>
+				</section>
+			</section>
+
+			<section class="text-gray-600 body-font">
+				<div class="container px-5 py-24 mx-auto flex flex-wrap flex-col">
+				  <div class="flex mx-auto flex-wrap mb-20">
+					<a class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium bg-gray-100 inline-flex items-center leading-none border-indigo-500 text-indigo-500 tracking-wider rounded-t">
+					  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+						<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+					  </svg>STEP 1
+					</a>
+					<a class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+					  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+						<path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+					  </svg>STEP 2
+					</a>
+					<a class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+					  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+						<circle cx="12" cy="5" r="3"></circle>
+						<path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+					  </svg>STEP 3
+					</a>
+					<a class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+					  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+						<path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+						<circle cx="12" cy="7" r="4"></circle>
+					  </svg>STEP 4
+					</a>
+				  </div>
+				  <img class="xl:w-1/4 lg:w-1/3 md:w-1/2 w-2/3 block mx-auto mb-10 object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
+				  <div class="flex flex-col text-center w-full">
+					<h1 class="text-xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>
+					<p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
+				  </div>
+				</div>
+			</section>
+			<p>페이지구성</p>
+			<p>기능 구성</p>
+			<p>디자인 구성</p>
+
+			<button class="border px-3 py-1 mt-4">LINK</button>
+		</div>
+	</main>
+    <!-- <div include-html="../../pages/common/footer.html"></div> -->
+	<script>
+        includeHTML();
+	</script>   
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+	<script src="../../js/lib/imagesloaded.pkgd.min.js"></script>
+	 <script src="../../js/lib/charming.min.js"></script>
+    <script src="../../js/lib/TweenMax.min.js"></script>
+    <script src="../../js/lib/demo.js"></script>
+</body>
+</html>
