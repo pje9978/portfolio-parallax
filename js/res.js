@@ -27,7 +27,7 @@ function workData(data) {
     Object.keys(data).forEach((key, index) => {
         const section = sections[index];
         const item = data[key];
-        console.log((data[key]))
+        // console.log((data[key]))
         
         Object.keys(item).forEach(subKey => {
             const value = item[subKey];
@@ -35,9 +35,9 @@ function workData(data) {
             const div = document.createElement('div');
             const divtitle = document.createElement('div');
             div.classList.add(subKey);
-            /* div.dataset[subKey] = value; */
-            divtitle.textContent = subKey;
-            div.textContent = value;
+            divtitle.style.opacity = '0.5';
+            const output = divtitle.textContent = "> " + subKey;
+            div.textContent = "> " + value;
             
             section.querySelector('.work').appendChild(divtitle);
             section.querySelector('.work').appendChild(div);

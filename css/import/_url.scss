@@ -1,13 +1,14 @@
-
+$url : "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/";
 // variables
 $imgPath:"../images/gallery";
 
 // index gallery image url
 $galleryThumbUrls: (
   thumb-flip-glass,
-  thumb-flip-luster2,
+  thumb-flip-luster,
   thumb-ip-jelly,
   thumb-watch-case,
+  thumb-buds-silicone,
   thumb-pencil,
   thumb-flip-pard,
   thumb-airpod-silicone,
@@ -20,6 +21,7 @@ $galleryDtlUrls: (
   dtl-flip-luster,
   dtl-ip-jelly,
   dtl-watch-case,
+  dtl-buds-silicone,
   dtl-pencil,
   dtl-flip-pard,
   dtl-airpod-silicone,
@@ -42,7 +44,20 @@ $galleryDtlUrls: (
 
 //proj1 images url 
 
-#web_plantShop {
-  .macbook .viewport{ background-image: url("../../images/subpages/proj1/intro.png");}
 
+#web_plantShop {
+
+  $subpagesURL : "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/subpages/proj1";
+  
+  $projName : "2304_plant_website";
+  .macbook .viewport{ background-image: url("#{$subpagesURL}/intro.png");}
+  .phone-display {
+    background: #ff352a;
+    .display-content {
+      margin-top: 16px;
+      background: url("#{$url}/#{$projName}/images/capture/main-3.png");
+      background-size: cover;
+    }
+  }
+  
 }

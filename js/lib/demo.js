@@ -234,14 +234,35 @@
         }
         // Positions one slide (left, right or current) in the viewport.
         position(pos) {
-            TweenMax.set(this.DOM.imgWrap, {
-                x: this.transforms[pos].x, 
-                y: this.transforms[pos].y, 
+            TweenMax.to(this.DOM.imgWrap, 0.3, {
+                x: this.transforms[pos].x,
+                y: this.transforms[pos].y,
                 rotationX: 0,
                 rotationY: 0,
-                opacity: 1,
-                rotationZ: this.transforms[pos].rotation
+                rotationZ: this.transforms[pos].rotation,
+                opacity: this.getOpacity(pos),
+                zIndex: this.getZIndex(pos),
+                ease: Power2.easeInOut
             });
+        }
+
+        getOpacity(pos) {
+            if (this.DOM.el.classList.contains('slide--left') || this.DOM.el.classList.contains('slide--right')) {
+                return 0.5;
+            }
+            
+            if (this.DOM.el.classList.contains('slide--current')) {
+                return 1;
+            }
+            
+            return null;
+        }
+        getZIndex(pos) {
+            if (this.DOM.el.classList.contains('slide--current')) {
+                return 1000;
+            }
+            
+            return null;
         }
         // Sets it as current.
         setCurrent(isContentOpen) {
@@ -277,6 +298,7 @@
             this.isLeft = true;
             this.DOM.el.classList.add('slide--visible');
             this.DOM.el.classList.add('slide--left');
+            // this.DOM.el.style.opacity = "0.5"
             // Position it on the left position.
             this.position(isContentOpen ? 0 : 1);
         }
@@ -614,7 +636,7 @@
                 // Reset classes.
                 [this.nextSlide,this.currentSlide,this.prevSlide].forEach(slide => slide.reset());
                 this.render();
-                // allowTilt = true;
+                allowTilt = true;
                 this.isAnimating = false;
             });
         }
