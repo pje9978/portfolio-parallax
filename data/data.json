@@ -10,13 +10,14 @@
     "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
     "percent":"90% (10% 소스 활용)",
     "url":{
-      "url1":"https://google.com",
-      "url2":"https://nate.com",
-      "url3":"https://naver.com"
+      "fullUrl":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/",
+      "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/",
+      "url2":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/detail.html",
+      "url3":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/feed.html"
     },
-    "page":{
-      "subpage":"https://naver.com",
-      "pdf":"https://naver.com"
+    "link":{
+      "subpage":"./pages/subpages/02_plant_shop.html",
+      "pdf":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/portfolio.pdf"
     }
   },
   {
@@ -28,9 +29,10 @@
     "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
     "percent":"90% (10% 소스 활용)",
     "url":{
-      "url1":"https://apple.com"
+      "fullUrl" : "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/",
+      "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/"
     },
-    "page":{
+    "link":{
       "subpage":"https://naver.com",
       "pdf":"https://naver.com"
     }
