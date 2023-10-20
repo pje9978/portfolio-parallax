@@ -4,10 +4,10 @@
   {
     "title":"반응형 MZ들을 위한 반려식물 웹 쇼핑몰",
     "subTitle":"반응형/슬라이드 구현된 웹페이지",
+    "language":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
     "part":["기획","디자인","퍼블리싱"],
-    "date":"2023-08",
     "device":["데스크탑","태블릿","모바일"],
-    "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
+    "date":"2023-08",
     "percent":"90% (10% 소스 활용)",
     "url":{
       "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/",
@@ -22,10 +22,10 @@
   {
     "title":"Apple 페럴렉스 리디지인",
     "subTitle":"Tailwind CSS / GSAP 활용한 페럴렉스",
+    "language":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
     "part":["기획","디자인","퍼블리싱"],
-    "date":"2023-10",
     "device":["데스크탑","태블릿","모바일"],
-    "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
+    "date":"2023-10",
     "percent":"90% (10% 소스 활용)",
     "url":{
       "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2307_Apple_redesign/"
@@ -36,17 +36,20 @@
   },
   {
     "title":"오늘의 여행",
-    "subTitle":"Tailwind CSS / GSAP 활용한 페럴렉스",
+    "subTitle":"데스크탑으로 구현된 웹페이지 제작",
+    "language":["Photoshop","Illustrator","HTML","CSS","JavaScript","J-Query","Notion"],
     "part":["기획","디자인","퍼블리싱"],
+    "device":["데스크탑"],
     "date":"2023-10",
-    "device":["데스크탑","태블릿","모바일"],
-    "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
-    "percent":"90% (10% 소스 활용)",
+    "percent":"50% (팀프로젝트에서 6페이지중 3페이지 작업)",
     "url":{
-      "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2307_Apple_redesign/"
+      "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2303_ezen_today_trip/mainpage.html",
+      "url2":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2303_ezen_today_trip/searchpage.html",
+      "url3":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2303_ezen_today_trip/loginpage.html"
     },
     "link":{
-      "subpage":"./pages/subpages/01_apple_renewal.html"
+      "subpage":"./pages/subpages/01_apple_renewal.html",
+      "pdf":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2303_ezen_today_trip/portfolio/todaytrip.pdf"
     }
   }
 ]
