@@ -2007,4 +2007,8 @@ section#gallery .slideshow--previewopen .nav--prev {
 }
 .work .page {
   display: none;
+}
+
+.urlArea .fullUrl {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

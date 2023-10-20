@@ -20,10 +20,12 @@ fetch(
 function workData(data) {
     const sections = document.querySelectorAll('.workItem');
     const urlArea = document.querySelectorAll('.urlArea');
+    const linkArea = document.querySelectorAll('.linkArea');
 
     Object.keys(data).forEach((key, index) => {
         const section = sections[index];
         const urlElement = urlArea[index];
+        const linkElement = linkArea[index];
         const item = data[key];
         
         // console createElement
@@ -48,16 +50,27 @@ function workData(data) {
         // button createElement
         Object.keys(item).forEach(subKey => {
             const value = item[subKey];
-            if(subKey === 'url' || subKey === 'link'){
-                Object.values(value).forEach((a,i) => {
-                    const aElement =  document.createElement('a');
+            if (subKey === 'url') {
+                Object.entries(value).forEach((a, i) => {
+                    const aElement = document.createElement('a');
                     aElement.classList.add(subKey);
-                    aElement.classList.add("output");
-                    aElement.href = a;
+                    aElement.href = a[1];
                     aElement.textContent = `Page ${i + 1}`;
                     urlElement.appendChild(aElement);
-                    
-                })
+                });
+            }
+            
+            if (subKey === 'link') {
+                Object.entries(value).forEach((a, i) => {
+                    console.log(a)
+                    const aElement = document.createElement('a');
+                    aElement.href = a[1];
+                    // aElement.classList.add(subKey);
+                    aElement.classList.add("link");
+                    aElement.classList.add(a[0]);
+                    aElement.textContent = a[0];
+                    linkElement.appendChild(aElement);
+                });
             }
         });
     });

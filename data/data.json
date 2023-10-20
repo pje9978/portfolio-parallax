@@ -10,7 +10,6 @@
     "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
     "percent":"90% (10% 소스 활용)",
     "url":{
-      "fullUrl":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/",
       "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/",
       "url2":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/detail.html",
       "url3":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/feed.html"
@@ -29,12 +28,10 @@
     "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
     "percent":"90% (10% 소스 활용)",
     "url":{
-      "fullUrl" : "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/",
-      "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/"
+      "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2307_Apple_redesign/"
     },
     "link":{
-      "subpage":"https://naver.com",
-      "pdf":"https://naver.com"
+      "subpage":"./pages/subpages/01_apple_renewal.html"
     }
   }
 
