@@ -5,29 +5,19 @@
     "title":"반응형 MZ들을 위한 반려식물 웹 쇼핑몰",
     "subTitle":"반응형/슬라이드 구현된 웹페이지",
     "part":["기획","디자인","퍼블리싱"],
-    "date":"2023-10",
+    "date":"2023-08",
     "device":["데스크탑","태블릿","모바일"],
     "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
-    "percent":"80% (20% 소스 활용)",
-    "dtl-html":"1",
-    "url":{
-      "pdf":"https://naver.com",
-      "web":"https://naver.com"
-    }
+    "percent":"90% (10% 소스 활용)"
   },
   {
-    "title":"반응형 MZ들을 위한 반려식물 웹 쇼핑몰",
-    "subTitle":"반응형/슬라이드 구현된 웹페이지",
+    "title":"Apple 페럴렉스 리디지인",
+    "subTitle":"Tailwind CSS / GSAP 활용한 페럴렉스",
     "part":["기획","디자인","퍼블리싱"],
     "date":"2023-10",
     "device":["데스크탑","태블릿","모바일"],
     "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
-    "percent":"80% (20% 소스 활용)",
-    "dtl-html":"1",
-    "url":{
-      "pdf":"https://naver.com",
-      "web":"https://naver.com"
-    }
-  },
+    "percent":"80% (20% 소스 활용)"
+  }
 
 ]
