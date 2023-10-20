@@ -5,15 +5,12 @@ fetch(
         return response.json();
     }).then(function (json) {
         // 2
-        console.log(JSON.stringify(json));
+        // console.log(JSON.stringify(json));
         // const jsonData = JSON.stringify(json)
         // 3
         const jsonData = JSON.parse(JSON.stringify(json));
 
         workData(jsonData);
-        console.log(jsonData)
-
-
     }).catch(function(error) {
         console.log(error);
 });
@@ -21,11 +18,12 @@ fetch(
 
     
 function workData(data) {
-    console.log(data)
     const sections = document.querySelectorAll('.workItem');
+    const urlArea = document.querySelectorAll('.urlArea');
 
     Object.keys(data).forEach((key, index) => {
         const section = sections[index];
+        const url = urlArea[index];
         const item = data[key];
         // console.log((data[key]))
         
@@ -43,6 +41,4 @@ function workData(data) {
             section.querySelector('.work').appendChild(div);
         });
     });
- 
-
 }

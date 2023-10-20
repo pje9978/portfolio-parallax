@@ -10,13 +10,9 @@
     "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
     "percent":"90% (10% 소스 활용)",
     "url":{
-      "url1":"https://naver.com",
-      "url2":"https://naver.com",
-      "url3":"https://naver.com"
-    },
-    "page":{
-      "subpage":"https://naver.com",
-      "pdf":"https://naver.com"
+      "pdf":"https://naver.com",
+      "web":"https://naver.com"
+
     }
   },
   {
@@ -28,11 +24,8 @@
     "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
     "percent":"90% (10% 소스 활용)",
     "url":{
-      "url1":"https://naver.com"
-    },
-    "page":{
-      "subpage":"https://naver.com",
-      "pdf":"https://naver.com"
+      "web":"https://naver.com"
+
     }
   }
 

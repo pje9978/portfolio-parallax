@@ -2000,4 +2000,8 @@ section#gallery .slideshow--previewopen .nav--prev {
   background: #333;
   height: 16px;
   width: 16px;
+}
+
+.url {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
