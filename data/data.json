@@ -33,6 +33,20 @@
     "link":{
       "subpage":"./pages/subpages/01_apple_renewal.html"
     }
+  },
+  {
+    "title":"오늘의 여행",
+    "subTitle":"Tailwind CSS / GSAP 활용한 페럴렉스",
+    "part":["기획","디자인","퍼블리싱"],
+    "date":"2023-10",
+    "device":["데스크탑","태블릿","모바일"],
+    "lang":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
+    "percent":"90% (10% 소스 활용)",
+    "url":{
+      "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2307_Apple_redesign/"
+    },
+    "link":{
+      "subpage":"./pages/subpages/01_apple_renewal.html"
+    }
   }
-
 ]

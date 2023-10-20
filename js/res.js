@@ -21,11 +21,15 @@ function workData(data) {
     const sections = document.querySelectorAll('.workItem');
     const urlArea = document.querySelectorAll('.urlArea');
     const linkArea = document.querySelectorAll('.linkArea');
+    const searchUrl = document.querySelectorAll('.search a');
+    const iframeUrl = document.querySelectorAll('.window iframe');
 
     Object.keys(data).forEach((key, index) => {
         const section = sections[index];
         const urlElement = urlArea[index];
         const linkElement = linkArea[index];
+        const searchUrlElement = searchUrl[index];
+        const iframeUrlElement = iframeUrl[index];
         const item = data[key];
         
         // console createElement
@@ -50,26 +54,45 @@ function workData(data) {
         // button createElement
         Object.keys(item).forEach(subKey => {
             const value = item[subKey];
+            console.log(value)
             if (subKey === 'url') {
                 Object.entries(value).forEach((a, i) => {
+                    // work url
                     const aElement = document.createElement('a');
                     aElement.classList.add(subKey);
                     aElement.href = a[1];
+                    aElement.target = "_blank";
                     aElement.textContent = `Page ${i + 1}`;
                     urlElement.appendChild(aElement);
+
+                    //iframe search href
+                    searchUrlElement.href = value.url1;
+                    searchUrlElement.textContent = a[1];
+
+                    // iframe src 
+                    iframeUrlElement.src = value.url1;
+                    
                 });
             }
             
             if (subKey === 'link') {
                 Object.entries(value).forEach((a, i) => {
+
                     console.log(a)
                     const aElement = document.createElement('a');
                     aElement.href = a[1];
+                    aElement.target = "_blank";
                     // aElement.classList.add(subKey);
                     aElement.classList.add("link");
                     aElement.classList.add(a[0]);
-                    aElement.textContent = a[0];
+                    if(a[0] === "subpage"){
+                        
+                        aElement.textContent = "자세히 보기";
+                    }else if(a[0] === "pdf"){
+                        aElement.textContent = "기획서";
+                    }
                     linkElement.appendChild(aElement);
+
                 });
             }
         });
