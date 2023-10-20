@@ -18,6 +18,6 @@
     "device":["데스크탑","태블릿","모바일"],
     "language":["TailwindCSS","HTML","CSS","JavaScript"],
     "percent":"90% (20% 소스 활용)"
-  },
+  }
 
 ]
