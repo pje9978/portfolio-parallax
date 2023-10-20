@@ -44,19 +44,20 @@ function workData(data) {
             section.querySelector('.work').appendChild(divtitle);
             section.querySelector('.work').appendChild(div);
         });
-          // button createElement
+
+        // button createElement
         Object.keys(item).forEach(subKey => {
             const value = item[subKey];
-            if(subKey === 'url' || subKey === 'subpage'){
-                const aElement =  document.createElement('a');
-                aElement.classList.add(subKey);
-                aElement.classList.add("output");
+            if(subKey === 'url' || subKey === 'link'){
                 Object.values(value).forEach((a,i) => {
+                    const aElement =  document.createElement('a');
+                    aElement.classList.add(subKey);
+                    aElement.classList.add("output");
                     aElement.href = a;
+                    aElement.textContent = `Page ${i + 1}`;
+                    urlElement.appendChild(aElement);
                     
                 })
-                aElement.textContent = subKey;
-                urlElement.appendChild(aElement);
             }
         });
     });

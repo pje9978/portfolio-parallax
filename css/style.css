@@ -2002,6 +2002,9 @@ section#gallery .slideshow--previewopen .nav--prev {
   width: 16px;
 }
 
+.work .url {
+  display: none;
+}
 .work .page {
   display: none;
 }/*# sourceMappingURL=style.css.map */
