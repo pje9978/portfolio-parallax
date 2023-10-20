@@ -64,6 +64,7 @@
             .swiper-pagination-bullet-active{@apply w-full border-b-2 border-white/100 text-white/100 ;}
             .swiper-pagination-bullet-active:before{@apply content-[""] block absolute border-t-[10px_solid_transparent] border-r-[10px_solid_transparent] border-b-[10px_solid_transparent] border-l-[10px_solid_pink] [transition:all_.5_ease-in-out];}
             .editor-line {counter-increment: line;}
+            .urlArea a{@apply rounded-r-md border border-gray-200 bg-white text-sm font-medium px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700;}
         }
         
 
@@ -381,22 +382,13 @@
                                     <div class="w-full flex flex-col  rounded-md mb-4 md:flex-wrap sm:flex-row justify-center items-center truncate" role="group">
                                         <!-- url -->
                                         <div class="urlArea flex">
-                                            <a href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/"  class="rounded-l-lg border border-gray-200 bg-white text-sm font-medium px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">1 Page</a>
-                                            <a href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/detail.html" class="border-t border-b border-gray-200 bg-white text-sm font-medium px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">2 Page</a>
-                                            <a href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/feed.html" class="rounded-r-md border border-gray-200 bg-white text-sm font-medium px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">3 Page</a>
-                                            <!-- <button type="button" class="rounded-l-lg border border-gray-200 bg-white text-sm font-medium px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700" onclick="location.href='http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/'";>
-                                                1 Page
-                                            </button>
-                                            <button type="button"  class="border-t border-b border-gray-200 bg-white text-sm font-medium px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700" onclick="location.href='http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/detail.html'";>
-                                                2 Page
-                                            </button>
-                                            <button type="button" class="rounded-r-md border border-gray-200 bg-white text-sm font-medium px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700" onclick="location.href='http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/feed.html'";>
-                                                3 Page
-                                            </button> -->
+                                            <a href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/"  class="rounded-l-lg border border-gray-200 bg-white text-sm font-medium px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700" target="_blank">1 Page</a>
+                                            <a href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/detail.html" class="border-t border-b border-gray-200 bg-white text-sm font-medium px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700" target="_blank">2 Page</a>
+                                            <a href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/feed.html" class="rounded-r-md border border-gray-200 bg-white text-sm font-medium px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700" target="_blank">3 Page</a>
                                         </div>
 
                                         <!-- 세부페이지 및 기획서 -->
-                                        <div class="LinkArea mt-2  md:mt-0 sm:mt-2 sm:ml-2">
+                                        <div class="linkArea mt-2  md:mt-0 sm:mt-2 sm:ml-2">
                                             <a class="inline-flex rounded-md bg-black/80 hover:bg-black/100 text-sm px-4 py-2" href="./pages/subpages/02_plant_shop.html">자세히 보기</a>
                                             <a class="inline-flex rounded-md bg-black/80 hover:bg-black/100 text-sm px-4 py-2" href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/portfolio.pdf">기획서</a>
                                         </div>
@@ -514,8 +506,8 @@
                                         </div>
 
                                         <!-- 기획서 / 세부페이지 -->
-                                        <div class="mt-2 md:mt-0 sm:mt-0 sm:ml-2">
-                                            <a class=" rounded bg-black/80 hover:bg-black/100 text-sm px-4 py-2 inline-flex" href="./pages/subpages/01_apple_renewal.html">자세히 보기</a>
+                                        <div class="linkArea mt-2 md:mt-0 sm:mt-0 sm:ml-2">
+                                            <a class="rounded bg-black/80 hover:bg-black/100 text-sm px-4 py-2 inline-flex" href="./pages/subpages/01_apple_renewal.html">자세히 보기</a>
                                         </div>
                                     </div>
                                 </div>

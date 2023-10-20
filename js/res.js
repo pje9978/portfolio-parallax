@@ -23,22 +23,41 @@ function workData(data) {
 
     Object.keys(data).forEach((key, index) => {
         const section = sections[index];
-        const url = urlArea[index];
+        const urlElement = urlArea[index];
         const item = data[key];
-        // console.log((data[key]))
         
+        // console createElement
         Object.keys(item).forEach(subKey => {
             const value = item[subKey];
-            
+
             const div = document.createElement('div');
             const divtitle = document.createElement('div');
             div.classList.add(subKey);
+            div.classList.add("output");
+            
+            divtitle.classList.add(subKey);
+            divtitle.classList.add("input");
             divtitle.style.opacity = '0.5';
             const output = divtitle.textContent = "> " + subKey;
             div.textContent = "> " + value;
             
             section.querySelector('.work').appendChild(divtitle);
             section.querySelector('.work').appendChild(div);
+        });
+          // button createElement
+        Object.keys(item).forEach(subKey => {
+            const value = item[subKey];
+            if(subKey === 'url' || subKey === 'subpage'){
+                const aElement =  document.createElement('a');
+                aElement.classList.add(subKey);
+                aElement.classList.add("output");
+                Object.values(value).forEach((a,i) => {
+                    aElement.href = a;
+                    
+                })
+                aElement.textContent = subKey;
+                urlElement.appendChild(aElement);
+            }
         });
     });
 }
