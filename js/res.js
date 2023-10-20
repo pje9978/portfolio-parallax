@@ -23,6 +23,8 @@ function workData(data) {
     const linkArea = document.querySelectorAll('.linkArea');
     const searchUrl = document.querySelectorAll('.search a');
     const iframeUrl = document.querySelectorAll('.window iframe');
+    const editorTitle = document.querySelectorAll('.editorTitle');
+    const editorSubTitle = document.querySelectorAll('.editorSubTitle');
 
     Object.keys(data).forEach((key, index) => {
         const section = sections[index];
@@ -30,8 +32,23 @@ function workData(data) {
         const linkElement = linkArea[index];
         const searchUrlElement = searchUrl[index];
         const iframeUrlElement = iframeUrl[index];
+        const editorTitleElement = editorTitle[index];
+        const editorSubTitleElement = editorSubTitle[index];
+
         const item = data[key];
-        
+        console.log(item)
+
+        // editor 
+        editorTitleElement.textContent = item.title;
+        editorSubTitleElement.textContent = item.subTitle;
+
+        // search
+        Object.entries(item.url).forEach(([key,value]) => {
+            searchUrlElement.textContent = item.url.url1;
+            searchUrlElement.href = item.url.url1;
+            iframeUrlElement.src = item.url.url1;
+        });
+
         // console createElement
         Object.keys(item).forEach(subKey => {
             const value = item[subKey];
@@ -54,7 +71,8 @@ function workData(data) {
         // button createElement
         Object.keys(item).forEach(subKey => {
             const value = item[subKey];
-            console.log(value)
+            console.log(item[subKey])
+            
             if (subKey === 'url') {
                 Object.entries(value).forEach((a, i) => {
                     // work url
@@ -64,14 +82,6 @@ function workData(data) {
                     aElement.target = "_blank";
                     aElement.textContent = `Page ${i + 1}`;
                     urlElement.appendChild(aElement);
-
-                    //iframe search href
-                    searchUrlElement.href = value.url1;
-                    searchUrlElement.textContent = a[1];
-
-                    // iframe src 
-                    iframeUrlElement.src = value.url1;
-                    
                 });
             }
             

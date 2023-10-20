@@ -2002,6 +2002,12 @@ section#gallery .slideshow--previewopen .nav--prev {
   width: 16px;
 }
 
+.work .title {
+  display: none;
+}
+.work .subTitle {
+  display: none;
+}
 .work .url {
   display: none;
 }
