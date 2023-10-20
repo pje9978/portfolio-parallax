@@ -8,7 +8,7 @@
     "date":"2023-06",
     "device":["데스크탑","태블릿","모바일"],
     "language":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
-    "percent":"90% (10% 소스 활용)",
+    "percent":"90% (10% 소스 활용)"
   },
   {
     "title":"Apple 페럴렉스 리디자인",
@@ -17,7 +17,7 @@
     "date":"2023-10",
     "device":["데스크탑","태블릿","모바일"],
     "language":["TailwindCSS","HTML","CSS","JavaScript"],
-    "percent":"90% (20% 소스 활용)",
+    "percent":"90% (20% 소스 활용)"
   },
 
 ]
