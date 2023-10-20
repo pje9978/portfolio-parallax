@@ -61,3 +61,17 @@ $galleryDtlUrls: (
   }
   
 }
+
+#appleRenewal {
+  $subpagesURL : "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/subpages/proj2";
+  $projName : "2307_Apple_redesign";
+  .macbook .viewport{ background-image: url("#{$subpagesURL}/desktop.png");}
+  .phone-display {
+    background: #ffffff;
+    .display-content {
+      // margin-top: 16px;
+      background: url("#{$subpagesURL}/mobile.png");
+      background-size: cover;
+    }
+  } 
+}

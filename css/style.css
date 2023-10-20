@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable.css");
 :root {
   --bg-black: hsl(0, 0%, 5%);
   --text-black: hsl(0, 0%, 5%);
@@ -25,6 +26,7 @@ body {
   margin: 0;
   background: var(--bg-black);
   color: var(--text-white);
+  font-family: "Pretendard-Regular";
 }
 
 @keyframes loaderAnim {
@@ -1931,6 +1933,17 @@ section#gallery .slideshow--previewopen .nav--prev {
 #web_plantShop .phone-display .display-content {
   margin-top: 16px;
   background: url("http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work//2304_plant_website/images/capture/main-3.png");
+  background-size: cover;
+}
+
+#appleRenewal .macbook .viewport {
+  background-image: url("http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/subpages/proj2/desktop.png");
+}
+#appleRenewal .phone-display {
+  background: #ffffff;
+}
+#appleRenewal .phone-display .display-content {
+  background: url("http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/subpages/proj2/mobile.png");
   background-size: cover;
 }
 
