@@ -15,6 +15,7 @@ fetch(`https://raw.githubusercontent.com/pje9978/portfolio-parallax/main/data/da
         const iphone = document.querySelector('.display-content');
         const pageLink = document.querySelectorAll('.pageLink');
         const pageImg = document.querySelectorAll('.pageImg');
+        const pdf = document.querySelector('.pdf');
 
 
         data.forEach(itemData => {
@@ -46,7 +47,13 @@ fetch(`https://raw.githubusercontent.com/pje9978/portfolio-parallax/main/data/da
             })
 
             //iphone Img
-            iphone.style.backgroundImage = `url(${itemData.img.mobile[0]})`;
+            if (iphone) {
+                iphone.style.backgroundImage = `url(${itemData.img.mobile[0]})`;
+            }
+
+            //기획서 url
+            pdf.href = itemData.link.pdf;
+            console.log(itemData.link.pdf)
         }
         });
     })

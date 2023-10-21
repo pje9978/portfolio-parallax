@@ -45,6 +45,8 @@ function workData(data) {
         searchUrlElement.href = item.url.url1;
         iframeUrlElement.src = item.url.url1;
 
+        // subpage
+        
 
         // console createElement
         Object.keys(item).forEach(subKey => {
@@ -68,7 +70,7 @@ function workData(data) {
         // button createElement
         Object.keys(item).forEach(subKey => {
             const value = item[subKey];
-            // console.log(item[subKey])
+
             
             if (subKey === 'url') {
                 Object.entries(value).forEach((a, i) => {
@@ -84,8 +86,8 @@ function workData(data) {
             
             if (subKey === 'link') {
                 Object.entries(value).forEach((a, i) => {
-
-                    console.log(a)
+                    
+        
                     const aElement = document.createElement('a');
                     aElement.href = a[1];
                     aElement.target = "_blank";
@@ -93,8 +95,8 @@ function workData(data) {
                     aElement.classList.add("link");
                     aElement.classList.add(a[0]);
                     if(a[0] === "subpage"){
-                        
                         aElement.textContent = "자세히 보기";
+                        // aElement.href = 
                     }else if(a[0] === "pdf"){
                         aElement.textContent = "기획서";
                     }

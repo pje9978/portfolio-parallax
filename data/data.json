@@ -64,7 +64,7 @@
     "language":["HTML","CSS","JavaScript","J-Query","Photoshop","Illustrator","Notion"],
     "part":["기획","디자인","퍼블리싱"],
     "device":["데스크탑"],
-    "percent":"50% (팀프로젝트에서 6페이지중 3페이지 작업)",
+    "percent":"50% (3명의 팀 프로젝트에서 6페이지중 3페이지 작업)",
     "date":"2023-10",
     "url":{
       "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2303_ezen_today_trip/mainpage.html",
@@ -77,7 +77,9 @@
     },
     "img" : {
       "desktop" : [
-        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2303_ezen_today_trip/images/capture/main.png"
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2303_ezen_today_trip/images/capture/page1.png",
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2303_ezen_today_trip/images/capture/page2.png",
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2303_ezen_today_trip/images/capture/page3.png"
       ]
     }
   }
