@@ -2006,6 +2006,15 @@ section#gallery .slideshow--previewopen .nav--prev {
 .work .link {
   display: none;
 }
+.work .id {
+  display: none;
+}
+.work .name {
+  display: none;
+}
+.work .img {
+  display: none;
+}
 
 .urlArea .fullUrl {
   display: none;
