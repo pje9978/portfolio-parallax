@@ -23,7 +23,7 @@ function workData(data) {
     const iframeUrl = document.querySelectorAll('.window iframe');
     const editorTitle = document.querySelectorAll('.editorTitle');
     const editorSubTitle = document.querySelectorAll('.editorSubTitle');
-    console.log(data)
+ 
     Object.keys(data).forEach((key, index) => {
         const section = sections[index];
         const urlElement = urlArea[index];
@@ -34,7 +34,6 @@ function workData(data) {
         const editorSubTitleElement = editorSubTitle[index];
 
         const item = data[key];
-        console.log(item)
 
         // editor 
         editorTitleElement.textContent = item.title;
@@ -107,20 +106,3 @@ function workData(data) {
     });
 }
 
-
-function subPageData(data){
-    const dataContainer = document.getElementById('data-container');
-    data.forEach(item => {
-        document.querySelector('.title').textContent = item.title;
-
-        // ID 값을 가져와서 해당 HTML 파일을 로드하고 데이터를 적용
-        const itemId = item.id;
-        fetch(`pages/page${itemId}.html`)
-            .then(response => response.text())
-            .then(htmlData => {
-                // HTML 내용을 적용
-                itemElement.innerHTML += htmlData;
-            })
-            .catch(error => console.log(error));
-        });
-}
