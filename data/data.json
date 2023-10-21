@@ -3,6 +3,7 @@
 [
   {
     "id": 1 ,
+    "name":"apple_renewal",
     "title":"반응형 MZ들을 위한 반려식물 웹 쇼핑몰",
     "subTitle":"반응형/슬라이드 구현된 웹페이지",
     "language":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
@@ -22,6 +23,7 @@
   },
   {
     "id": 2,
+    "name":"plant_shop",
     "title":"Apple 페럴렉스 리디지인",
     "subTitle":"Tailwind CSS / GSAP 활용한 페럴렉스",
     "language":["Tailwind CSS","HTML","CSS","JavaScript","Figma","J-Query","Notion"],
@@ -38,6 +40,7 @@
   },
   {
     "id": 3,
+    "name":"today_trip",
     "title":"오늘의 여행",
     "subTitle":"데스크탑으로 구현된 웹페이지 제작",
     "language":["HTML","CSS","JavaScript","J-Query","Photoshop","Illustrator","Notion"],
