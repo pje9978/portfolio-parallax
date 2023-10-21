@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const itemId = itemData.id;
             console.log(itemId)
             if (itemId === parseInt(inputDataId)) {
-               const itemName = itemData.name; // name 속성 가져오기
+               
                title.textContent = itemData.title;
                subTitle.textContent = itemData.subTitle;
             
