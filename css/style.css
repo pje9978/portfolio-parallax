@@ -1924,29 +1924,6 @@ section#gallery .slideshow--previewopen .nav--prev {
   background-position: center;
 }
 
-#web_plantShop .macbook .viewport {
-  background-image: url("http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/subpages/proj1/intro.png");
-}
-#web_plantShop .phone-display {
-  background: #ff352a;
-}
-#web_plantShop .phone-display .display-content {
-  margin-top: 16px;
-  background: url("http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work//2304_plant_website/images/capture/main-3.png");
-  background-size: cover;
-}
-
-#appleRenewal .macbook .viewport {
-  background-image: url("http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/subpages/proj2/desktop.png");
-}
-#appleRenewal .phone-display {
-  background: #ffffff;
-}
-#appleRenewal .phone-display .display-content {
-  background: url("http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/subpages/proj2/mobile.png");
-  background-size: cover;
-}
-
 /*변수*/
 /*반응형 화면 크기*/
 /*반응형, 브라우저 크기가 767px 이하일때*/
