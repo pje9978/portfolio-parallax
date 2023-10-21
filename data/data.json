@@ -74,6 +74,11 @@
     "link":{
       "subpage":"./pages/03_today_trip.html",
       "pdf":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2303_ezen_today_trip/portfolio/todaytrip.pdf"
+    },
+    "img" : {
+      "desktop" : [
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2307_Apple_redesign/images/capture/desktop.png"
+      ]
     }
   }
 ]
