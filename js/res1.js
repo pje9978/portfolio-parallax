@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
                
                // macbook Img
                if (mackbook) {
-                    console.log(mackbook)
+            
                   mackbook.style.backgroundImage = `url(${itemData.img.desktop[0]})`;
                } 
                
