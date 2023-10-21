@@ -17,7 +17,7 @@
       "url3":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/feed.html"
     },
     "link":{
-      "subpage":"./pages/subpages/02_plant_shop.html",
+      "subpage":"./pages/02_plant_shop.html",
       "pdf":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/portfolio.pdf"
     }
   },
@@ -35,7 +35,7 @@
       "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2307_Apple_redesign/"
     },
     "link":{
-      "subpage":"./pages/subpages/01_apple_renewal.html"
+      "subpage":"./pages/01_apple_renewal.html"
     }
   },
   {
@@ -54,7 +54,7 @@
       "url3":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2303_ezen_today_trip/loginpage.html"
     },
     "link":{
-      "subpage":"./pages/subpages/01_apple_renewal.html",
+      "subpage":"./pages/01_apple_renewal.html",
       "pdf":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2303_ezen_today_trip/portfolio/todaytrip.pdf"
     }
   }

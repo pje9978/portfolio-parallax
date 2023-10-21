@@ -4,13 +4,11 @@ fetch(
     ).then(function(response) {
         return response.json();
     }).then(function (json) {
-        // 2
-        // console.log(JSON.stringify(json));
-        // const jsonData = JSON.stringify(json)
-        // 3
-        const jsonData = JSON.parse(JSON.stringify(json));
 
+        const jsonData = JSON.parse(JSON.stringify(json));
         workData(jsonData);
+        subPageData(jsonData);
+
     }).catch(function(error) {
         console.log(error);
 });
@@ -25,7 +23,7 @@ function workData(data) {
     const iframeUrl = document.querySelectorAll('.window iframe');
     const editorTitle = document.querySelectorAll('.editorTitle');
     const editorSubTitle = document.querySelectorAll('.editorSubTitle');
-
+    console.log(data)
     Object.keys(data).forEach((key, index) => {
         const section = sections[index];
         const urlElement = urlArea[index];
@@ -42,12 +40,12 @@ function workData(data) {
         editorTitleElement.textContent = item.title;
         editorSubTitleElement.textContent = item.subTitle;
 
+
         // search
-        Object.entries(item.url).forEach(([key,value]) => {
-            searchUrlElement.textContent = item.url.url1;
-            searchUrlElement.href = item.url.url1;
-            iframeUrlElement.src = item.url.url1;
-        });
+        searchUrlElement.textContent = item.url.url1;
+        searchUrlElement.href = item.url.url1;
+        iframeUrlElement.src = item.url.url1;
+
 
         // console createElement
         Object.keys(item).forEach(subKey => {
@@ -71,7 +69,7 @@ function workData(data) {
         // button createElement
         Object.keys(item).forEach(subKey => {
             const value = item[subKey];
-            console.log(item[subKey])
+            // console.log(item[subKey])
             
             if (subKey === 'url') {
                 Object.entries(value).forEach((a, i) => {
@@ -107,4 +105,22 @@ function workData(data) {
             }
         });
     });
+}
+
+
+function subPageData(data){
+    const dataContainer = document.getElementById('data-container');
+    data.forEach(item => {
+        document.querySelector('.title').textContent = item.title;
+
+        // ID 값을 가져와서 해당 HTML 파일을 로드하고 데이터를 적용
+        const itemId = item.id;
+        fetch(`pages/page${itemId}.html`)
+            .then(response => response.text())
+            .then(htmlData => {
+                // HTML 내용을 적용
+                itemElement.innerHTML += htmlData;
+            })
+            .catch(error => console.log(error));
+        });
 }
