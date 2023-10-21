@@ -2,7 +2,7 @@
 
 [
   {
-    "id": 1 ,
+    "id": 2 ,
     "name":"plant_shop",
     "title":"MZ들을 위한 반려식물 웹 쇼핑몰",
     "subTitle":"반응형/슬라이드 구현된 웹페이지",
@@ -19,12 +19,23 @@
     "link":{
       "subpage":"./pages/02_plant_shop.html",
       "pdf":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/portfolio.pdf"
-    }
+    },
+    "img" : {
+      "desktop" : [
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/images/capture/main-1.png",
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/images/capture/detail-1.png",
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/images/capture/feed-1.png"
+      ],
+      "mobile" : [
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work//2304_plant_website/images/capture/main-3.png"
+      ]
+    },
+    "review": "MZ는 의미 있는 가치를 찾아 다양한 경험을 통해 '나'를 만들어가고 성장합니다. 지치고 바쁜 일상에서 벗어나 나의 공간에서 식물이 주는 휴식을 잠시 느껴보고 정성으로 키운 식물이 주는 가치를 통해 나의 존재를 느낍니다.그로우 바이는 식물과 함께 만들어가는 가치에 공감하고 집중합니다."
   },
   {
-    "id": 2,
+    "id": 1,
     "name":"apple_renewal",
-    "title":"Apple 페럴렉스 리디지인",
+    "title":"Apple 페럴렉스 리디자인",
     "subTitle":"Tailwind CSS / GSAP 활용한 페럴렉스",
     "language":["Tailwind CSS","HTML","CSS","JavaScript","Figma","J-Query","Notion"],
     "part":["기획","디자인","퍼블리싱"],
