@@ -1924,6 +1924,21 @@ section#gallery .slideshow--previewopen .nav--prev {
   background-position: center;
 }
 
+#web_plantShop .phone-display {
+  background: #ff352a;
+}
+#web_plantShop .phone-display .display-content {
+  margin-top: 16px;
+  background-size: cover;
+}
+
+#appleRenewal .phone-display {
+  background: #ffffff;
+}
+#appleRenewal .phone-display .display-content {
+  background-size: cover;
+}
+
 /*변수*/
 /*반응형 화면 크기*/
 /*반응형, 브라우저 크기가 767px 이하일때*/

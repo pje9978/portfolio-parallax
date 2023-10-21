@@ -29,8 +29,7 @@
       "mobile" : [
         "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work//2304_plant_website/images/capture/main-3.png"
       ]
-    },
-    "review": "MZ는 의미 있는 가치를 찾아 다양한 경험을 통해 '나'를 만들어가고 성장합니다. 지치고 바쁜 일상에서 벗어나 나의 공간에서 식물이 주는 휴식을 잠시 느껴보고 정성으로 키운 식물이 주는 가치를 통해 나의 존재를 느낍니다.그로우 바이는 식물과 함께 만들어가는 가치에 공감하고 집중합니다."
+    }
   },
   {
     "id": 1,
@@ -47,6 +46,14 @@
     },
     "link":{
       "subpage":"./pages/01_apple_renewal.html"
+    },
+    "img" : {
+      "desktop" : [
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2307_Apple_redesign/images/capture/desktop.png"
+      ],
+      "mobile" : [
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2307_Apple_redesign/images/capture/mobile.png"
+      ]
     }
   },
   {

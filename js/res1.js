@@ -17,21 +17,19 @@ document.addEventListener('DOMContentLoaded', function() {
          const pageImg = document.querySelectorAll('.pageImg');
 
 
-         if (mackbook) {
-            console.log(mackbook);
-         } 
-
          data.forEach(itemData => {
             const itemId = itemData.id;
             console.log(itemId)
             if (itemId === parseInt(inputDataId)) {
-               
+               console.log(itemData.subTitle)
                // title 
                title.textContent = itemData.title;
                subTitle.textContent = itemData.subTitle;
-
+               console.log(mackbook)
+               
                // macbook Img
                if (mackbook) {
+                    console.log(mackbook)
                   mackbook.style.backgroundImage = `url(${itemData.img.desktop[0]})`;
                } 
                
