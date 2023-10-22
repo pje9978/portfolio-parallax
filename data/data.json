@@ -21,12 +21,12 @@
       "pdf":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/portfolio.pdf"
     },
     "img" : {
-      "desktop" :  {
-        "MainPage" : "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/images/capture/main-1.png",
-        "DetailPage" : "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/images/capture/detail-1.png",
-        "FeedPage" : "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/images/capture/feed-1.png"
-
-      },
+      "desktop" : 
+      [
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/images/capture/main-1.png",
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/images/capture/detail-1.png",
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2304_plant_website/images/capture/feed-1.png"
+      ],
       "mobile" : [
         "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work//2304_plant_website/images/capture/main-3.png"
       ]
