@@ -29,6 +29,12 @@ body {
   font-family: "Pretendard-Regular";
 }
 
+/*변수*/
+/*반응형 화면 크기*/
+/*반응형, 브라우저 크기가 767px 이하일때*/
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+/*넓이, 높이 자동 계산함수*/
 @keyframes loaderAnim {
   to {
     opacity: 1;
@@ -72,14 +78,15 @@ body {
 }
 
 .loading-blurbs {
-  width: 400px;
+  max-width: 400px;
+  width: 320px;
   height: 180px;
   text-align: left;
   position: relative;
 }
 
 .loading-blurbs code {
-  --animation-duration: 500ms;
+  --animation-duration: 200ms;
   display: block;
   position: absolute;
   width: 100%;

@@ -53,7 +53,7 @@ function workData(data) {
         },500); 
     }
 
-    setTimeout(hideLoadingScreen, 4000);
+    setTimeout(hideLoadingScreen, 2000);
 
     
     Object.keys(data).forEach((key, index) => {

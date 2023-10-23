@@ -1,3 +1,4 @@
+@import "../import/utils";
 
 @keyframes loaderAnim {
 	to {
@@ -45,14 +46,16 @@
   // background: #2A2F36;
 }
 
+
 .loading-blurbs {
-  width: 400px;
+  max-width: 400px;
+  width: 320px;
   height: 180px;
   text-align: left;
   position: relative;
 }
 .loading-blurbs code {
-  --animation-duration: 500ms;
+  --animation-duration: 200ms;
   display: block;
   position: absolute;
   width: 100%;

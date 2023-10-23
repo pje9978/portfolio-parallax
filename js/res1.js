@@ -18,7 +18,18 @@ fetch(`https://raw.githubusercontent.com/pje9978/portfolio-parallax/main/data/da
         const pageLink = document.querySelectorAll('.pageLink');
         const pageImg = document.querySelectorAll('.pageImg');
         const pdf = document.querySelector('.pdf');
+        const linkElement = document.createElement("link");
 
+        function favicon(){
+            linkElement.rel = "icon";
+            linkElement.type = "image/png";
+            linkElement.sizes = "16x16";
+            linkElement.href = "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/favicons/favicon-16x16.png";
+        
+            const headElement = document.head || document.getElementsByTagName("head")[0];
+            headElement.appendChild(linkElement);
+        }
+        favicon();
 
         data.forEach(itemData => {
 
@@ -30,25 +41,10 @@ fetch(`https://raw.githubusercontent.com/pje9978/portfolio-parallax/main/data/da
                 docTitle.textContent = itemData.name;
                 title.textContent = itemData.title;
                 subTitle.textContent = itemData.subTitle;
-                console.log(mackbook)
                 
-                function showLoadingScreen() {
-                    loadingScreen.style.display = 'block'; // 로딩 화면 표시
-                }
-                
-                function hideLoadingScreen() {
-                loadingScreen.style.display = 'none'; // 로딩 화면 숨김 처리
-                main.style.display = 'block';
-                }
-                
-                // 이미지 로드 완료 시 이벤트 핸들러
-                mackbook.addEventListener('load', function() {
-                hideLoadingScreen(); // 이미지가 완전히 로드된 후에 로딩 화면 숨김 처리
-                });
-
                 // macbook Img
                 if (mackbook) {
-                    hideLoadingScreen();
+                    // hideLoadingScreen();
                     mackbook.style.backgroundImage = `url(${itemData.img.desktop[0]})`;
                 } 
                 
