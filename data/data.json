@@ -46,7 +46,8 @@
       "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2307_Apple_redesign/"
     },
     "link":{
-      "subpage":"./pages/01_apple_renewal.html"
+      "subpage":"./pages/01_apple_renewal.html",
+      "gitHub":"https://github.com/pje9978/work-appleRedesign"
     },
     "img" : {
       "desktop" : [

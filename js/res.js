@@ -99,6 +99,8 @@ function workData(data) {
                         // aElement.href = 
                     }else if(a[0] === "pdf"){
                         aElement.textContent = "기획서";
+                    }else if(a[0] === "gitHub"){
+                        aElement.textContent = "GitHub";
                     }
                     linkElement.appendChild(aElement);
 
