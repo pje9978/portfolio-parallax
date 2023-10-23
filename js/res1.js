@@ -52,16 +52,23 @@ fetch(`https://raw.githubusercontent.com/pje9978/portfolio-parallax/main/data/da
                 
                 function loadImage(url, element, successCallback, errorCallback) {
                     var image = new Image();
-                    image.src = url;
+                    console.log(url.includes("images"))
+                    if (url.includes("images") || url.includes("image")) {
+                        image.src = url;
+                        image.onload = function() {
+                            successCallback(element);
+                            console.log("로드됨");
+                            loadingScreen.style.display = "none";
+                            main.style.display = "flex";
+                            element.style.backgroundImage = `url(${url})`;
+                            element.src = url;
+        
+                            // element.href = url;
+                        };
+                    }else{
+                        element.href = url;
+                    }
 
-                    image.onload = function() {
-                        successCallback(element);
-                        console.log("로드됨");
-                        loadingScreen.style.display = "none";
-                        main.style.display = "flex";
-                        element.style.backgroundImage = `url(${url})`;
-                        element.src = url;
-                    };
                     
                     image.onerror = function() {
                         errorCallback(element);
@@ -75,6 +82,7 @@ fetch(`https://raw.githubusercontent.com/pje9978/portfolio-parallax/main/data/da
                     // Add your logic for handling image loading errors here
                     console.error("Failed to load image");
                 }
+
                 // macbook Img
                 if (mackbook) {
                     loadImage(itemData.img.desktop[0], mackbook, handleImageLoad, handleImageError);
@@ -85,14 +93,13 @@ fetch(`https://raw.githubusercontent.com/pje9978/portfolio-parallax/main/data/da
                     const imgUrl = itemData.img.desktop;
                     loadImage(imgUrl[i], imgElement, handleImageLoad, handleImageError);
                 });
-            
+                
                 //link Img
                 pageLink.forEach((linkElement, i) => {
-                    const linkUrlArray = Object.values(itemData.url);
-                    loadImage(linkUrlArray[i], linkElement, handleImageLoad, handleImageError);
+                    const linkUrl = Object.values(itemData.url);
+                    loadImage(linkUrl[i], linkElement, handleImageLoad, handleImageError); 
                 });
                 
-
                 //iphone Img
                 if (iphone) { 
                     loadImage(itemData.img.mobile[0], iphone, handleImageLoad, handleImageError);
