@@ -1,4 +1,5 @@
 
+
 document.addEventListener('DOMContentLoaded', function() {
     const body = document.querySelector('body');
     const inputDataId = body.getAttribute('data-id');
@@ -7,8 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
 fetch(`https://raw.githubusercontent.com/pje9978/portfolio-parallax/main/data/data.json`)
     .then(response => response.json())
     .then(data => {
-        const main = document.querySelector('main');
-        const loadingScreen = document.getElementById('loading-screen');
+       
+        var loadingScreen = document.getElementById('loading-sub');
+        var main = document.querySelector('main');
         const docTitle = document.querySelector('title');
         const container = document.getElementById('data-container');
         const title = document.querySelector('.title');
@@ -20,6 +22,12 @@ fetch(`https://raw.githubusercontent.com/pje9978/portfolio-parallax/main/data/da
         const pdf = document.querySelector('.pdf');
         const linkElement = document.createElement("link");
 
+
+
+
+      
+
+        
         function favicon(){
             linkElement.rel = "icon";
             linkElement.type = "image/png";
@@ -42,35 +50,63 @@ fetch(`https://raw.githubusercontent.com/pje9978/portfolio-parallax/main/data/da
                 title.textContent = itemData.title;
                 subTitle.textContent = itemData.subTitle;
                 
+                function loadImage(url, element, successCallback, errorCallback) {
+                    var image = new Image();
+                    image.src = url;
+
+                    image.onload = function() {
+                        successCallback(element);
+                        console.log("로드됨");
+                        loadingScreen.style.display = "none";
+                        main.style.display = "flex";
+                        element.style.backgroundImage = `url(${url})`;
+                        element.src = url;
+                    };
+                    
+                    image.onerror = function() {
+                        errorCallback(element);
+                    };
+                }
+                
+                function handleImageLoad(element) {
+                    element.style.display = "block"; 
+                }
+                function handleImageError(element) {
+                    // Add your logic for handling image loading errors here
+                    console.error("Failed to load image");
+                }
                 // macbook Img
                 if (mackbook) {
-                    // hideLoadingScreen();
-                    mackbook.style.backgroundImage = `url(${itemData.img.desktop[0]})`;
-                } 
+                    loadImage(itemData.img.desktop[0], mackbook, handleImageLoad, handleImageError);
+                }
                 
                 //page Img
-                pageImg.forEach((a,i) => {
+                pageImg.forEach((imgElement, i) => {
                     const imgUrl = itemData.img.desktop;
-                    a.src = imgUrl[i];
-                })
+                    loadImage(imgUrl[i], imgElement, handleImageLoad, handleImageError);
+                });
             
                 //link Img
-                pageLink.forEach((a,i) => {
-                    const linkUrl = Object.values(itemData.url);
-                    a.href = linkUrl[i];
-                })
+                pageLink.forEach((linkElement, i) => {
+                    const linkUrlArray = Object.values(itemData.url);
+                    loadImage(linkUrlArray[i], linkElement, handleImageLoad, handleImageError);
+                });
+                
 
                 //iphone Img
-                if (iphone) {
-                
-                    iphone.style.backgroundImage = `url(${itemData.img.mobile[0]})`;
+                if (iphone) { 
+                    loadImage(itemData.img.mobile[0], iphone, handleImageLoad, handleImageError);
                 }
 
                 //기획서 url
-                pdf.href = itemData.link.pdf;
-                console.log(itemData.link.pdf)
+                if(pdf) {
+                    pdf.href = itemData.link.pdf;
+                }
+
             }
         });
+
+
     })
     .catch(error => console.log(error));
 });
