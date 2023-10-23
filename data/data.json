@@ -32,7 +32,7 @@
     "name":"plant_shop",
     "title":"MZ들을 위한 반려식물 웹 쇼핑몰",
     "subTitle":"반응형/슬라이드 구현된 웹페이지",
-    "language":["Figma","HTML","CSS","JavaScript","J-Query","Notion"],
+    "language":["HTML","CSS","JavaScript","J-Query","Figma","Notion"],
     "part":["기획","디자인","퍼블리싱"],
     "device":["데스크탑","태블릿","모바일"],
     "percent":"90% (10% 소스 활용)",
