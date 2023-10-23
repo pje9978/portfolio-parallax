@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
 fetch(`https://raw.githubusercontent.com/pje9978/portfolio-parallax/main/data/data.json`)
     .then(response => response.json())
     .then(data => {
-
+        const docTitle = document.querySelector('title');
+        console.log(docTitle)
         const container = document.getElementById('data-container');
         const title = document.querySelector('.title');
         const subTitle = document.querySelector('.subTitle');
@@ -25,6 +26,7 @@ fetch(`https://raw.githubusercontent.com/pje9978/portfolio-parallax/main/data/da
         if (itemId === parseInt(inputDataId)) {
             console.log(itemData.subTitle)
             // title 
+            docTitle.textContent = itemData.name;
             title.textContent = itemData.title;
             subTitle.textContent = itemData.subTitle;
             console.log(mackbook)
