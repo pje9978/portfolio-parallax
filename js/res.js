@@ -23,7 +23,39 @@ function workData(data) {
     const iframeUrl = document.querySelectorAll('.window iframe');
     const editorTitle = document.querySelectorAll('.editorTitle');
     const editorSubTitle = document.querySelectorAll('.editorSubTitle');
- 
+    const loadingScreen = document.getElementById('loading-screen');
+
+
+    function disableScroll() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        document.body.style.overflow = 'hidden';
+        window.scrollTo(0, scrollTop);
+    }
+
+    function showLoadingScreen() {
+        loadingScreen.style.display = 'block';
+    }
+
+    window.addEventListener('load', function() {
+        showLoadingScreen();
+        disableScroll();
+    });
+    function hideLoadingScreen() {
+        loadingScreen.classList.add('fade-out');
+        setTimeout(function() {
+            loadingScreen.style.display = 'none';
+            document.querySelector('.gnb').style.opacity = '1';
+            document.querySelector('.lnb').style.opacity = '1';
+            document.querySelector('main').style.opacity = '1';
+            document.querySelector('footer').style.opacity = '1';
+            document.querySelector('.lnb').style.display = 'contents';
+            window.scrollTo(0, 0);
+        },500); 
+    }
+
+    setTimeout(hideLoadingScreen, 4000);
+
+    
     Object.keys(data).forEach((key, index) => {
         const section = sections[index];
         const urlElement = urlArea[index];

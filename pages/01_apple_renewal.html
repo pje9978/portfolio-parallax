@@ -48,8 +48,8 @@
 <body data-id="1" id="appleRenewal" class="relative">
 	<div include-html="../pages/common/gnb.html"></div>
 	<div include-html="../pages/common/bgGradient.html"></div>
-
-	<main id="data-container" class="bg-bgwhite z-10 relative">
+	<div include-html="../pages/common/loading.html" id="loading-screen"></div>
+	<main id="data-container" class="hidden bg-bgwhite z-10 relative">
 		<div class="container mx-auto px-6">
 			<!-- infro -->
 			<section class="w-full relative">
@@ -143,7 +143,7 @@
 							</div>
 							<figure class="relative md:h-auto md:overflow-auto h-[20vh] overflow-y-scroll">
 								<img src=""
-									alt="desktop" class="pageImg min-w-full w-[320px] relative">
+									alt="desktop" class="pageImg image min-w-full w-[320px] relative">
 									<!-- hover Link -->
 									<figcaption class="absolute flex justify-center items-center bg-black/80 backdrop-blur text-[--white] w-full h-full opacity-0 top-0 left-0 transition ease-in-out delay-150 hover:opacity-100 uppercase">
 										<a href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2307_Apple_redesign/" class="pageLink w-40 h-40 leading-[160px] text-center bg-black text-white rounded-full font-medium">Link</a>
@@ -211,7 +211,7 @@
 							<div class="phone-notch">
 								<div class="phone-speaker"></div>
 							</div>
-							<div class="display-content">
+							<div class="display-content image">
 								<!-- <div class="notifications-bar">
 									<div class="time">9:41</div>
 									<div class="range"></div>
@@ -376,7 +376,7 @@
 				<div class="slideshow py-24 grid-cols-[10% 80% 10%]">
 					<div class="slide">
 						<div class="slide__img-wrap">
-							<div class="slide__img " style="background: black url('../images/subpages/proj2/func-1.png') no-repeat center/contain;"
+							<div class="slide__img image" style="background: black url('../images/subpages/proj2/func-1.png') no-repeat center/contain;"
 							></div>
 						</div>
 						<div class="slide__side">Tailwind CSS 활용</div>
@@ -388,7 +388,7 @@
 					</div>
 					<div class="slide">
 						<div class="slide__img-wrap">
-							<div class="slide__img " style="background: black url('../images/subpages/proj2/func-2.png') no-repeat center/contain;"
+							<div class="slide__img image" style="background: black url('../images/subpages/proj2/func-2.png') no-repeat center/contain;"
 							></div>
 						</div>
 						<div class="slide__side">스크롤 페이지 트렌드</div>
@@ -400,7 +400,7 @@
 					</div>
 					<div class="slide">
 						<div class="slide__img-wrap">
-							<div class="slide__img " style="background: black url('../images/subpages/proj2/func-3.png') no-repeat center/contain;"
+							<div class="slide__img image" style="background: black url('../images/subpages/proj2/func-3.png') no-repeat center/contain;"
 							></div>
 						</div>
 						<div class="slide__side">반응형</div>
@@ -414,7 +414,7 @@
 					</div>
 					<div class="slide" style="display: none;">
 						<div class="slide__img-wrap">
-							<div class="slide__img " style="background: black"
+							<div class="slide__img" style="background: black"
 							></div>
 						</div>
 						<div class="slide__side"></div>
