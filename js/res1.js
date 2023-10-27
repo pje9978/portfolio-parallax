@@ -50,18 +50,23 @@ fetch(`https://raw.githubusercontent.com/pje9978/portfolio-parallax/main/data/da
                 title.textContent = itemData.title;
                 subTitle.textContent = itemData.subTitle;
                 
+                
                 function loadImage(url, element, successCallback, errorCallback) {
+                    
                     var image = new Image();
+                    var timestamp = Date.now();
+                    var imageUrl = url + "?timestamp=" + timestamp;
                     console.log(url.includes("images"))
                     if (url.includes("images") || url.includes("image")) {
-                        image.src = url;
+                        image.src = imageUrl;
                         image.onload = function() {
                             successCallback(element);
                             console.log("로드됨");
+
                             loadingScreen.style.display = "none";
                             main.style.display = "flex";
-                            element.style.backgroundImage = `url(${url})`;
-                            element.src = url;
+                            element.style.backgroundImage = `url(${imageUrl})`;
+                            element.src = imageUrl;
         
                             // element.href = url;
                         };
@@ -85,6 +90,8 @@ fetch(`https://raw.githubusercontent.com/pje9978/portfolio-parallax/main/data/da
 
                 // macbook Img
                 if (mackbook) {
+                    loadImage(itemData.img.desktop[0], mackbook, handleImageLoad, handleImageError);
+                }else{
                     loadImage(itemData.img.desktop[0], mackbook, handleImageLoad, handleImageError);
                 }
                 
