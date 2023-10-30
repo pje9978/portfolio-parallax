@@ -636,10 +636,19 @@
         
         <section id="gallery" class="mainpage">
             <h2 class="content content--full flex flex-col w-screen relative p-0">
-                <h2 class="content__title grid text-center " data-splitting data-effect10>
+                <p class="content__title grid text-center " data-splitting data-effect10>
                     <span class="md:text-[10vw] font-larger text-[15vw]  opacity-80">Gallery.</span>
 
-                </h2>
+                </p>
+                <div class="w-full flex flex-col shrink-0 h-full justify-center items-center">
+                    <!-- <span class="text-xs tracking-widest">{ Skill
+                        }</span> -->
+                    <h1 class="text-center text-3xl text-textwhite font-semibold mt-2 ">
+                        Previous Company Portfolio:<br> 
+                        <span class="text-textwhite opacity-50">A showcase of various graphic design</span>
+                    </h1>
+
+                </div>
             </h2>
 
             <div class="slideshow py-24 grid-cols-30">
@@ -991,14 +1000,20 @@
                 <h2 class="content content--full flex flex-col w-screen relative p-0">
                     <h2 class="content__title grid text-center" data-splitting data-effect10><span class="md:text-[10vw] font-larger text-[15vw]  opacity-80 -mt-2">Education.</span></h2>
                 </h2>
-                <div class="content md:flex-row md:mx-auto md:items-start items-center flex flex-col relative gap-8  justify-items-start">
-                    <div class="md:mr-12 md:w-1/4 md:items-start md:justify-left flex flex-col h-full justify-center items-center">
-                        <span class="text-xs tracking-widest selection:bg-yellow-300 text-center">{
-                            eductaion }</span>
-            
+                
+                <div class="content md:flex-row md:mx-auto items-start flex flex-col relative gap-8 justify-center mt-12">
+
+                    <div class="flex flex-col shrink-0 w-1/4 items-start h-full">
+                        <span class="text-xs tracking-widest">{ Education
+                        }</span>
+                        <h1 class=" text-3xl text-textwhite font-semibold mt-2">Academic Background:
+                            <span class="text-textwhite opacity-50">current areas of
+                                proficiency</span>
+                        </h1>
                     </div>
 
-                    <ul class="content__title content__title--left md:w-3/4 w-full flex flex-col flex-wrap"
+
+                    <ul class="content__title content__title--left"
                         data-splitting data-effect16>
                         <li class="relative text-2xl flex-1 px-4 py-4 flex flex-col items-start border border-white/10 hover:border hover:px-6 hover:border-textwhite hover:opacity-100">
                             <span class="text-xs tracking-widest opacity-50 mb-2">2023.03 - 2023. 08</span>
@@ -1027,81 +1042,62 @@
             </div>
         </section>
 
-        <!-- contact -->
-        <section id="contact">
-            <div class="container mx-auto">
-
-                <h2 class="content w-full flex flex-col w-screen relative p-0">
-                    <h2 class="content__title grid text-center " data-splitting data-effect10><span
-                            class="md:text-[10vw] font-larger text-[15vw]  opacity-100">Contact.</span>
-                        <span class="w-3/4 mx-auto text-3xl opacity-60 pb-10 -mt-2 font-semibold">Want to work together on a
-                            project?</span>
-                    </h2>
-                </h2>
-                <div class="flex flex-wrap w-full justify-center">
-                    <section class="flex flex-col justify-center items-center gap-4  tracking-widests ">
-                        <p class="text-2xl">Web Publisher</p>
-                        <p class="email relative flex flex-col sm:flex-row justify-center items-center">
-                            <a href="mailto:pje9978@gmail.com" class="copy-button left-0  sm:after:content-['|'] sm:after:mx-1 text-xs  opacity-50 hover:bg-[--primary] hover:text-[--secondary]">📧 pje9978@gmail.com</a>
-                            <span class="feedback flex w-1/2 text-center items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:left-full ml-0 md:ml-4 bg-[--primary] text-[--secondary] rounded text-xs font-medium text-xs opacity-50">
-                            </span>
-
-                            <span class="sm:after:content-['|'] after:mx-1 text-xs  opacity-50">+82 10 6563 9978</span>
-                            <span class="sm:after:mx-1 text-xs  opacity-50"> Gwanak-gu, Seoul</span>
-                        </p>
-
-                        <p class="flex flex-col text-xs  w-full justify-center items-center opacity-50">
-
-
-                        </p>
-            
-
-                     
-                    </section>
-                    <div class="form md:w-1/2 w-full hidden ">
-                        <form class="px-24">
-                            <p class="flex flex-col mb-6">
-                                <input type="text" id="name" name="name" placeholder="Hong Gil Dong"
-                                    class="peer w-full bg-transparent border border-[#e8e5de]/50 text-white bg-opacity-50 focus:border-[#e8e5de]/100 focus:caret-[#e8e5de]/80  focus:ring-1  focus:ring-[#e8e5de] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out z-10 placeholder-[#e8e5de]/20">
-                                <label for="name"
-                                    class="order-first peer-focus:text-[#e8e5de]/100 tracking-widest text-xs text-[#e8e5de]/50 mb-1">Name</label>
-                            </p>
-                            <p class="flex flex-col mb-6">
-                                <input type="text" id="email" name="email" placeholder="you@example.com"
-                                    class="peer w-full bg-transparent border border-[#e8e5de]/50 text-white bg-opacity-50 focus:border-[#e8e5de]/100 focus:caret-[#e8e5de]/80  focus:ring-1  focus:ring-[#e8e5de] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out z-10 placeholder-[#e8e5de]/20">
-                                <label for="email"
-                                    class="order-first peer-focus:text-[#e8e5de]/100 tracking-widest text-xs text-[#e8e5de]/50 mb-1">Email</label>
-                            </p>
-                            <p class="flex flex-col mb-6">
-
-                                <textarea name="" id="" cols="30" rows="10"
-                                    class="peer w-full bg-transparent border border-[#e8e5de]/50 text-white bg-opacity-50 focus:border-[#e8e5de]/100 focus: caret-[#e8e5de]/80  focus:ring-2  focus:ring-[#e8e5de] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out z-10 placeholder-[#e8e5de]/20"></textarea>
-                                <label for="message"
-                                    class=" order-first peer-focus:text-[#e8e5de]/100 tracking-widest text-xs text-[#e8e5de]/50 mb-1">Message</label>
-                            </p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <footer style="opacity: 0;">
+    <footer id="contact">
         <svg class=" w-full" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
             <polygon class="w-full" points="5,5 195,10 185,185 10,195" />
             <!-- Common use case: embed HTML text into SVG -->
-            <foreignObject class="w-full text-center" y="15" width="100%" height="100%">
+            <foreignObject class="w-full  text-2xl text-center" y="15" width="100%" height="100%">
                 <!--¸
                 In the context of SVG embedded in an HTML document, the XHTML
                 namespace could be omitted, but it is mandatory in the
                 context of an SVG document
               -->
-                PARK JI EUN
+              Contact.
                
             </foreignObject>
 
         </svg>
+        <div class="container mx-auto flex flex-wrap w-full justify-center mt-12">
+            <section class="flex flex-col justify-center items-center gap-4  tracking-widests w-full">
+                <!-- <p class="text-2xl">Web Publisher</p> -->
+                <p class="w-3/4 mx-auto text-3xl opacity-60 -mt-2 font-semibold text-center">Want to work together on a
+                    project?</p>
+                <p class="email relative flex flex-col sm:flex-row justify-center items-center">
+                    <a href="mailto:pje9978@gmail.com" class="copy-button left-0  sm:after:content-['|'] sm:after:mx-1 text-xs  opacity-50 hover:bg-[--primary] hover:text-[--secondary]">📧 pje9978@gmail.com</a>
 
+
+                    <span class="sm:after:content-['|'] after:mx-1 text-xs  opacity-50">+82 10 6563 9978</span>
+                    <span class="sm:after:mx-1 text-xs  opacity-50"> Gwanak-gu, Seoul</span>
+                </p>
+
+             
+            </section>
+            <div class="form md:w-1/2 w-full hidden ">
+                <form class="px-24">
+                    <p class="flex flex-col mb-6">
+                        <input type="text" id="name" name="name" placeholder="Hong Gil Dong"
+                            class="peer w-full bg-transparent border border-[#e8e5de]/50 text-white bg-opacity-50 focus:border-[#e8e5de]/100 focus:caret-[#e8e5de]/80  focus:ring-1  focus:ring-[#e8e5de] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out z-10 placeholder-[#e8e5de]/20">
+                        <label for="name"
+                            class="order-first peer-focus:text-[#e8e5de]/100 tracking-widest text-xs text-[#e8e5de]/50 mb-1">Name</label>
+                    </p>
+                    <p class="flex flex-col mb-6">
+                        <input type="text" id="email" name="email" placeholder="you@example.com"
+                            class="peer w-full bg-transparent border border-[#e8e5de]/50 text-white bg-opacity-50 focus:border-[#e8e5de]/100 focus:caret-[#e8e5de]/80  focus:ring-1  focus:ring-[#e8e5de] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out z-10 placeholder-[#e8e5de]/20">
+                        <label for="email"
+                            class="order-first peer-focus:text-[#e8e5de]/100 tracking-widest text-xs text-[#e8e5de]/50 mb-1">Email</label>
+                    </p>
+                    <p class="flex flex-col mb-6">
+
+                        <textarea name="" id="" cols="30" rows="10"
+                            class="peer w-full bg-transparent border border-[#e8e5de]/50 text-white bg-opacity-50 focus:border-[#e8e5de]/100 focus: caret-[#e8e5de]/80  focus:ring-2  focus:ring-[#e8e5de] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out z-10 placeholder-[#e8e5de]/20"></textarea>
+                        <label for="message"
+                            class=" order-first peer-focus:text-[#e8e5de]/100 tracking-widest text-xs text-[#e8e5de]/50 mb-1">Message</label>
+                    </p>
+                </form>
+            </div>
+        </div>
         <div class="container mx-auto px-6 py-12 ">
     
             <div class="flex justify-between pt-3 border-t">
