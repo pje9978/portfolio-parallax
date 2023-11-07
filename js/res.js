@@ -7,7 +7,7 @@ fetch(
 
         const jsonData = JSON.parse(JSON.stringify(json));
         workData(jsonData);
-        subPageData(jsonData);
+        // subPageData(jsonData);
 
     }).catch(function(error) {
         console.log(error);
