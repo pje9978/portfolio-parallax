@@ -104,8 +104,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Swiper 컴포넌트 초기화
-    var bullet = ['1번', '2번', '3번'];
-    
+
+    const slide = document.querySelectorAll('.swiper-slide');
+    var bullet = [];
+
+    for (var i = 1; i <= slide.length; i++) {
+        bullet.push(i + '번');
+    }
+
     var swiper1 = new Swiper('#work .swiper-container', {
       pagination: {
         el: '.swiper-pagination',
