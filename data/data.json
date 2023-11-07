@@ -2,6 +2,31 @@
 
 [
   {
+    "id": 4,
+    "name":"movie-site",
+    "title":"react-movie-site",
+    "subTitle":"api 활용한 리액트 프로젝트",
+    "language":["GitHub","React","Tailwind CSS"],
+    "part":["기획","디자인","퍼블리싱"],
+    "device":["데스크탑","태블릿","모바일"],
+    "percent":"80% (20% 소스 활용)",
+    "date":"2023-11",
+    "url":{
+      "url1":"https://pje9978.github.io/react-movie/"
+    },
+    "link":{
+      "gitHub":"https://github.com/pje9978/react-movie/tree/work1"
+    },
+    "img" : {
+      "desktop" : [
+        ""
+      ],
+      "mobile" : [
+        ""
+      ]
+    }
+  },
+  {
     "id": 1,
     "name":"apple_renewal",
     "title":"Apple 페럴렉스 리디자인",
