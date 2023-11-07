@@ -279,7 +279,7 @@
 
             const bgSlide = document.querySelector(".slideshow__deco");
             const currSlide = document.querySelector(".slide.slide--current.slide--visible .slide__img");
-            const backgroundImageUrl = getComputedStyle(currSlide).backgroundImage;
+            const backgroundImageUrl = getComputedStyle(currSlide,"").backgroundImage;
             
             bgSlide.style.backgroundImage = backgroundImageUrl;
             bgSlide.style.width = "80vw";
