@@ -2,6 +2,31 @@
 
 [
   {
+    "id": 5,
+    "name":"webportfolio",
+    "title":"web-portfolio",
+    "subTitle":"json 데이터 관리 / API 활용 동적으로 웹페이지 구현한 프로젝트",
+    "language":["GitHub","JavaScript","SCSS","HTML"],
+    "part":["기획","디자인","퍼블리싱"],
+    "device":["데스크탑","태블릿","모바일"],
+    "percent":"80% (20% 소스 활용)",
+    "date":"2023-11",
+    "url":{
+      "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax"
+    },
+    "link":{
+      "gitHub":"https://github.com/pje9978/portfolio-parallax"
+    },
+    "img" : {
+      "desktop" : [
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/capture/main.png"
+      ],
+      "mobile" : [
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/capture/mobil.png"
+      ]
+    }
+  },
+  {
     "id": 4,
     "name":"movie-site",
     "title":"react-movie-site",
