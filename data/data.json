@@ -19,10 +19,11 @@
     },
     "img" : {
       "desktop" : [
-        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/capture/main.png"
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/capture/main.png",
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/capture/subpage.png"
       ],
       "mobile" : [
-        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/capture/mobil.png"
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/capture/mobile.png"
       ]
     }
   },
@@ -70,7 +71,8 @@
     },
     "img" : {
       "desktop" : [
-        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2307_Apple_redesign/images/capture/desktop.png"
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2307_Apple_redesign/images/capture/desktop.png",
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/capture/mobil.png"
       ],
       "mobile" : [
         "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2307_Apple_redesign/images/capture/mobile.png"
