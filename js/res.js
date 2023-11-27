@@ -20,50 +20,18 @@ function workData(data) {
     const urlArea = document.querySelectorAll('.urlArea');
     const linkArea = document.querySelectorAll('.linkArea');
     const searchUrl = document.querySelectorAll('.search a');
-    const iframeUrl = document.querySelectorAll('.window iframe');
+    const workImg = document.querySelectorAll('.window img');
     const editorTitle = document.querySelectorAll('.editorTitle');
     const editorSubTitle = document.querySelectorAll('.editorSubTitle');
     const loadingScreen = document.getElementById('loading-screen');
-
-
-    // function disableScroll() {
-    //     var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    //     document.body.style.overflow = 'hidden';
-    //     window.scrollTo(0, scrollTop);
-    // }
-
-    // function showLoadingScreen() {
-    //     loadingScreen.style.display = 'block';
-     
-    // }
-
-    // window.addEventListener('load', function() {
-    //     showLoadingScreen();
-    //     disableScroll();
-       
-
-    // });
-    // function hideLoadingScreen() {
-    //     loadingScreen.classList.add('fade-out');
-    //     setTimeout(function() {
-    //         loadingScreen.style.display = 'none';
-    //         document.querySelector('.gnb').style.opacity = '1';
-    //         document.querySelector('.lnb').style.opacity = '1';
-    //         document.querySelector('main').style.opacity = '1';
-    //         document.querySelector('footer').style.opacity = '1';
-    //         document.querySelector('.lnb').style.display = 'contents';
-    //         window.scrollTo(0, 0);
-    //     },500); 
-    // }
-
-    // setTimeout(hideLoadingScreen, 2000);
     
     Object.keys(data).forEach((key, index) => {
         const section = sections[index];
         const urlElement = urlArea[index];
         const linkElement = linkArea[index];
         const searchUrlElement = searchUrl[index];
-        const iframeUrlElement = iframeUrl[index];
+   
+        const workImgElement = workImg[index];
         const editorTitleElement = editorTitle[index];
         const editorSubTitleElement = editorSubTitle[index];
 
@@ -77,7 +45,8 @@ function workData(data) {
         // search
         searchUrlElement.textContent = item.url.url1;
         searchUrlElement.href = item.url.url1;
-        iframeUrlElement.src = item.url.url1;
+        // iframeUrlElement.src = item.url.url1;
+        workImgElement.src = data[index].img.desktop[0];
 
         // subpage
         
@@ -100,11 +69,17 @@ function workData(data) {
             section.querySelector('.work').appendChild(divtitle);
             section.querySelector('.work').appendChild(div);
         });
-
-        // button createElement
+        
+        
         Object.keys(item).forEach(subKey => {
             const value = item[subKey];
-
+       
+        });
+        
+        // button createElement
+        Object.keys(item).forEach(subKey => {
+            
+            const value = item[subKey];
             
             if (subKey === 'url') {
                 Object.entries(value).forEach((a, i) => {
@@ -120,8 +95,6 @@ function workData(data) {
             
             if (subKey === 'link') {
                 Object.entries(value).forEach((a, i) => {
-                    
-        
                     const aElement = document.createElement('a');
                     aElement.href = a[1];
                     aElement.target = "_blank";
