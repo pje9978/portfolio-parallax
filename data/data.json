@@ -46,10 +46,10 @@
     },
     "img" : {
       "desktop" : [
-        ""
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2311_react_movie/images/desktop.png"
       ],
       "mobile" : [
-        ""
+        "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio/work/2311_react_movie/images/mobile.png"
       ]
     }
   },
