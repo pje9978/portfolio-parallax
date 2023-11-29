@@ -520,6 +520,10 @@ section#gallery .slideshow {
   grid-column-gap: 0.5%;
   grid-template-rows: 100%;
   grid-template-areas: "... slide ...";
+  
+  >h2 {
+    display: none;
+  }
 }
 section#gallery .slideshow .slideshow__deco {
   overflow: hidden;
@@ -703,6 +707,9 @@ section#gallery .slideshow--previewopen .nav--prev {
   box-sizing: border-box;
   filter: blur(50px) saturate(3);
   -webkit-filter: blur(50px) saturate(3);
+  >h2 {
+    display: none;
+  }
 }
 
 .slideshow-title {
