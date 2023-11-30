@@ -67,8 +67,7 @@
             .swiper-pagination-bullet-active:before{@apply content-[""] block absolute border-t-[10px_solid_transparent] border-r-[10px_solid_transparent] border-b-[10px_solid_transparent] border-l-[10px_solid_pink] [transition:all_.5_ease-in-out];}
             .editor-line {counter-increment: line;}
             .urlArea a{@apply bg-white overflow-clip text-sm font-medium px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700;}
-            .linkArea a{@apply bg-black/80 hover:bg-black/100 text-sm px-4 py-2 inline-flex;}
-            
+            .linkArea a{@apply bg-black/80 hover:bg-black/100 text-sm px-4 py-2 inline-flex;}  
             .output {@apply mb-2;}
         }
         
@@ -77,8 +76,34 @@
 </head>
 
 <body class="loading  bg-bgblack text-textwhite box-border no-scroll">
-    <div include-html="./pages/common/gnb.html" ></div>
-    <div include-html="./pages/common/bgGradient.html"></div>
+    <div class="glow-container ">
+        <div class="ball"></div>
+        <div class="ball" style="--delay:-12s;--size:0.35;--speed:25s;"></div>
+        <div class="ball" style="--delay:-10s;--size:0.3;--speed:15s;"></div>
+    </div>
+    <nav class="w-screen  bg-black z-50 border-b  border-textwhite">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap items-center ">
+                <h1 class="md:w-auto text-xl font-bold flex w-full justify-center items-center py-4 text-textwhite"><a
+                        href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/">PORTFOLIO.</a></h1>
+                <ul
+                    class="md:w-auto md:flex-row flex h-full flex-wrap w-full justify-center  ml-auto items-center text-base ">
+                    <li class="relative"><a href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/"
+                            class="block p-5 opacity-50 text-center text-textwhite text-xs nav-after hover:opacity-100 hover:after:w-full">{
+                            Portfolio }</a></li>
+                    <li class="relative"><a href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/#work"
+                            class="block p-5 opacity-50 text-center text-textwhite text-xs nav-after hover:opacity-100 hover:after:w-full">{
+                            Work }</a></li>
+                    <li class="relative"><a href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/#gallery"
+                            class="block p-5 opacity-50 text-center text-textwhite text-xs nav-after hover:opacity-100 hover:after:w-full">{
+                            Gallery }</a></li>
+                    <li class="relative"><a href=".http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/#contact"
+                            class="block p-5 opacity-50 text-center text-textwhite text-xs nav-after hover:opacity-100 hover:after:w-full">{
+                            Contact }</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>                                                              
     <nav class="lnb fixed bottom-2 left-1/2 -translate-x-1/2  z-[10000] border border-white backdrop-blur-sm -webkit-backdrop-blur-sm  bg-black  text-textwhite rounded-full  shadow-2xl  font-medium mix-blend-difference">
         <ul class="container mx-auto px-6 py-3 flex justify-center gap-4">
             <li class="uppercase text-sm sm:text-base"><a href="http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/#about">About</a></li>
@@ -111,7 +136,7 @@
                 </div>
             </section>
         </section>
-        <section id="about" class="w-screen">
+        <section id="about" class="w-screen my-24">
             <div class=" container mx-auto lg:w-2/3 md:w-2/3 w-full  flex flex-wrap justify-start px-6">
                 <header class="w-fit">
                     <h2 class="text-xs tracking-widest w-1/2">{ About }</h2>
@@ -128,9 +153,7 @@
                 </a>
             </div>
         </section>
-        
-        <!-- Strength -->
-        <section id="strength" class="w-screen">
+        <section id="strength" class="w-screen my-24">
             <div id="container" class="container relative mx-auto flex flex-col justify-center px-6">
                 <header class="text-center mb-8">
                     <h2 class="content__title grid text-center" data-splitting data-effect10>
@@ -138,9 +161,7 @@
                     </h2>
                     <a target="_blank" href="https://www.notion.so/GALLUP-5-b1c9b3e695064cf1a51e8175a170877e?pvs=4" class="hover:opacity-100 text-xs opacity-50 p-2 link z-0  text-xs underline  after:content-['_↗']">강점 보고서 자세히 보기</a>
                 </header>
-
                 <ul class="relative flex flex-wrap justify-center items-center mt-4" data-splitting data-effect14>
-                    <!-- <div class="tooltip-top absolute top-0 text-sm -translate-x-1 flex justify-center items-center">Click Me</div> -->
                     <li class="popup-item w-32 flex flex-col  justify-center items-center  aspect-square border border-white/40 hover:border-white/100 hover:text-xl cursor-pointer after:opacity-0">
                         <h4 class="text-xs font-thin tracking-widest">적응력</h4>
                         <h3 class="font-medium">Adaptability</h3>
@@ -163,8 +184,9 @@
                     </li>
                 </ul>
                 
-                <ul class="popup absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/80 text-textwhite backdrop-blur w-11/12 h-3/4 flex justify-center items-center z-100">
-                    <li class="popup-content flex flex-col justify-center items-center m-4 p-4">
+                <article class="popup absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/80 text-textwhite backdrop-blur w-11/12 h-3/4 flex justify-center items-center z-100">
+                    <h2 class="hidden">팝업</h2>
+                    <section class="popup-content flex flex-col justify-center items-center m-4 p-4">
                         <span class="text-xs font-thin tracking-widest">적응력</span>
                         <span class="font-medium text-4xl">Adaptability</span>
                         <h3 class="text-base opacity-80 mt-8 text-center leading-relaxed">저는 변화에 민감하고, 유연하며, 상황의 흐름에 따라
@@ -172,8 +194,8 @@
                         <h4 class="block text-sm opacity-50 my-4">
                             #도전 #미래지향 #유연함 #창의력 #효율성 #끊임없는 공부
                         </h4>
-                    </li>
-                    <li class="popup-content flex flex-col justify-center items-center m-4 p-4">
+                    </section>
+                    <section class="popup-content flex flex-col justify-center items-center m-4 p-4">
                         <span class="text-xs font-thin tracking-widest">문제해결</span>
                         <span class="font-medium text-4xl">Restorative</span>
                         <h3 class="text-base opacity-80 mt-8 text-center leading-relaxed">저는 문제 분석하고 해결하는 과정을
@@ -182,8 +204,8 @@
                         <h4 class="block text-sm opacity-50 my-4">
                             #도전 #미래지향 #유연함 #창의성 #효율성 추구 #끊임없는 공부
                         </h4>
-                    </li>
-                    <li class="popup-content flex flex-col justify-center items-center m-4 p-4">
+                    </section>
+                    <section class="popup-content flex flex-col justify-center items-center m-4 p-4">
                         <span class="text-xs font-thin tracking-widest">공감능력</span>
                         <span class="font-medium text-4xl">Empathy</span>
                         <h3 class="text-base opacity-80 mt-8 text-center leading-relaxed">상대방의 상황과 감정들을 사람들의 감정을 잘 헤아릴 수
@@ -191,8 +213,8 @@
                         <h4 class="block text-sm opacity-50 my-4">
                             #이해심 #감수성 #편안함 #안정감 #통찰력
                         </h4>
-                    </li>
-                    <li class="popup-content flex flex-col justify-center items-center m-4 p-4">
+                    </section>
+                    <section class="popup-content flex flex-col justify-center items-center m-4 p-4">
                         <span class="text-xs font-thin tracking-widest">미래지향</span>
                         <span class="font-medium text-4xl">Futuristic</span>
                         <h3 class="text-base opacity-80 mt-8 text-center leading-relaxed">새로운 기회와 도전으로 많은 아이디어와 가능성을
@@ -200,8 +222,8 @@
                         <h4 class="block text-sm opacity-50 my-4">
                             #유연함 #변화 #혁신 #도전 #창의성 #예측 #비전 #변화
                         </h4>
-                    </li>
-                    <li class="popup-content flex flex-col justify-center items-center m-4 p-4">
+                    </section>
+                    <section class="popup-content flex flex-col justify-center items-center m-4 p-4">
                         <span class="text-xs font-thin tracking-widest">긍정적</span>
                         <span class="font-medium text-4xl">Positivity</span>
                         <h3 class="text-base opacity-80 mt-8 text-center leading-relaxed">저는 사람들의 긍정적인 모습을 잘 발견하고, 긍정적인
@@ -209,21 +231,21 @@
                         <h4 class="block text-sm opacity-50 my-4">
                             #화합 #공감 #긍정적 #에너지 #유쾌 #존중 #배려
                         </h4>
-                    </li>
-                </ul>
-                <button class="closeBtn absolute right-0 top-0 m-4">
-                    <svg class="hover:stroke-textwhite stroke-textwhite hover:stroke-2" width="44px" height="44px"
-                        viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8e5de"
-                        stroke-width="1">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <line x1="20" y1="20" x2="44" y2="44"></line>
-                            <line x1="44" y1="20" x2="20" y2="44"></line>
-                            <rect x="8" y="8" width="48" height="48"></rect>
-                        </g>
-                    </svg>
-                </button>
+                    </section>
+                    <button class="closeBtn absolute right-0 top-0 m-4">
+                        <svg class="hover:stroke-textwhite stroke-textwhite hover:stroke-2" width="44px" height="44px"
+                            viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#e8e5de"
+                            stroke-width="1">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <line x1="20" y1="20" x2="44" y2="44"></line>
+                                <line x1="44" y1="20" x2="20" y2="44"></line>
+                                <rect x="8" y="8" width="48" height="48"></rect>
+                            </g>
+                        </svg>
+                    </button>
+                </article>
 
                 <article class="icon1 flex flex-col justify-center animate-bounce items-center mt-12">
                     <h5 class="text-xs opacity-80 z-0">블록을 클릭해주세요.</h5>
@@ -243,7 +265,7 @@
         </section>
 
         <!-- work -->
-        <section id="work" class="w-screen">
+        <section id="work" class="w-screen my-24">
             <div class="container md:container-2xl mx-auto flex flex-col justify-center px-6">
                 <header>
                     <h2 class="content__title grid text-center" data-splitting data-effect10>
@@ -601,7 +623,6 @@
 
                             </li>
                             
-                            
                             <!--webplanShop -->
                             <li class="swiper-slide md:flex-wrap md:flex-row w-full h-auto workItem p-4 text-center text-[18px] bg-bgwhite flex flex-col  border border-[#e8e5de]/20 ">
                                 <!-- editor -->
@@ -688,7 +709,7 @@
                                     </article>
                                 </article>
                             
-                                <article class="lg:w-2/3 h-[60vh] rounded-[5px] overflow-hidden">
+                                <article class="lg:w-2/3 w-[inherit] h-[60vh] rounded-[5px] overflow-hidden">
                                     <h2 class="hidden">project image</h2>
                                     <div class="[box-shadow:0px_2px_3px_0px_rgba(50,_50,_50,_0.11)] border-[1px] border-[solid]  border-[#c3c3c3] w-full  rounded-[5px] relative h-full">
                                         <nav class="header flex justify-center items-center bg-[#e8e8e8] h-[45px] rounded-tl-[5px] rounded-br-[0] rounded-tr-[5px] rounded-bl-[0] pl-[10px] pr-[10px] py-[10px]">
@@ -710,6 +731,7 @@
                                 </article>
 
                             </li>
+                            
 
                             <!-- trip -->
                             <li class="swiper-slide md:flex-wrap md:flex-row w-full h-auto workItem p-4 text-center text-[18px] bg-bgwhite flex flex-col  border border-[#e8e5de]/20 ">
@@ -840,7 +862,7 @@
             </div>
         </section>
         
-        <section id="gallery" class="mainpage">
+        <section id="gallery" class="mainpage my-24">
             <header class="text-center">
                 <h2 class="content__title md:text-[10vw] font-larger text-[15vw]  opacity-80" data-splitting data-effect10>Gallery.</h2>
                 <h3 class="text-center text-3xl text-textwhite font-semibold mt-2 ">
@@ -1173,7 +1195,7 @@
         </section>
 
         <!-- edu -->
-        <section id="edu">
+        <section id="edu" class="my-24">
             <div class="container w-screen mx-auto flex flex-col justify-start px-6">
                 <header class="content content--full flex flex-col relative p-0 text-center">
                     <h2 class="content__title grid text-center md:text-[10vw] font-larger text-[15vw]  opacity-80 -mt-2" data-splitting data-effect10>Education.</h2>
@@ -1215,7 +1237,7 @@
 
     </main>
 
-    <footer id="contact">
+    <footer id="contact" class="mt-24">
         <svg class=" w-full" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
             <polygon class="w-full" points="5,5 195,10 185,185 10,195" />
             <!-- Common use case: embed HTML text into SVG -->
@@ -1285,14 +1307,10 @@
     </footer>
     <!-- gallery -->
 
-    <script>
-        includeHTML();
-    </script>
+
     <script src="js/res.js"></script>
     <script src="js/lib/mouse-effect.js"></script>
     <script src="js/lib/marquee-effect.js"></script>
-
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
