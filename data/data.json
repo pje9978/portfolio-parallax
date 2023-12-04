@@ -14,10 +14,6 @@
     "url":{
       "url1":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax"
     },
-    "link":{
-      "subpage":"http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/pages/05_web_portfolio.html",
-      "gitHub":"https://github.com/pje9978/portfolio-parallax"
-    },
     "img" : {
       "desktop" : [
         "http://pje9978.ipdisk.co.kr:8000/list/HDD2/portfolio-parallax/images/capture/main.png",
